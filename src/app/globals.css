@@ -1,25 +1,47 @@
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+  /* Background and accent colors */
+  --paper-background: #00000000;
+  --accent-cyan: #24f2e1;
+  --accent-blue: #1058df;
+  --accent-magenta: #e526cb;
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  /* Neon glow effects (holy ballz) */
+  --neon-core-magenta: #dad;
+  --neon-shadow-magenta:
+    0 0 0.1rem var(--neon-core-magenta),
+    0 0 0.1rem var(--neon-core-magenta),
+    0 0 0.4rem #bc13fe,
+    0 0 0.1rem #e526cb,
+    0 0 0.6rem #e526cb,
+    inset 0 0 0.3rem #e526cb;
+  
+  --neon-core-cyan: #9ee;
+  --neon-shadow-cyan:
+    0 0 .1rem var(--neon-core-cyan),
+    0 0 .1rem var(--neon-core-cyan),
+    0 0 0.4rem #17abc5,
+    0 0 0.1rem #24f2e1,
+    0 0 0.6rem #24f2e1,
+    inset 0 0 0.3rem #24f2e1;
+
+  /* Main text color */
+  --text-color: #ffffff;
+
+  /* Measurements */
+  --basepage-spacing: 12px;
+  --border-radius: 10px;
 }
 
 html,
 body {
   max-width: 100vw;
   overflow-x: hidden;
+  color-scheme: dark;
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  color: var(--text-color);
+  font-family: "Source Code Pro", monospace;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -33,10 +55,4 @@ body {
 a {
   color: inherit;
   text-decoration: none;
-}
-
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
 }

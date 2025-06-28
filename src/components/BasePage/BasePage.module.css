@@ -1,0 +1,11 @@
+.basePage {
+  min-height: 100vh;
+  display: flex;
+  flex-flow: column;
+  padding: var(--basepage-spacing);
+  gap: var(--basepage-spacing);
+}
+
+.content {
+  flex-grow: 1;
+}

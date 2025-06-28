@@ -1,0 +1,331 @@
+:root {
+  /* Cyan */
+  --cyan-100: #acfcf7;
+  --cyan-100-neon:
+    0 0 0.2rem color-mix(in oklab, var(--cyan-100) 80%, #fff 30%),
+    0 0 0.2rem color-mix(in oklab, var(--cyan-100) 80%, #fff 30%),
+    0 0 0.8rem color-mix(in oklab, var(--cyan-100) 80%, #000 30%),
+    0 0 0.2rem var(--cyan-100),
+    0 0 1.2rem var(--cyan-100),
+    inset 0 0 0.6rem var(--cyan-100);
+
+  --cyan-200: #11d6c6;
+  --cyan-200-neon:
+    0 0 0.19rem color-mix(in oklab, var(--cyan-200) 80%, #fff 25%),
+    0 0 0.19rem color-mix(in oklab, var(--cyan-200) 80%, #fff 25%),
+    0 0 0.76rem color-mix(in oklab, var(--cyan-200) 80%, #000 25%),
+    0 0 0.19rem var(--cyan-200),
+    0 0 1.14rem var(--cyan-200),
+    inset 0 0 0.57rem var(--cyan-200);
+
+  --cyan-300: #16b5a8;
+  --cyan-300-neon:
+    0 0 0.18rem color-mix(in oklab, var(--cyan-300) 80%, #fff 20%),
+    0 0 0.18rem color-mix(in oklab, var(--cyan-300) 80%, #fff 20%),
+    0 0 0.72rem color-mix(in oklab, var(--cyan-300) 80%, #000 20%),
+    0 0 0.18rem var(--cyan-300),
+    0 0 1.08rem var(--cyan-300),
+    inset 0 0 0.54rem var(--cyan-300);
+
+  --cyan-400: #0b746c;
+  --cyan-400-neon:
+    0 0 0.17rem color-mix(in oklab, var(--cyan-400) 80%, #fff 15%),
+    0 0 0.17rem color-mix(in oklab, var(--cyan-400) 80%, #fff 15%),
+    0 0 0.68rem color-mix(in oklab, var(--cyan-400) 80%, #000 15%),
+    0 0 0.17rem var(--cyan-400),
+    0 0 1.02rem var(--cyan-400),
+    inset 0 0 0.51rem var(--cyan-400);
+
+  --cyan-500: #054f48;
+  --cyan-500-neon:
+    0 0 0.16rem color-mix(in oklab, var(--cyan-500) 80%, #fff 10%),
+    0 0 0.16rem color-mix(in oklab, var(--cyan-500) 80%, #fff 10%),
+    0 0 0.64rem color-mix(in oklab, var(--cyan-500) 80%, #000 10%),
+    0 0 0.16rem var(--cyan-500),
+    0 0 0.96rem var(--cyan-500),
+    inset 0 0 0.48rem var(--cyan-500);
+
+  --cyan-600: #022c28;
+  --cyan-600-neon:
+    0 0 0.15rem color-mix(in oklab, var(--cyan-600) 80%, #fff 5%),
+    0 0 0.15rem color-mix(in oklab, var(--cyan-600) 80%, #fff 5%),
+    0 0 0.6rem color-mix(in oklab, var(--cyan-600) 80%, #000 5%),
+    0 0 0.15rem var(--cyan-600),
+    0 0 0.9rem var(--cyan-600),
+    inset 0 0 0.45rem var(--cyan-600);
+
+  /* Blue */
+  --blue-100: #cad1fe;
+  --blue-100-neon:
+    0 0 0.2rem color-mix(in oklab, var(--blue-100) 80%, #fff 30%),
+    0 0 0.2rem color-mix(in oklab, var(--blue-100) 80%, #fff 30%),
+    0 0 0.8rem color-mix(in oklab, var(--blue-100) 80%, #000 30%),
+    0 0 0.2rem var(--blue-100),
+    0 0 1.2rem var(--blue-100),
+    inset 0 0 0.6rem var(--blue-100);
+
+  --blue-200: #96a8fd;
+  --blue-200-neon:
+    0 0 0.19rem color-mix(in oklab, var(--blue-200) 80%, #fff 25%),
+    0 0 0.19rem color-mix(in oklab, var(--blue-200) 80%, #fff 25%),
+    0 0 0.76rem color-mix(in oklab, var(--blue-200) 80%, #000 25%),
+    0 0 0.19rem var(--blue-200),
+    0 0 1.14rem var(--blue-200),
+    inset 0 0 0.57rem var(--blue-200);
+
+  --blue-300: #587efc;
+  --blue-300-neon:
+    0 0 0.18rem color-mix(in oklab, var(--blue-300) 80%, #fff 20%),
+    0 0 0.18rem color-mix(in oklab, var(--blue-300) 80%, #fff 20%),
+    0 0 0.72rem color-mix(in oklab, var(--blue-300) 80%, #000 20%),
+    0 0 0.18rem var(--blue-300),
+    0 0 1.08rem var(--blue-300),
+    inset 0 0 0.54rem var(--blue-300);
+
+  --blue-400: #1058df;
+  --blue-400-neon:
+    0 0 0.17rem color-mix(in oklab, var(--blue-400) 80%, #fff 15%),
+    0 0 0.17rem color-mix(in oklab, var(--blue-400) 80%, #fff 15%),
+    0 0 0.68rem color-mix(in oklab, var(--blue-400) 80%, #000 15%),
+    0 0 0.17rem var(--blue-400),
+    0 0 1.02rem var(--blue-400),
+    inset 0 0 0.51rem var(--blue-400);
+
+  --blue-500: #073a98;
+  --blue-500-neon:
+    0 0 0.16rem color-mix(in oklab, var(--blue-500) 80%, #fff 10%),
+    0 0 0.16rem color-mix(in oklab, var(--blue-500) 80%, #fff 10%),
+    0 0 0.64rem color-mix(in oklab, var(--blue-500) 80%, #000 10%),
+    0 0 0.16rem var(--blue-500),
+    0 0 0.96rem var(--blue-500),
+    inset 0 0 0.48rem var(--blue-500);
+
+  --blue-600: #021e57;
+  --blue-600-neon:
+    0 0 0.15rem color-mix(in oklab, var(--blue-600) 80%, #fff 5%),
+    0 0 0.15rem color-mix(in oklab, var(--blue-600) 80%, #fff 5%),
+    0 0 0.6rem color-mix(in oklab, var(--blue-600) 80%, #000 5%),
+    0 0 0.15rem var(--blue-600),
+    0 0 0.9rem var(--blue-600),
+    inset 0 0 0.45rem var(--blue-600);
+
+  /* Magenta */
+  --magenta-100: #fcbaee;
+  --magenta-100-neon:
+    0 0 0.2rem color-mix(in oklab, var(--magenta-100) 80%, #fff 30%),
+    0 0 0.2rem color-mix(in oklab, var(--magenta-100) 80%, #fff 30%),
+    0 0 0.8rem color-mix(in oklab, var(--magenta-100) 80%, #000 30%),
+    0 0 0.2rem var(--magenta-100),
+    0 0 1.2rem var(--magenta-100),
+    inset 0 0 0.6rem var(--magenta-100);
+
+  --magenta-200: #fa77e3;
+  --magenta-200-neon:
+    0 0 0.19rem color-mix(in oklab, var(--magenta-200) 80%, #fff 25%),
+    0 0 0.19rem color-mix(in oklab, var(--magenta-200) 80%, #fff 25%),
+    0 0 0.76rem color-mix(in oklab, var(--magenta-200) 80%, #000 25%),
+    0 0 0.19rem var(--magenta-200),
+    0 0 1.14rem var(--magenta-200),
+    inset 0 0 0.57rem var(--magenta-200);
+
+  --magenta-300: #e526cb;
+  --magenta-300-neon:
+    0 0 0.18rem color-mix(in oklab, var(--magenta-300) 80%, #fff 20%),
+    0 0 0.18rem color-mix(in oklab, var(--magenta-300) 80%, #fff 20%),
+    0 0 0.72rem color-mix(in oklab, var(--magenta-300) 80%, #000 20%),
+    0 0 0.18rem var(--magenta-300),
+    0 0 1.08rem var(--magenta-300),
+    inset 0 0 0.54rem var(--magenta-300);
+
+  --magenta-400: #a91996;
+  --magenta-400-neon:
+    0 0 0.17rem color-mix(in oklab, var(--magenta-400) 80%, #fff 15%),
+    0 0 0.17rem color-mix(in oklab, var(--magenta-400) 80%, #fff 15%),
+    0 0 0.68rem color-mix(in oklab, var(--magenta-400) 80%, #000 15%),
+    0 0 0.17rem var(--magenta-400),
+    0 0 1.02rem var(--magenta-400),
+    inset 0 0 0.51rem var(--magenta-400);
+
+  --magenta-500: #710d63;
+  --magenta-500-neon:
+    0 0 0.16rem color-mix(in oklab, var(--magenta-500) 80%, #fff 10%),
+    0 0 0.16rem color-mix(in oklab, var(--magenta-500) 80%, #fff 10%),
+    0 0 0.64rem color-mix(in oklab, var(--magenta-500) 80%, #000 10%),
+    0 0 0.16rem var(--magenta-500),
+    0 0 0.96rem var(--magenta-500),
+    inset 0 0 0.48rem var(--magenta-500);
+
+  --magenta-600: #3d0435;
+  --magenta-600-neon:
+    0 0 0.15rem color-mix(in oklab, var(--magenta-600) 80%, #fff 5%),
+    0 0 0.15rem color-mix(in oklab, var(--magenta-600) 80%, #fff 5%),
+    0 0 0.6rem color-mix(in oklab, var(--magenta-600) 80%, #000 5%),
+    0 0 0.15rem var(--magenta-600),
+    0 0 0.9rem var(--magenta-600),
+    inset 0 0 0.45rem var(--magenta-600);
+
+  /* Scarlet */
+  --scarlet-100: #ffc0be;
+  --scarlet-100-neon:
+    0 0 0.2rem color-mix(in oklab, var(--scarlet-100) 80%, #fff 30%),
+    0 0 0.2rem color-mix(in oklab, var(--scarlet-100) 80%, #fff 30%),
+    0 0 0.8rem color-mix(in oklab, var(--scarlet-100) 80%, #000 30%),
+    0 0 0.2rem var(--scarlet-100),
+    0 0 1.2rem var(--scarlet-100),
+    inset 0 0 0.6rem var(--scarlet-100);
+
+  --scarlet-200: #ff857e;
+  --scarlet-200-neon:
+    0 0 0.19rem color-mix(in oklab, var(--scarlet-200) 80%, #fff 25%),
+    0 0 0.19rem color-mix(in oklab, var(--scarlet-200) 80%, #fff 25%),
+    0 0 0.76rem color-mix(in oklab, var(--scarlet-200) 80%, #000 25%),
+    0 0 0.19rem var(--scarlet-200),
+    0 0 1.14rem var(--scarlet-200),
+    inset 0 0 0.57rem var(--scarlet-200);
+
+  --scarlet-300: #fc2f00;
+  --scarlet-300-neon:
+    0 0 0.18rem color-mix(in oklab, var(--scarlet-300) 80%, #fff 20%),
+    0 0 0.18rem color-mix(in oklab, var(--scarlet-300) 80%, #fff 20%),
+    0 0 0.72rem color-mix(in oklab, var(--scarlet-300) 80%, #000 20%),
+    0 0 0.18rem var(--scarlet-300),
+    0 0 1.08rem var(--scarlet-300),
+    inset 0 0 0.54rem var(--scarlet-300);
+
+  --scarlet-400: #bb2000;
+  --scarlet-400-neon:
+    0 0 0.17rem color-mix(in oklab, var(--scarlet-400) 80%, #fff 15%),
+    0 0 0.17rem color-mix(in oklab, var(--scarlet-400) 80%, #fff 15%),
+    0 0 0.68rem color-mix(in oklab, var(--scarlet-400) 80%, #000 15%),
+    0 0 0.17rem var(--scarlet-400),
+    0 0 1.02rem var(--scarlet-400),
+    inset 0 0 0.51rem var(--scarlet-400);
+
+  --scarlet-500: #7d1200;
+  --scarlet-500-neon:
+    0 0 0.16rem color-mix(in oklab, var(--scarlet-500) 80%, #fff 10%),
+    0 0 0.16rem color-mix(in oklab, var(--scarlet-500) 80%, #fff 10%),
+    0 0 0.64rem color-mix(in oklab, var(--scarlet-500) 80%, #000 10%),
+    0 0 0.16rem var(--scarlet-500),
+    0 0 0.96rem var(--scarlet-500),
+    inset 0 0 0.48rem var(--scarlet-500);
+
+  --scarlet-600: #450600;
+  --scarlet-600-neon:
+    0 0 0.15rem color-mix(in oklab, var(--scarlet-600) 80%, #fff 5%),
+    0 0 0.15rem color-mix(in oklab, var(--scarlet-600) 80%, #fff 5%),
+    0 0 0.6rem color-mix(in oklab, var(--scarlet-600) 80%, #000 5%),
+    0 0 0.15rem var(--scarlet-600),
+    0 0 0.9rem var(--scarlet-600),
+    inset 0 0 0.45rem var(--scarlet-600);
+
+  /* Orange */
+  --orange-100: #ffceb8;
+  --orange-100-neon:
+    0 0 0.2rem color-mix(in oklab, var(--orange-100) 80%, #fff 30%),
+    0 0 0.2rem color-mix(in oklab, var(--orange-100) 80%, #fff 30%),
+    0 0 0.8rem color-mix(in oklab, var(--orange-100) 80%, #000 30%),
+    0 0 0.2rem var(--orange-100),
+    0 0 1.2rem var(--orange-100),
+    inset 0 0 0.6rem var(--orange-100);
+
+  --orange-200: #eda65f;
+  --orange-200-neon:
+    0 0 0.19rem color-mix(in oklab, var(--orange-200) 80%, #fff 25%),
+    0 0 0.19rem color-mix(in oklab, var(--orange-200) 80%, #fff 25%),
+    0 0 0.76rem color-mix(in oklab, var(--orange-200) 80%, #000 25%),
+    0 0 0.19rem var(--orange-200),
+    0 0 1.14rem var(--orange-200),
+    inset 0 0 0.57rem var(--orange-200);
+
+  --orange-300: #d9720b;
+  --orange-300-neon:
+    0 0 0.18rem color-mix(in oklab, var(--orange-300) 80%, #fff 20%),
+    0 0 0.18rem color-mix(in oklab, var(--orange-300) 80%, #fff 20%),
+    0 0 0.72rem color-mix(in oklab, var(--orange-300) 80%, #000 20%),
+    0 0 0.18rem var(--orange-300),
+    0 0 1.08rem var(--orange-300),
+    inset 0 0 0.54rem var(--orange-300);
+
+  --orange-400: #824205;
+  --orange-400-neon:
+    0 0 0.17rem color-mix(in oklab, var(--orange-400) 80%, #fff 15%),
+    0 0 0.17rem color-mix(in oklab, var(--orange-400) 80%, #fff 15%),
+    0 0 0.68rem color-mix(in oklab, var(--orange-400) 80%, #000 15%),
+    0 0 0.17rem var(--orange-400),
+    0 0 1.02rem var(--orange-400),
+    inset 0 0 0.51rem var(--orange-400);
+
+  --orange-500: #512702;
+  --orange-500-neon:
+    0 0 0.16rem color-mix(in oklab, var(--orange-500) 80%, #fff 10%),
+    0 0 0.16rem color-mix(in oklab, var(--orange-500) 80%, #fff 10%),
+    0 0 0.64rem color-mix(in oklab, var(--orange-500) 80%, #000 10%),
+    0 0 0.16rem var(--orange-500),
+    0 0 0.96rem var(--orange-500),
+    inset 0 0 0.48rem var(--orange-500);
+
+  --orange-600: #260f00;
+  --orange-600-neon:
+    0 0 0.15rem color-mix(in oklab, var(--orange-600) 80%, #fff 5%),
+    0 0 0.15rem color-mix(in oklab, var(--orange-600) 80%, #fff 5%),
+    0 0 0.6rem color-mix(in oklab, var(--orange-600) 80%, #000 5%),
+    0 0 0.15rem var(--orange-600),
+    0 0 0.9rem var(--orange-600),
+    inset 0 0 0.45rem var(--orange-600);
+
+  /* Green */
+  --green-100: #c5ffcd;
+  --green-100-neon:
+    0 0 0.2rem color-mix(in oklab, var(--green-100) 80%, #fff 30%),
+    0 0 0.2rem color-mix(in oklab, var(--green-100) 80%, #fff 30%),
+    0 0 0.8rem color-mix(in oklab, var(--green-100) 80%, #000 30%),
+    0 0 0.2rem var(--green-100),
+    0 0 1.2rem var(--green-100),
+    inset 0 0 0.6rem var(--green-100);
+
+  --green-200: #12ed5b;
+  --green-200-neon:
+    0 0 0.19rem color-mix(in oklab, var(--green-200) 80%, #fff 25%),
+    0 0 0.19rem color-mix(in oklab, var(--green-200) 80%, #fff 25%),
+    0 0 0.76rem color-mix(in oklab, var(--green-200) 80%, #000 25%),
+    0 0 0.19rem var(--green-200),
+    0 0 1.14rem var(--green-200),
+    inset 0 0 0.57rem var(--green-200);
+
+  --green-300: #0cc048;
+  --green-300-neon:
+    0 0 0.18rem color-mix(in oklab, var(--green-300) 80%, #fff 20%),
+    0 0 0.18rem color-mix(in oklab, var(--green-300) 80%, #fff 20%),
+    0 0 0.72rem color-mix(in oklab, var(--green-300) 80%, #000 20%),
+    0 0 0.18rem var(--green-300),
+    0 0 1.08rem var(--green-300),
+    inset 0 0 0.54rem var(--green-300);
+
+  --green-400: #046d25;
+  --green-400-neon:
+    0 0 0.17rem color-mix(in oklab, var(--green-400) 80%, #fff 15%),
+    0 0 0.17rem color-mix(in oklab, var(--green-400) 80%, #fff 15%),
+    0 0 0.68rem color-mix(in oklab, var(--green-400) 80%, #000 15%),
+    0 0 0.17rem var(--green-400),
+    0 0 1.02rem var(--green-400),
+    inset 0 0 0.51rem var(--green-400);
+
+  --green-500: #014716;
+  --green-500-neon:
+    0 0 0.16rem color-mix(in oklab, var(--green-500) 80%, #fff 10%),
+    0 0 0.16rem color-mix(in oklab, var(--green-500) 80%, #fff 10%),
+    0 0 0.64rem color-mix(in oklab, var(--green-500) 80%, #000 10%),
+    0 0 0.16rem var(--green-500),
+    0 0 0.96rem var(--green-500),
+    inset 0 0 0.48rem var(--green-500);
+
+  --green-600: #002407;
+  --green-600-neon:
+    0 0 0.15rem color-mix(in oklab, var(--green-600) 80%, #fff 5%),
+    0 0 0.15rem color-mix(in oklab, var(--green-600) 80%, #fff 5%),
+    0 0 0.6rem color-mix(in oklab, var(--green-600) 80%, #000 5%),
+    0 0 0.15rem var(--green-600),
+    0 0 0.9rem var(--green-600),
+    inset 0 0 0.45rem var(--green-600);
+}
