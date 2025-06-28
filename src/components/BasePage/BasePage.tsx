@@ -1,5 +1,5 @@
 import * as React from "react";
-import styles from "./BasePage.module.css";
+import styles from "./BasePage.module.scss";
 import BenrogoThemeProvider from "@/components/BenrogoThemeProvider/BenrogoThemeProvider";
 import ParticleBackground from "../ParticleBackground/ParticleBackground";
 import Navbar from "../Navbar/Navbar";

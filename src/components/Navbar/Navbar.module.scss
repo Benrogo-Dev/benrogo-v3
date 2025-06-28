@@ -1,0 +1,134 @@
+@use "@/stylesheets/sizingMixins" as *;
+
+.navBar {
+  display: flex;
+  flex-flow: row;
+  border-radius: var(--border-radius);
+  height: 60px;
+
+  @include mobile {
+    flex-flow: column;
+    height: fit-content;
+    gap: 0;
+    max-height: 60px;
+    overflow-y: hidden;
+
+    &.expanded {
+      max-height: 1000px !important;
+    }
+  }
+}
+
+.navGroup {
+  align-items: center;
+  display: flex;
+  flex-flow: row;
+  gap: 10px;
+  padding-inline: 10px;
+
+  &Left {
+    flex-grow: 1;
+  }
+
+  @include mobile {
+    flex-flow: column;
+    padding-block: 10px;
+  }
+
+  &Right {
+    flex-flow: row-reverse;
+
+    @include mobile {
+      .navItem:last-child {
+        display: none;
+      }
+    }
+  }
+}
+
+.topAlignmentContainer {
+  @include mobile {
+    width: 100%;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+.dropdownIcon {
+  display: none !important;
+  transition: transform 0.2s ease-in-out;
+
+  &.open {
+    transform: rotate(-90deg);
+  }
+
+  @include mobile {
+    display: block !important;
+  }
+}
+
+.navDivider {
+  height: 44px;
+  width: 2px;
+  border-radius: 2px;
+  box-shadow: var(--neon-shadow-magenta);
+  border-left: 0.15rem solid var(--neon-core-magenta);
+
+  @include mobile {
+    display: none;
+  }
+}
+
+.navItem {
+  align-items: center;
+  display: flex;
+  font-size: 20px;
+  font-weight: bold;
+  margin-inline: 6px;
+
+  img {
+    margin-right: 10px;
+
+    @include mobile {
+      margin-right: 6px;
+    }
+  }
+
+  @include mobile {
+    font-size: 22px;
+
+    :not(.topAlignmentContainer) > & {
+      width: 100%;
+    }
+  }
+}
+
+.hoverUnderline {
+  transition: transform 0.2s ease-out;
+
+  &::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--accent-cyan);
+    transition: all 0.2s ease-out;
+  }
+
+  @include desktop {
+    &:hover {
+      transform: translateY(-2px);
+      color: var(--accent-cyan);
+  
+      &::after {
+        transform: scaleX(1) translateY(2px);
+        transform-origin: bottom center;
+      }
+    }
+  }
+}

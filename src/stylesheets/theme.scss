@@ -1,0 +1,134 @@
+@function generateNeon($color, $intensity) {
+  $colorVar: var(--#{$color}-#{$intensity});
+  $intensityWeight: ($intensity - 100) * 0.01;
+  $layerOneSpread: 0.2rem - ($intensityWeight * 0.01rem);
+  $layerTwoSpread: 0.6rem - ($intensityWeight * 0.03rem);
+  $layerThreeSpread: 0.8rem - ($intensityWeight * 0.04rem);
+  $layerFourSpread: 1.2 - ($intensityWeight * 0.06rem);
+  $dimPercentage: 30% - ($intensityWeight * 5);
+  $neonPercentage: 100% - $dimPercentage;
+
+  @return
+    0 0 $layerOneSpread color-mix(in oklab, $colorVar $neonPercentage, #fff $dimPercentage),
+    0 0 $layerOneSpread color-mix(in oklab, $colorVar $neonPercentage, #fff $dimPercentage),
+    0 0 $layerThreeSpread color-mix(in oklab, $colorVar $neonPercentage, #000 $dimPercentage),
+    0 0 $layerOneSpread $colorVar,
+    0 0 $layerFourSpread $colorVar,
+    inset 0 0 $layerTwoSpread $colorVar;
+}
+
+:root {
+  /* Cyan */
+  --cyan-100: #acfcf7;
+  --cyan-100-neon: #{generateNeon("cyan", 100)};
+
+  --cyan-200: #11d6c6;
+  --cyan-200-neon: #{generateNeon("cyan", 200)};
+
+  --cyan-300: #16b5a8;
+  --cyan-300-neon: #{generateNeon("cyan", 300)};
+
+  --cyan-400: #0b746c;
+  --cyan-400-neon: #{generateNeon("cyan", 400)};
+
+  --cyan-500: #054f48;
+  --cyan-500-neon: #{generateNeon("cyan", 500)};
+
+  --cyan-600: #022c28;
+  --cyan-600-neon: #{generateNeon("cyan", 600)};
+
+  /* Blue */
+  --blue-100: #cad1fe;
+  --blue-100-neon: #{generateNeon("blue", 100)};
+
+  --blue-200: #96a8fd;
+  --blue-200-neon: #{generateNeon("blue", 200)};
+
+  --blue-300: #587efc;
+  --blue-300-neon: #{generateNeon("blue", 300)};
+
+  --blue-400: #1058df;
+  --blue-400-neon: #{generateNeon("blue", 400)};
+
+  --blue-500: #073a98;
+  --blue-500-neon: #{generateNeon("blue", 500)};
+
+  --blue-600: #021e57;
+  --blue-600-neon: #{generateNeon("blue", 600)};
+
+  /* Magenta */
+  --magenta-100: #fcbaee;
+  --magenta-100-neon: #{generateNeon("magenta", 100)};
+
+  --magenta-200: #fa77e3;
+  --magenta-200-neon: #{generateNeon("magenta", 200)};
+
+  --magenta-300: #e526cb;
+  --magenta-300-neon: #{generateNeon("magenta", 300)};
+
+  --magenta-400: #a91996;
+  --magenta-400-neon: #{generateNeon("magenta", 400)};
+
+  --magenta-500: #710d63;
+  --magenta-500-neon: #{generateNeon("magenta", 500)};
+
+  --magenta-600: #3d0435;
+  --magenta-600-neon: #{generateNeon("magenta", 600)};
+
+  /* Scarlet */
+  --scarlet-100: #ffc0be;
+  --scarlet-100-neon: #{generateNeon("scarlet", 100)};
+
+  --scarlet-200: #ff857e;
+  --scarlet-200-neon: #{generateNeon("scarlet", 200)};
+
+  --scarlet-300: #fc2f00;
+  --scarlet-300-neon: #{generateNeon("scarlet", 300)};
+
+  --scarlet-400: #bb2000;
+  --scarlet-400-neon: #{generateNeon("scarlet", 400)};
+
+  --scarlet-500: #7d1200;
+  --scarlet-500-neon: #{generateNeon("scarlet", 500)};
+
+  --scarlet-600: #450600;
+  --scarlet-600-neon: #{generateNeon("scarlet", 600)};
+
+  /* Orange */
+  --orange-100: #ffceb8;
+  --orange-100-neon: #{generateNeon("orange", 100)};
+
+  --orange-200: #eda65f;
+  --orange-200-neon: #{generateNeon("orange", 200)};
+
+  --orange-300: #d9720b;
+  --orange-300-neon: #{generateNeon("orange", 300)};
+
+  --orange-400: #824205;
+  --orange-400-neon: #{generateNeon("orange", 400)};
+
+  --orange-500: #512702;
+  --orange-500-neon: #{generateNeon("orange", 500)};
+
+  --orange-600: #260f00;
+  --orange-600-neon: #{generateNeon("orange", 600)};
+
+  /* Green */
+  --green-100: #c5ffcd;
+  --green-100-neon: #{generateNeon("green", 100)};
+
+  --green-200: #12ed5b;
+  --green-200-neon: #{generateNeon("green", 200)};
+
+  --green-300: #0cc048;
+  --green-300-neon: #{generateNeon("green", 300)};
+
+  --green-400: #046d25;
+  --green-400-neon: #{generateNeon("green", 400)};
+
+  --green-500: #014716;
+  --green-500-neon: #{generateNeon("green", 500)};
+
+  --green-600: #002407;
+  --green-600-neon: #{generateNeon("green", 600)};
+}
