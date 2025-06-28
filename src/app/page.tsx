@@ -1,6 +1,5 @@
 import { Button, Checkbox } from "@mui/material";
 import TestBar from "@/components/TestBar/TestBar";
-import { lime } from "@mui/material/colors";
 
 const Home = () => {
   return (
