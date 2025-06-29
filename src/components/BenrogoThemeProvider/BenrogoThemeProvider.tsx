@@ -2,38 +2,49 @@
 
 import { createTheme, ThemeProvider } from "@mui/material";
 import * as React from "react";
+
+import "./colors.scss";
 import MuiButton from "./overrides/MuiButton";
 import MuiCheckbox from "./overrides/MuiCheckbox";
 import MuiSlider from "./overrides/MuiSlider";
 import MuiSwitch from "./overrides/MuiSwitch";
+import MuiTable from "./overrides/MuiTable";
+import MuiRating from "./overrides/MuiRating";
+import MuiTypography from "./overrides/MuiTypography";
 
 const BenrogoTheme = createTheme({
   palette: {
     mode: "dark",
     primary: {
-      main: "#fff"
+      main: "#e526cb"
     },
     secondary: {
-      main: "#fff"
+      main: "#11d6c6"
     },
+    success: {
+      main: "#0cc048"
+    },
+    error: {
+      main: "#fc2f00"
+    },
+    info: {
+      main: "#587efc"
+    },
+    warning: {
+      main: "#d9720b"
+    }
   },
   shape: {
     borderRadius: 12
   },
   components: {
-    MuiTableBody: {
-      styleOverrides: {
-        root: {
-          '& .MuiTableRow-root:last-child td, & .MuiTableRow-root:last-child th': {
-            border: 0
-          }
-        }
-      }
-    },
     MuiButton,
     MuiCheckbox,
     MuiSlider,
-    MuiSwitch
+    MuiSwitch,
+    MuiTable,
+    MuiRating,
+    MuiTypography
   }
 });
 

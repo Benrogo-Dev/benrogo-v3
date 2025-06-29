@@ -5,25 +5,6 @@
   --accent-blue: #1058df;
   --accent-magenta: #e526cb;
 
-  /* Neon glow effects (holy ballz) */
-  --neon-core-magenta: #dad;
-  --neon-shadow-magenta:
-    0 0 0.1rem var(--neon-core-magenta),
-    0 0 0.1rem var(--neon-core-magenta),
-    0 0 0.4rem #bc13fe,
-    0 0 0.1rem #e526cb,
-    0 0 0.6rem #e526cb,
-    inset 0 0 0.3rem #e526cb;
-  
-  --neon-core-cyan: #9ee;
-  --neon-shadow-cyan:
-    0 0 .1rem var(--neon-core-cyan),
-    0 0 .1rem var(--neon-core-cyan),
-    0 0 0.4rem #17abc5,
-    0 0 0.1rem #24f2e1,
-    0 0 0.6rem #24f2e1,
-    inset 0 0 0.3rem #24f2e1;
-
   /* Main text color */
   --text-color: #ffffff;
 

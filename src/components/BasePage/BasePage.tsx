@@ -13,12 +13,12 @@ const BasePage = ({ children }: BasePageProps) => {
     <>
       <ParticleBackground />
       <div className={styles.basePage}>
-          <BenrogoThemeProvider>
+        <BenrogoThemeProvider>
           <Navbar />
-        <div className={styles.content}>
-            { children }
-        </div>
-          </BenrogoThemeProvider>
+          <div className={styles.content}>
+              { children }
+          </div>
+        </BenrogoThemeProvider>
       </div>
     </>
   );

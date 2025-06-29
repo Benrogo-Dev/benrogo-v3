@@ -17,10 +17,10 @@ const MuiSwitch = {
             "+.MuiSwitch-track": {
               backgroundColor: "var(--magenta-600)",
               boxShadow: "none"
+            },
+            "& .MuiSwitch-thumb": {
+              backgroundColor: "var(--magenta-500)"
             }
-          },
-          "& .MuiSwitch-thumb": {
-            backgroundColor: "var(--magenta-500)"
           }
         }
       },
@@ -40,10 +40,10 @@ const MuiSwitch = {
             "+.MuiSwitch-track": {
               backgroundColor: "var(--cyan-600)",
               boxShadow: "none"
+            },
+            "& .MuiSwitch-thumb": {
+              backgroundColor: "var(--cyan-500)"
             }
-          },
-          "& .MuiSwitch-thumb": {
-            backgroundColor: "var(--cyan-500)"
           }
         }
       },
@@ -63,10 +63,10 @@ const MuiSwitch = {
             "+.MuiSwitch-track": {
               backgroundColor: "var(--green-600)",
               boxShadow: "none"
+            },
+            "& .MuiSwitch-thumb": {
+              backgroundColor: "var(--green-500)"
             }
-          },
-          "& .MuiSwitch-thumb": {
-            backgroundColor: "var(--green-500)"
           }
         }
       },
@@ -86,10 +86,10 @@ const MuiSwitch = {
             "+.MuiSwitch-track": {
               backgroundColor: "var(--scarlet-600)",
               boxShadow: "none"
+            },
+            "& .MuiSwitch-thumb": {
+              backgroundColor: "var(--scarlet-500)"
             }
-          },
-          "& .MuiSwitch-thumb": {
-            backgroundColor: "var(--scarlet-500)"
           }
         }
       },
@@ -109,10 +109,10 @@ const MuiSwitch = {
             "+.MuiSwitch-track": {
               backgroundColor: "var(--blue-600)",
               boxShadow: "none"
+            },
+            "& .MuiSwitch-thumb": {
+              backgroundColor: "var(--blue-500)"
             }
-          },
-          "& .MuiSwitch-thumb": {
-            backgroundColor: "var(--blue-500)"
           }
         }
       },
@@ -132,13 +132,13 @@ const MuiSwitch = {
             "+.MuiSwitch-track": {
               backgroundColor: "var(--orange-600)",
               boxShadow: "none"
+            },
+            "& .MuiSwitch-thumb": {
+              backgroundColor: "var(--orange-500)"
             }
-          },
-          "& .MuiSwitch-thumb": {
-            backgroundColor: "var(--orange-500)"
           }
         }
-      },
+      }
     }
   }
 };

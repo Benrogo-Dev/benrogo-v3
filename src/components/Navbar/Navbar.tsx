@@ -4,6 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import styles from "./Navbar.module.scss";
 import { useState } from "react";
+import PlayArrowIcon from "@mui/icons-material/PlayArrow";
 
 const Navbar = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -32,14 +33,10 @@ const Navbar = () => {
             />
             Benrogo
           </Link>
-          <Image
+          <PlayArrowIcon
             className={`${styles.dropdownIcon} ${styles.navItem} ${isDropdownOpen ? styles.open : ""}`}
-            src="/arrow.svg"
-            alt=""
-            width={30}
-            height={30}
             onClick={handleDropdown}
-            priority
+            fontSize="large"
           />
         </div>
         <div className={styles.navDivider}></div>

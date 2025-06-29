@@ -1,4 +1,4 @@
-import { Button, Checkbox, Slider, Switch } from "@mui/material";
+import { Button, Checkbox, Rating, Slider, Switch } from "@mui/material";
 import TestBar from "@/components/TestBar/TestBar";
 
 const Home = () => {
@@ -157,6 +157,12 @@ const Home = () => {
         <Switch color="warning" defaultChecked />
         <Switch color="warning" defaultChecked disabled />
       </div>
+      <br/>
+      <Rating readOnly value={1} />
+      <Rating readOnly value={2} />
+      <Rating readOnly value={3} />
+      <Rating readOnly value={4} />
+      <Rating readOnly value={5} />
     </>
   );
 }

@@ -58,7 +58,8 @@
 
 .dropdownIcon {
   display: none !important;
-  transition: transform 0.2s ease-in-out;
+  transition: transform 0.2s ease-in-out !important;
+  rotate: 180deg;
 
   &.open {
     transform: rotate(-90deg);
@@ -71,10 +72,10 @@
 
 .navDivider {
   height: 44px;
-  width: 2px;
+  width: 4px;
   border-radius: 2px;
-  box-shadow: var(--neon-shadow-magenta);
-  border-left: 0.15rem solid var(--neon-core-magenta);
+  box-shadow: var(--magenta-300-neon);
+  border: 0.07rem solid var(--magenta-300);
 
   @include mobile {
     display: none;
