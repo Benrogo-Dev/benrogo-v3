@@ -1,4 +1,4 @@
-import { Button, Checkbox } from "@mui/material";
+import { Button, Checkbox, Slider, Switch } from "@mui/material";
 import TestBar from "@/components/TestBar/TestBar";
 
 const Home = () => {
@@ -100,28 +100,62 @@ const Home = () => {
       </div>
       <br/>
       <div style={{
-        display: "grid",
-        gridTemplateColumns: "repeat(6, 53px)",
+        display: "flex",
+        flexFlow: "row",
         gap: 10
       }}>
-        <Checkbox color="primary" size="small" defaultChecked/>
-        <Checkbox color="secondary" size="small" defaultChecked />
-        <Checkbox color="success" size="small" defaultChecked />
-        <Checkbox color="error" size="small" defaultChecked />
-        <Checkbox color="info" size="small" defaultChecked />
-        <Checkbox color="warning" size="small" defaultChecked />
-        <Checkbox color="primary" size="medium" defaultChecked/>
-        <Checkbox color="secondary" size="medium" defaultChecked />
-        <Checkbox color="success" size="medium" defaultChecked />
-        <Checkbox color="error" size="medium" defaultChecked />
-        <Checkbox color="info" size="medium" defaultChecked />
-        <Checkbox color="warning" size="medium" defaultChecked />
-        <Checkbox color="primary" size="large" defaultChecked/>
-        <Checkbox color="secondary" size="large" defaultChecked />
-        <Checkbox color="success" size="large" defaultChecked />
-        <Checkbox color="error" size="large" defaultChecked />
-        <Checkbox color="info" size="large" defaultChecked />
-        <Checkbox color="warning" size="large" defaultChecked />
+        <Checkbox color="primary" defaultChecked/>
+        <Checkbox color="primary" defaultChecked disabled />
+        <Checkbox color="secondary" defaultChecked />
+        <Checkbox color="secondary" defaultChecked disabled />
+        <Checkbox color="success" defaultChecked />
+        <Checkbox color="success" defaultChecked disabled />
+        <Checkbox color="error" defaultChecked />
+        <Checkbox color="error" defaultChecked disabled />
+        <Checkbox color="info" defaultChecked />
+        <Checkbox color="info" defaultChecked disabled />
+        <Checkbox color="warning" defaultChecked />
+        <Checkbox color="warning" defaultChecked disabled />
+      </div>
+      <div style={{
+        display: "grid",
+        gridTemplateRows: "repeat(4, 20px)",
+        gridTemplateColumns: "repeat(auto-fill, 200px)",
+        gap: 20,
+        gridAutoFlow: "column"
+      }}>
+        <Slider color="primary" defaultValue={50} />
+        <Slider color="primary" defaultValue={50} disabled />
+        <Slider color="secondary" defaultValue={50} />
+        <Slider color="secondary" defaultValue={50} disabled />
+        <Slider color="success" defaultValue={50} />
+        <Slider color="success" defaultValue={50} disabled />
+        <Slider color="error" defaultValue={50} />
+        <Slider color="error" defaultValue={50} disabled />
+        <Slider color="info" defaultValue={50} />
+        <Slider color="info" defaultValue={50} disabled />
+        <Slider color="warning" defaultValue={50} />
+        <Slider color="warning" defaultValue={50} disabled />
+      </div>
+      <div style={{
+        display: "grid",
+        gridTemplateRows: "repeat(4, 20px)",
+        gridTemplateColumns: "repeat(auto-fill, 200px)",
+        gap: 20,
+        gridAutoFlow: "column"
+      }}>
+        <Switch color="primary" defaultChecked />
+        <Switch color="primary" defaultChecked disabled />
+        <Switch color="secondary" defaultChecked />
+        <Switch color="secondary" defaultChecked disabled />
+        <Switch color="success" defaultChecked />
+        <Switch color="success" defaultChecked disabled />
+        <Switch color="error" defaultChecked />
+        <Switch color="error" defaultChecked disabled />
+        <Switch color="info" defaultChecked />
+        <Switch color="info" defaultChecked disabled />
+        <Switch color="warning" defaultChecked />
+        <Switch color="warning" defaultChecked disabled />
       </div>
     </>
   );
