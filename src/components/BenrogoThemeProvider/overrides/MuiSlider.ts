@@ -175,14 +175,14 @@ const MuiSlider = {
         },
         "&.Mui-disabled": {
           "& .MuiSlider-rail": {
-            backgroundColor: "var(--orange-600)",
+            backgroundColor: "var(--orange-500)",
           },
           "& .MuiSlider-track": {
-            backgroundColor: "var(--orange-500)",
+            backgroundColor: "var(--orange-400)",
             boxShadow: "none"
           },
           "& .MuiSlider-thumb": {
-            backgroundColor: "var(--orange-500)",
+            backgroundColor: "var(--orange-400)",
             boxShadow: "none"
           }
         }

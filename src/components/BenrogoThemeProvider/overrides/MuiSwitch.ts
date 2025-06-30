@@ -130,11 +130,11 @@ const MuiSwitch = {
         "&.Mui-disabled": {
           "&.Mui-checked": {
             "+.MuiSwitch-track": {
-              backgroundColor: "var(--orange-600)",
+              backgroundColor: "var(--orange-500)",
               boxShadow: "none"
             },
             "& .MuiSwitch-thumb": {
-              backgroundColor: "var(--orange-500)"
+              backgroundColor: "var(--orange-400)"
             }
           }
         }

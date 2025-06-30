@@ -39,9 +39,7 @@
     flex-flow: row-reverse;
 
     @include mobile {
-      .navItem:last-child {
-        display: none;
-      }
+      display: none;
     }
   }
 }
@@ -95,6 +93,10 @@
     @include mobile {
       margin-right: 6px;
     }
+  }
+
+  &.versionNumber {
+    opacity: 0.5;
   }
 
   @include mobile {

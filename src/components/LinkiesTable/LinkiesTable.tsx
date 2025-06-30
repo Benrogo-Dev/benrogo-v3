@@ -1,72 +1,189 @@
+"use client";
+
 import {
-  Rating, Table,
-  TableBody, TableCell,
-  TableContainer, TableHead,
-  TableRow, Typography
+  Button,
+  FormControlLabel,
+  Rating,
+  Stack,
+  Table,
+  TableBody,
+  TableCell,
+  TableContainer,
+  TableHead,
+  TableRow,
+  Typography,
+  Box,
+  Switch
 } from "@mui/material";
 import Link from "next/link";
+import PlayArrowIcon from "@mui/icons-material/PlayArrow";
+import useMediaQuery from "@mui/material/useMediaQuery";
+import { useState } from "react";
 
-/*
-type LinkiesEntry = {
-  url: string,
-  status: "online" | "offline" | "unknown",
-  requests: number,
-  loadTime?: number,
-  reliability?: number
+export type LinkiesEntry = {
+  url: string;
+  status: "online" | "offline" | "unknown";
+  requests: number;
+  loadTime?: number;
+  reliability?: number;
 };
-*/
 
-const LinkiesTable = () => {
+type LinkiesTableProps = {
+  linkies: LinkiesEntry[];
+};
+
+const LinkiesTable = ({ linkies }: LinkiesTableProps) => {
+  const mobile = useMediaQuery("(max-width:700px)");
+  const containerPadding = mobile ? 0 : 2;
+
+  const [showOffline, setShowOffline] = useState(true);
+  const [showUnknown, setShowUnknown] = useState(true);
+
+  // Remove useMemo, just filter directly
+  const filteredLinkies = linkies.filter(entry => {
+    if (entry.status === "offline" && !showOffline) return false;
+    if (entry.status === "unknown" && !showUnknown) return false;
+    return true;
+  });
+
+  const Pagination = () => (
+    <Stack
+      direction="row"
+      alignItems="center"
+      spacing={2}
+      justifyContent={mobile ? "center" : "flex-end"}
+    >
+      <Button sx={{ p: 0 }}>
+        <PlayArrowIcon
+          fontSize={mobile ? "medium" : "large"}
+          sx={{ transform: "rotate(180deg)" }}
+        />
+      </Button>
+      <Typography fontSize={mobile ? "medium" : "large"}>1</Typography>
+      <Button sx={{ p: 0 }}>
+        <PlayArrowIcon fontSize={mobile ? "medium" : "large"} />
+      </Button>
+    </Stack>
+  );
+
   return (
-    <TableContainer>
+    <TableContainer
+      sx={{
+        pt: containerPadding,
+        pb: 2,
+        pl: containerPadding,
+        pr: containerPadding,
+        maxWidth: mobile ? "100vw" : undefined,
+        overflowX: "auto",
+      }}
+    >
+      <Stack
+        direction={mobile ? "column" : "row"}
+        alignItems="center"
+        spacing={1}
+      >
+        <Stack direction="row">
+          <FormControlLabel
+            control={<Switch checked={showOffline} onChange={e => setShowOffline(e.target.checked)} color="error" />}
+            label="Show offline"
+          />
+          <FormControlLabel
+            control={<Switch checked={showUnknown} onChange={e => setShowUnknown(e.target.checked)} color="warning" />}
+            label="Show unknown"
+          />
+        </Stack>
+        <Box sx={{ flex: 1 }} />
+        <Pagination />
+      </Stack>
+      <br />
       <Table size="small">
         <TableHead>
           <TableRow>
-            <TableCell><Typography>Link</Typography></TableCell>
-            <TableCell align="right"><Typography>Status</Typography></TableCell>
-            <TableCell align="right"><Typography>Requests</Typography></TableCell>
-            <TableCell align="right"><Typography>Load time</Typography></TableCell>
-            <TableCell align="right"><Typography>Reliability</Typography></TableCell>
+            <TableCell>
+              <Typography>Link</Typography>
+            </TableCell>
+            {!mobile && (
+              <TableCell align="left" sx={{ width: 120 }}>
+                <Typography>Status</Typography>
+              </TableCell>
+            )}
+            <TableCell align="right" sx={{ width: 120 }}>
+              <Typography>Requests</Typography>
+            </TableCell>
+            {!mobile && (
+              <>
+                <TableCell align="right" sx={{ width: 120 }}>
+                  <Typography>Load time</Typography>
+                </TableCell>
+                <TableCell align="center" sx={{ width: 140 }}>
+                  <Typography>Reliability</Typography>
+                </TableCell>
+              </>
+            )}
           </TableRow>
         </TableHead>
         <TableBody>
-          <TableRow>
-            <TableCell><Link href={"https://www.google.com/"}><Typography>https://www.google.com/</Typography></Link></TableCell>
-            <TableCell align="right"><Typography color="error">OFFLINE</Typography></TableCell>
-            <TableCell align="right"><Typography>1,293,483</Typography></TableCell>
-            <TableCell align="right"><Typography>N/A</Typography></TableCell>
-            <TableCell align="right"><Rating readOnly precision={0.1} value={1.3} /></TableCell>
-          </TableRow>
-          <TableRow>
-            <TableCell><Link href={"https://www.example.com/"}><Typography>https://www.example.com/</Typography></Link></TableCell>
-            <TableCell align="right"><Typography color="success">ONLINE</Typography></TableCell>
-            <TableCell align="right"><Typography>234,567</Typography></TableCell>
-            <TableCell align="right"><Typography>0.12s</Typography></TableCell>
-            <TableCell align="right"><Rating readOnly precision={0.1} value={4.8} /></TableCell>
-          </TableRow>
-          <TableRow>
-            <TableCell><Link href={"https://www.github.com/"}><Typography>https://www.github.com/</Typography></Link></TableCell>
-            <TableCell align="right"><Typography color="success">ONLINE</Typography></TableCell>
-            <TableCell align="right"><Typography>3,456,789</Typography></TableCell>
-            <TableCell align="right"><Typography>0.19s</Typography></TableCell>
-            <TableCell align="right"><Rating readOnly precision={0.1} value={4.9} /></TableCell>
-          </TableRow>
-          <TableRow>
-            <TableCell><Link href={"https://www.notarealsite.com/"}><Typography>https://www.notarealsite.com/</Typography></Link></TableCell>
-            <TableCell align="right"><Typography color="warning">UNKNOWN</Typography></TableCell>
-            <TableCell align="right"><Typography>0</Typography></TableCell>
-            <TableCell align="right"><Typography>N/A</Typography></TableCell>
-            <TableCell align="right"><Typography>N/A</Typography></TableCell>
-          </TableRow>
-          <TableRow>
-            <TableCell><Link href={"https://www.wikipedia.org/"}><Typography>https://www.wikipedia.org/</Typography></Link></TableCell>
-            <TableCell align="right"><Typography color="success">ONLINE</Typography></TableCell>
-            <TableCell align="right"><Typography>987,654</Typography></TableCell>
-            <TableCell align="right"><Typography>0.22s</Typography></TableCell>
-            <TableCell align="right"><Rating readOnly precision={0.1} value={4.7} /></TableCell>
-          </TableRow>
+          {filteredLinkies.map((entry, index) => {
+            const statusColor =
+              entry.status === "online"
+                ? "success"
+                : entry.status === "offline"
+                ? "error"
+                : "warning";
+            return (
+              <TableRow key={entry.url + index}>
+                <TableCell sx={{ maxWidth: mobile ? 180 : undefined, overflow: "hidden", textOverflow: "unset", whiteSpace: "normal" }}>
+                  <Link href={entry.url}>
+                    <Typography
+                      sx={{
+                        wordWrap: "break-word",
+                        overflowWrap: "break-word",
+                        whiteSpace: "normal",
+                        maxWidth: mobile ? 180 : undefined,
+                        display: "block",
+                        fontSize: mobile ? "14px" : undefined,
+                      }}
+                      color={mobile ? statusColor : undefined}
+                    >
+                      {entry.url}
+                    </Typography>
+                  </Link>
+                </TableCell>
+                {!mobile && (
+                  <TableCell align="left" sx={{ width: 120 }}>
+                    <Typography color={statusColor}>
+                      {entry.status.toUpperCase()}
+                    </Typography>
+                  </TableCell>
+                )}
+                <TableCell align="right" sx={{ width: 120 }}>
+                  <Typography>{entry.requests.toLocaleString()}</Typography>
+                </TableCell>
+                {!mobile && (
+                  <>
+                    <TableCell align="right" sx={{ width: 120 }}>
+                      <Typography>
+                        {entry.loadTime
+                          ? `${entry.loadTime.toLocaleString()} s`
+                          : "N/A"}
+                      </Typography>
+                    </TableCell>
+                    <TableCell align="center" sx={{ width: 140 }}>
+                      <Rating
+                        readOnly
+                        precision={0.1}
+                        value={entry.reliability || 0}
+                      />
+                    </TableCell>
+                  </>
+                )}
+              </TableRow>
+            );
+          })}
         </TableBody>
       </Table>
+      <br />
+      <Pagination />
     </TableContainer>
   );
 };

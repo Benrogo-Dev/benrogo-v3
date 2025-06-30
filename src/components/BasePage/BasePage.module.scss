@@ -1,9 +1,15 @@
+@use "@/stylesheets/sizingMixins" as *;
+
 .basePage {
   min-height: 100vh;
   display: flex;
   flex-flow: column;
   padding: var(--basepage-spacing);
   gap: var(--basepage-spacing);
+
+  @include mobile {
+    gap: calc(var(--basepage-spacing) / 2)
+  }
 }
 
 .content {

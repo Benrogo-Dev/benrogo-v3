@@ -72,7 +72,7 @@ const Navbar = () => {
         </Link>
       </div>
       <div className={`${styles.navGroup} ${styles.navGroupRight}`}>
-        <p className={styles.navItem}>Version 3.0.0</p>
+        <p className={`${styles.navItem} ${styles.versionNumber}`}>Version 3.0.0</p>
       </div>
     </nav>
   );

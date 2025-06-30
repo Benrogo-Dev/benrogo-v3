@@ -2,6 +2,8 @@ const MuiButton = {
   styleOverrides: {
     root: {
       color: "#ffffff",
+      padding: 6,
+      minWidth: 32,
       "&.MuiButton-colorPrimary": {
         backgroundColor: "var(--magenta-600)",
         border: "0.1rem solid var(--magenta-200)",

@@ -158,7 +158,7 @@ const Home = () => {
         <Switch color="warning" defaultChecked disabled />
       </div>
       <br/>
-      <Rating readOnly value={1} />
+      <Rating readOnly value={1.5} precision={0.1} />
       <Rating readOnly value={2} />
       <Rating readOnly value={3} />
       <Rating readOnly value={4} />

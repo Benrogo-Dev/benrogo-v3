@@ -4,8 +4,11 @@ import SquareOutlined from "@mui/icons-material/SquareOutlined";
 const MuiRating = {
   styleOverrides: {
     root: {
-      "& .MuiRating-icon": {
-        color: "var(--magenta-300)",
+      "& .MuiRating-iconFilled": {
+        color: "var(--magenta-300)"
+      },
+      "& .MuiRating-iconEmpty": {
+        color: "var(--magenta-500)"
       }
     }
   },
