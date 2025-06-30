@@ -141,7 +141,12 @@ const LinkiesTable = ({ linkies }: LinkiesTableProps) => {
                         whiteSpace: "normal",
                         maxWidth: mobile ? 180 : undefined,
                         display: "block",
-                        fontSize: mobile ? "14px" : undefined,
+                        fontSize: mobile ? "14px" : undefined
+                      }}
+                      style={{
+                        userSelect: "none",
+                        WebkitUserSelect: "none",
+                        WebkitTouchCallout: "none"
                       }}
                       color={mobile ? statusColor : undefined}
                     >

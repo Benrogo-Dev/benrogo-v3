@@ -22,7 +22,7 @@ const Navbar = () => {
         <div className={styles.topAlignmentContainer}>
           <Link
             href={"/"}
-            className={styles.navItem}
+            className={`${styles.navItem} ${styles.hoverUnderline}`}
           >
             <Image
               src="/benrogo-old.png"
@@ -31,7 +31,7 @@ const Navbar = () => {
               height={40}
               priority
             />
-            Benrogo
+            <p>Benrogo</p>
           </Link>
           <PlayArrowIcon
             className={`${styles.dropdownIcon} ${styles.navItem} ${isDropdownOpen ? styles.open : ""}`}
