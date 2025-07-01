@@ -5,6 +5,7 @@ import Image from "next/image";
 import styles from "./Navbar.module.scss";
 import { useState } from "react";
 import PlayArrowIcon from "@mui/icons-material/PlayArrow";
+import SignInButton from "../SignInButton/SignInButton";
 
 const Navbar = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -47,10 +48,10 @@ const Navbar = () => {
           Linkies
         </Link>
         <Link
-          href={"/games"}
+          href={"/dashboard"}
           className={`${styles.navItem} ${styles.hoverUnderline}`}
         >
-          Games
+          Dashboard
         </Link>
         <Link
           href={"/partners"}
@@ -72,7 +73,7 @@ const Navbar = () => {
         </Link>
       </div>
       <div className={`${styles.navGroup} ${styles.navGroupRight}`}>
-        <p className={`${styles.navItem} ${styles.versionNumber}`}>Version 3.0.0</p>
+        <SignInButton />
       </div>
     </nav>
   );

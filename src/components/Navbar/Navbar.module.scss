@@ -39,7 +39,7 @@
     flex-flow: row-reverse;
 
     @include mobile {
-      display: none;
+      flex-flow: row;
     }
   }
 }

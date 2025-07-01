@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Source_Code_Pro } from "next/font/google";
 import { AppRouterCacheProvider } from "@mui/material-nextjs/v13-appRouter";
+import { SessionProvider } from "next-auth/react";
+
 import BasePage from "@/components/BasePage/BasePage";
 import "./globals.css";
 
@@ -26,9 +28,11 @@ export default function RootLayout({
     <html lang="en">
       <body className={sourceCodePro.variable}>
         <AppRouterCacheProvider>
-          <BasePage>
-            {children}
-          </BasePage>
+          <SessionProvider>
+            <BasePage>
+              {children}
+            </BasePage>
+          </SessionProvider>
         </AppRouterCacheProvider>
       </body>
     </html>
