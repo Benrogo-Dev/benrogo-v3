@@ -36,10 +36,9 @@
   }
 
   &Right {
-    flex-flow: row-reverse;
-
     @include mobile {
-      flex-flow: row;
+      justify-content: left;
+      flex-flow: row-reverse;
     }
   }
 }
