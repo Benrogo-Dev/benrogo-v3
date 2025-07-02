@@ -1,8 +1,9 @@
 :root {
   /* Background and accent colors */
+  --background-color: #0a0a0a;
   --paper-background: #00000000;
-  --accent-cyan: #24f2e1;
-  --accent-blue: #1058df;
+  --accent-cyan: #11d6c6;
+  --accent-blue: #587efc;
   --accent-magenta: #e526cb;
 
   /* Main text color */
@@ -10,7 +11,7 @@
 
   /* Measurements */
   --basepage-spacing: 12px;
-  --border-radius: 10px;
+  --border-radius: 12px;
 }
 
 html,
