@@ -7,14 +7,8 @@
   height: 60px;
   backdrop-filter: blur(10px);
   background: color-mix(in oklab, var(--background-color) 95%, transparent 5%);
-  border: 1px solid color-mix(in oklab, var(--cyan-200) 20%, transparent 80%);
-  box-shadow: 0 4px 20px color-mix(in oklab, var(--magenta-300) 15%, transparent 85%);
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-
-  &:hover {
-    border-color: color-mix(in oklab, var(--cyan-200) 40%, transparent 60%);
-    box-shadow: 0 6px 25px color-mix(in oklab, var(--magenta-300) 25%, transparent 75%);
-  }
+  border: 1px solid transparent;
+  box-shadow: var(--cyan-200-neon);
 
   @include mobile {
     flex-flow: column;
@@ -26,7 +20,7 @@
 
     &.expanded {
       max-height: 1000px !important;
-      border-color: color-mix(in oklab, var(--magenta-300) 30%, transparent 70%);
+      box-shadow: var(--magenta-300-neon);
     }
   }
 }
@@ -95,21 +89,12 @@
   background: linear-gradient(180deg, var(--magenta-300), var(--cyan-200));
   box-shadow: var(--magenta-300-neon), inset 0 0 8px color-mix(in oklab, var(--magenta-300) 30%, #fff 70%);
   border: none;
-  animation: dividerPulse 3s ease-in-out infinite;
 
   @include mobile {
     display: none;
   }
 }
 
-@keyframes dividerPulse {
-  0%, 100% {
-    box-shadow: var(--magenta-300-neon), inset 0 0 8px color-mix(in oklab, var(--magenta-300) 30%, #fff 70%);
-  }
-  50% {
-    box-shadow: var(--cyan-200-neon), inset 0 0 12px color-mix(in oklab, var(--cyan-200) 40%, #fff 60%);
-  }
-}
 
 .navItem {
   align-items: center;
