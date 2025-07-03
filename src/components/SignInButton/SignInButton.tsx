@@ -4,7 +4,6 @@ import { Avatar, Button, Typography } from "@mui/material"
 import { GitHub } from "@mui/icons-material"
 import { signIn, signOut, useSession } from "next-auth/react";
 import { useMediaQuery } from "@mui/material";
-import { use } from "react";
 
 const SignInButton = () => {
   const { data: session } = useSession();
