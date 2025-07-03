@@ -4,6 +4,7 @@ import { createTheme, ThemeProvider } from "@mui/material";
 import * as React from "react";
 
 import "./colors.scss";
+import MuiAvatar from "./overrides/MuiAvatar";
 import MuiButton from "./overrides/MuiButton";
 import MuiCheckbox from "./overrides/MuiCheckbox";
 import MuiSlider from "./overrides/MuiSlider";
@@ -38,6 +39,7 @@ const BenrogoTheme = createTheme({
     borderRadius: 12
   },
   components: {
+    MuiAvatar,
     MuiButton,
     MuiCheckbox,
     MuiSlider,
