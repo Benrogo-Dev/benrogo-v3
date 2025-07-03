@@ -1,4 +1,5 @@
-import LinkiesTable, { LinkiesEntry } from "@/components/LinkiesTable/LinkiesTable";
+import { LinkiesTable } from "@/components";
+import type { LinkiesEntry } from "@/components/LinkiesTable/LinkiesTable";
 import { Typography } from "@mui/material";
 import type { Metadata } from "next";
 

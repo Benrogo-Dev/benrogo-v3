@@ -3,7 +3,7 @@
 import { Avatar, Button, Typography } from "@mui/material"
 import { GitHub } from "@mui/icons-material"
 import { signIn, signOut, useSession } from "next-auth/react";
-import { useMediaQuery } from "@mui/material";
+import { useMobileLayout } from "@/utils";
 
 const SignInButton = () => {
   const { data: session } = useSession();
@@ -11,7 +11,7 @@ const SignInButton = () => {
   const username = session?.user?.name;
   const pfpUrl = session?.user?.image;
 
-  const mobile = useMediaQuery("(max-width: 700px)");
+  const mobile = useMobileLayout();
 
   return (    
     <>

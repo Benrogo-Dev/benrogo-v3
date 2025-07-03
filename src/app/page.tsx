@@ -1,5 +1,5 @@
 import { Button, Checkbox, Rating, Slider, Switch } from "@mui/material";
-import TestBar from "@/components/TestBar/TestBar";
+import { TestBar } from "@/components";
 
 const Home = () => {
   return (
