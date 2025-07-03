@@ -3,33 +3,24 @@
 import { Avatar, Button, Typography } from "@mui/material"
 import { GitHub } from "@mui/icons-material"
 import { signIn, signOut, useSession } from "next-auth/react";
+import { useMediaQuery } from "@mui/material";
+import { use } from "react";
 
-interface SignInButtonProps {
-  isNavExpanded?: boolean;
-}
-
-const SignInButton = ({ isNavExpanded = false }: SignInButtonProps) => {
+const SignInButton = () => {
   const { data: session } = useSession();
 
   const username = session?.user?.name;
   const pfpUrl = session?.user?.image;
 
+  const mobile = useMediaQuery("(max-width: 700px)");
+
   return (    
     <>
       <Button
-        color="secondary"
+        color={mobile ? "secondary" : "primary"}
         sx={{ 
           display: "flex", 
-          gap: 1,
-          '@media (max-width: 600px)': {
-            borderColor: isNavExpanded ? 'var(--magenta-300)' : 'var(--cyan-200)',
-            boxShadow: isNavExpanded ? 'var(--magenta-300-neon)' : 'var(--cyan-300-neon)',
-            transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
-            '&:hover': {
-              borderColor: isNavExpanded ? 'var(--magenta-200)' : 'var(--cyan-300)',
-              backgroundColor: isNavExpanded ? 'var(--magenta-500)' : 'var(--cyan-500)',
-            }
-          }
+          gap: 1
         }}
         onClick={() => username ? signOut() : signIn("github")}
       >
@@ -57,11 +48,7 @@ const SignInButton = ({ isNavExpanded = false }: SignInButtonProps) => {
           sx={{ 
             width: 40, 
             height: 40, 
-            boxShadow: "var(--cyan-200-neon)",
-            '@media (max-width: 600px)': {
-              boxShadow: isNavExpanded ? 'var(--magenta-300-neon)' : 'var(--cyan-200-neon)',
-              transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
-            }
+            boxShadow: mobile ? "var(--cyan-200-neon)" : "var(--magenta-200-neon)"
           }} 
         />
       }

@@ -73,7 +73,7 @@ const Navbar = () => {
         </Link>
       </div>
       <div className={`${styles.navGroup} ${styles.navGroupRight}`}>
-        <SignInButton isNavExpanded={isDropdownOpen} />
+        <SignInButton />
       </div>
     </nav>
   );

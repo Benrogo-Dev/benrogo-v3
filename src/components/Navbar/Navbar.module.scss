@@ -7,7 +7,7 @@
   height: 60px;
   backdrop-filter: blur(10px);
   background: color-mix(in oklab, var(--background-color) 95%, transparent 5%);
-  border: 1px solid transparent;
+  border: 1px solid var(--cyan-200);
   box-shadow: var(--cyan-200-neon);
 
   @include mobile {
@@ -16,10 +16,11 @@
     gap: 0;
     max-height: 60px;
     overflow-y: hidden;
-    transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 
     &.expanded {
       max-height: 1000px !important;
+      border: 1px solid var(--magenta-300);
       box-shadow: var(--magenta-300-neon);
     }
   }
