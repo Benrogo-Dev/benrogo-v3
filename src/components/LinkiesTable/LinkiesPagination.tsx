@@ -1,11 +1,10 @@
 import { Button, Stack, Typography } from "@mui/material";
 import PlayArrowIcon from "@mui/icons-material/PlayArrow";
+import { useMobileLayout } from "@/utils";
 
-type LinkiesPaginationProps = {
-  mobile: boolean;
-};
+const LinkiesPagination = () => {
+  const mobile = useMobileLayout();
 
-const LinkiesPagination = ({ mobile }: LinkiesPaginationProps) => {
   return (
     <Stack
       direction="row"

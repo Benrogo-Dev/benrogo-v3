@@ -3,7 +3,7 @@
 import { createTheme, ThemeProvider } from "@mui/material";
 import * as React from "react";
 
-import "./colors.scss";
+// Component overrides (Stick to one per file)
 import MuiAvatar from "./overrides/MuiAvatar";
 import MuiButton from "./overrides/MuiButton";
 import MuiCheckbox from "./overrides/MuiCheckbox";
@@ -12,6 +12,22 @@ import MuiSwitch from "./overrides/MuiSwitch";
 import MuiTable from "./overrides/MuiTable";
 import MuiRating from "./overrides/MuiRating";
 import MuiTypography from "./overrides/MuiTypography";
+
+// Style imports (will propagate to the rest of the app)
+import "./colors.scss";
+
+// Type overrides
+declare module "@mui/material/styles" {
+  interface BreakpointOverrides {
+    xs: false;
+    sm: false;
+    md: false;
+    lg: false;
+    xl: false;
+    mobile: true;
+    desktop: true;
+  }
+}
 
 const BenrogoTheme = createTheme({
   palette: {
@@ -33,6 +49,12 @@ const BenrogoTheme = createTheme({
     },
     warning: {
       main: "#d9720b"
+    }
+  },
+  breakpoints: {
+    values: {
+      mobile: 0,
+      desktop: 850
     }
   },
   shape: {

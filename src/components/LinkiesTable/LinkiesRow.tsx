@@ -1,20 +1,22 @@
 import { TableRow, TableCell, Typography, Rating } from "@mui/material";
 import Link from "next/link";
 import { LinkiesEntry } from "./LinkiesTable";
+import { useMobileLayout } from "@/utils";
 
 type LinkiesRowProps = {
   entry: LinkiesEntry;
   index: number;
-  mobile: boolean;
 };
 
-const LinkiesRow = ({ entry, index, mobile }: LinkiesRowProps) => {
+const LinkiesRow = ({ entry, index }: LinkiesRowProps) => {
   const statusColor =
     entry.status === "online"
       ? "success"
       : entry.status === "offline"
       ? "error"
       : "warning";
+  
+  const mobile = useMobileLayout();
 
   return (
     <TableRow key={entry.url + index}>

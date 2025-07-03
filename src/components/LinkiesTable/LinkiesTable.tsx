@@ -13,10 +13,10 @@ import {
   Box,
   Switch
 } from "@mui/material";
-import useMediaQuery from "@mui/material/useMediaQuery";
 import { useState } from "react";
 import LinkiesRow from "./LinkiesRow";
 import LinkiesPagination from "./LinkiesPagination";
+import { useMobileLayout } from "@/utils";
 
 export type LinkiesEntry = {
   url: string;
@@ -31,7 +31,7 @@ type LinkiesTableProps = {
 };
 
 const LinkiesTable = ({ linkies }: LinkiesTableProps) => {
-  const mobile = useMediaQuery("(max-width:700px)");
+  const mobile = useMobileLayout();
   const containerPadding = mobile ? 0 : 2;
 
   const [showOffline, setShowOffline] = useState(true);
@@ -70,7 +70,7 @@ const LinkiesTable = ({ linkies }: LinkiesTableProps) => {
           />
         </Stack>
         <Box sx={{ flex: 1 }} />
-        <LinkiesPagination mobile={mobile} />
+        <LinkiesPagination />
       </Stack>
       <br />
       <Table size="small">
@@ -105,13 +105,12 @@ const LinkiesTable = ({ linkies }: LinkiesTableProps) => {
               key={entry.url + index}
               entry={entry}
               index={index}
-              mobile={mobile}
             />
           ))}
         </TableBody>
       </Table>
       <br />
-      <LinkiesPagination mobile={mobile} />
+      <LinkiesPagination />
     </TableContainer>
   );
 };

@@ -5,7 +5,7 @@ import Image from "next/image";
 import styles from "./Navbar.module.scss";
 import { useState } from "react";
 import PlayArrowIcon from "@mui/icons-material/PlayArrow";
-import SignInButton from "../SignInButton/SignInButton";
+import SignInButton from "./SignInButton";
 
 const Navbar = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
