@@ -1,4 +1,5 @@
-import { TableRow, TableCell, Typography, Rating, Link } from "@mui/material";
+import { TableRow, TableCell, Typography, Rating } from "@mui/material";
+import Link from "next/link";
 import { LinkiesEntry } from "./LinkiesTable";
 
 type LinkiesRowProps = {
@@ -18,7 +19,7 @@ const LinkiesRow = ({ entry, index, mobile }: LinkiesRowProps) => {
   return (
     <TableRow key={entry.url + index}>
       <TableCell sx={{ maxWidth: mobile ? 180 : undefined, overflow: "hidden", textOverflow: "unset", whiteSpace: "normal" }}>
-        <Link href={entry.url} color="#ffffff">
+        <Link href={entry.url}>
           <Typography
             sx={{
               wordWrap: "break-word",
