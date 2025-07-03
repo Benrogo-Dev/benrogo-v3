@@ -1,9 +1,7 @@
 "use client";
 
 import {
-  Button,
   FormControlLabel,
-  Rating,
   Stack,
   Table,
   TableBody,
@@ -15,10 +13,10 @@ import {
   Box,
   Switch
 } from "@mui/material";
-import Link from "next/link";
-import PlayArrowIcon from "@mui/icons-material/PlayArrow";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import { useState } from "react";
+import LinkiesRow from "./LinkiesRow";
+import LinkiesPagination from "./LinkiesPagination";
 
 export type LinkiesEntry = {
   url: string;
@@ -39,32 +37,11 @@ const LinkiesTable = ({ linkies }: LinkiesTableProps) => {
   const [showOffline, setShowOffline] = useState(true);
   const [showUnknown, setShowUnknown] = useState(true);
 
-  // Remove useMemo, just filter directly
   const filteredLinkies = linkies.filter(entry => {
     if (entry.status === "offline" && !showOffline) return false;
     if (entry.status === "unknown" && !showUnknown) return false;
     return true;
   });
-
-  const Pagination = () => (
-    <Stack
-      direction="row"
-      alignItems="center"
-      spacing={2}
-      justifyContent={mobile ? "center" : "flex-end"}
-    >
-      <Button sx={{ p: 0 }}>
-        <PlayArrowIcon
-          fontSize={mobile ? "medium" : "large"}
-          sx={{ transform: "rotate(180deg)" }}
-        />
-      </Button>
-      <Typography fontSize={mobile ? "medium" : "large"}>1</Typography>
-      <Button sx={{ p: 0 }}>
-        <PlayArrowIcon fontSize={mobile ? "medium" : "large"} />
-      </Button>
-    </Stack>
-  );
 
   return (
     <TableContainer
@@ -93,7 +70,7 @@ const LinkiesTable = ({ linkies }: LinkiesTableProps) => {
           />
         </Stack>
         <Box sx={{ flex: 1 }} />
-        <Pagination />
+        <LinkiesPagination mobile={mobile} />
       </Stack>
       <br />
       <Table size="small">
@@ -123,72 +100,18 @@ const LinkiesTable = ({ linkies }: LinkiesTableProps) => {
           </TableRow>
         </TableHead>
         <TableBody>
-          {filteredLinkies.map((entry, index) => {
-            const statusColor =
-              entry.status === "online"
-                ? "success"
-                : entry.status === "offline"
-                ? "error"
-                : "warning";
-            return (
-              <TableRow key={entry.url + index}>
-                <TableCell sx={{ maxWidth: mobile ? 180 : undefined, overflow: "hidden", textOverflow: "unset", whiteSpace: "normal" }}>
-                  <Link href={entry.url}>
-                    <Typography
-                      sx={{
-                        wordWrap: "break-word",
-                        overflowWrap: "break-word",
-                        whiteSpace: "normal",
-                        maxWidth: mobile ? 180 : undefined,
-                        display: "block",
-                        fontSize: mobile ? "14px" : undefined
-                      }}
-                      style={{
-                        userSelect: "none",
-                        WebkitUserSelect: "none",
-                        WebkitTouchCallout: "none"
-                      }}
-                      color={mobile ? statusColor : undefined}
-                    >
-                      {entry.url}
-                    </Typography>
-                  </Link>
-                </TableCell>
-                {!mobile && (
-                  <TableCell align="left" sx={{ width: 120 }}>
-                    <Typography color={statusColor}>
-                      {entry.status.toUpperCase()}
-                    </Typography>
-                  </TableCell>
-                )}
-                <TableCell align="right" sx={{ width: 120 }}>
-                  <Typography>{entry.requests.toLocaleString()}</Typography>
-                </TableCell>
-                {!mobile && (
-                  <>
-                    <TableCell align="right" sx={{ width: 120 }}>
-                      <Typography>
-                        {entry.loadTime
-                          ? `${entry.loadTime.toLocaleString()} s`
-                          : "N/A"}
-                      </Typography>
-                    </TableCell>
-                    <TableCell align="center" sx={{ width: 140 }}>
-                      <Rating
-                        readOnly
-                        precision={0.1}
-                        value={entry.reliability || 0}
-                      />
-                    </TableCell>
-                  </>
-                )}
-              </TableRow>
-            );
-          })}
+          {filteredLinkies.map((entry, index) => (
+            <LinkiesRow
+              key={entry.url + index}
+              entry={entry}
+              index={index}
+              mobile={mobile}
+            />
+          ))}
         </TableBody>
       </Table>
       <br />
-      <Pagination />
+      <LinkiesPagination mobile={mobile} />
     </TableContainer>
   );
 };
