@@ -29,6 +29,6 @@ This project is built on Next.JS, so you'll need to have Node.JS installed to ru
 
 # Contributing
 - Before you contribute, please run `npm run build` locally to make sure there's no build errors. If there is your PR won't be accepted!
-- If you want to contribute to this project, please make a new branch separate from main, make your changes there, and then make a pull request to merge it into main
+- If you want to contribute to this project, please fork it, make your changes there, and then make a pull request to merge it into main
 - The maintainers will review your PR and either approve it or make comments and tell you what you need to fix.
 - If you need instructions on how to make a PR, look it up!
