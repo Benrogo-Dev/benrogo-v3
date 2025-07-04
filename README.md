@@ -1,6 +1,6 @@
 # Benrogo-v3
 
-Version 3 of the Benrogo project.
+Version 3 of the Benrogo.net
 
 ![Cloudflare pages status badge](https://img.shields.io/endpoint?url=https://cloudflare-pages-badges.benrogo.workers.dev/?projectName=benrogo-v3)
 
@@ -8,19 +8,19 @@ Version 3 of the Benrogo project.
 
 This project is built with Next.js, so you'll need Node.js installed to run it.
 
-- Clone this repository:
+- Clone this repo:
 
   ```bash
   git clone https://github.com/Benrogo-Dev/benrogo-v3.git
   ```
 
-- Install dependencies:
+- Install deps:
 
   ```bash
   npm ci
   ```
 
-- Start the development server:
+- Start the dev server:
 
   ```bash
   npm run dev
@@ -29,13 +29,12 @@ This project is built with Next.js, so you'll need Node.js installed to run it.
 ### Auth Setup
 
 - Copy `.env.example` to `.env.local`
-- **For auth features:**
-  - Create a GitHub OAuth application:
-    - Application name: (your choice)
-    - Homepage URL: (your choice)
-    - Callback URL: `http://local.benrogo.net:3000/api/auth/callback/github`
-  - Copy the OAuth ID and secret to their respective variables in `.env.local`
-  - Generate auth secret:
+- Create a GitHub OAuth application:
+  - Application name: (up to you)
+  - Homepage URL: (up to you)
+  - Callback URL: `http://local.benrogo.net:3000/api/auth/callback/github`
+- Copy the OAuth ID and secret to their respective variables in `.env.local`
+- Generate auth secret:
 
     ```bash
     npx auth secret
