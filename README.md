@@ -1,6 +1,6 @@
 # Benrogo-v3
 
-Version 3 of the Benrogo.net
+Version 3 of Benrogo.net
 
 ![Cloudflare pages status badge](https://img.shields.io/endpoint?url=https://cloudflare-pages-badges.benrogo.workers.dev/?projectName=benrogo-v3)
 
@@ -46,10 +46,10 @@ This project is built with Next.js, so you'll need Node.js installed to run it.
 
 ## Contributing
 
-- Before you contribute, run `npm run build` and `npm run lint` locally to
-  make sure there's no build/linter errors. If there are, your PR won't be accepted!
+- Before you contribute, run `npm run build` locally to
+  make sure there's no build/lint errors. If there are, your PR won't be accepted!
 - Fork this repository, make a feature branch, make your changes, and create a
   pull request to merge into `main`
-- One or multiple maintainers will review your PR and either approve it or tell you what
+- One or more maintainers will review your PR and either approve it or tell you what
   needs fixing
 - Never done a pull request? Google it.
