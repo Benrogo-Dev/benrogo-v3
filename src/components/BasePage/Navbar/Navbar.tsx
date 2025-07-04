@@ -23,7 +23,7 @@ const Navbar = () => {
         <div className={styles.topAlignmentContainer}>
           <Link
             href={"/"}
-            className={`${styles.navItem} ${styles.hoverUnderline}`}
+            className={`${styles.navItem} ${styles.hoverGlow}`}
           >
             <Image
               src="/benrogo-old.png"
