@@ -172,3 +172,17 @@
     }
   }
 }
+
+.hoverGlow {
+  @extend .hoverUnderline;
+  
+  &::after {
+    display: none;
+  }
+  
+  @include desktop {
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+}
