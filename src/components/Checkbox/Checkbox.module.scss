@@ -1,0 +1,48 @@
+.Label {
+  display: flex;
+  width: fit-content;
+  height: fit-content;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  font-weight: bold;
+}
+
+.Checkbox {
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 3px;
+  transition: box-shadow 0.2s ease-out;
+  border: 2px solid var(--base-300);
+
+  cursor: pointer;
+
+  &[data-unchecked] {
+    background-color: var(--base-500);
+    border: 2px solid var(--base-400);
+  }
+
+  &[data-checked] {
+    background-color: var(--base-300);
+    box-shadow: var(--base-300-neon);
+  }
+
+  &[data-disabled] {
+    box-shadow: none;
+    filter: brightness(40%);
+    cursor: default;
+  }
+}
+
+.Indicator {
+  display: flex;
+  color: var(--base-600);
+  transition: all 0.5s ease-in-out;
+
+  &[data-unchecked] {
+    display: none;
+  }
+}

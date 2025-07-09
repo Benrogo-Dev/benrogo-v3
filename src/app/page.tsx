@@ -1,4 +1,5 @@
-import { Button, Checkbox, Rating, Slider, Switch } from "@mui/material";
+import { Button, Rating, Slider, Switch } from "@mui/material";
+import { Checkbox } from "@/components";
 import { TestBar } from "@/components";
 
 const Home = () => {
@@ -104,18 +105,18 @@ const Home = () => {
         flexFlow: "row",
         gap: 10
       }}>
-        <Checkbox color="primary" defaultChecked/>
-        <Checkbox color="primary" defaultChecked disabled />
-        <Checkbox color="secondary" defaultChecked />
-        <Checkbox color="secondary" defaultChecked disabled />
-        <Checkbox color="success" defaultChecked />
-        <Checkbox color="success" defaultChecked disabled />
-        <Checkbox color="error" defaultChecked />
-        <Checkbox color="error" defaultChecked disabled />
-        <Checkbox color="info" defaultChecked />
-        <Checkbox color="info" defaultChecked disabled />
-        <Checkbox color="warning" defaultChecked />
-        <Checkbox color="warning" defaultChecked disabled />
+        <Checkbox color="scarlet" defaultChecked/>
+        <Checkbox color="scarlet" defaultChecked disabled />
+        <Checkbox color="orange" defaultChecked />
+        <Checkbox color="orange" defaultChecked disabled />
+        <Checkbox color="green" defaultChecked />
+        <Checkbox color="green" defaultChecked disabled />
+        <Checkbox color="cyan" defaultChecked />
+        <Checkbox color="cyan" defaultChecked disabled />
+        <Checkbox color="blue" defaultChecked />
+        <Checkbox color="blue" defaultChecked disabled />
+        <Checkbox color="magenta" defaultChecked />
+        <Checkbox color="magenta" defaultChecked disabled />
       </div>
       <div style={{
         display: "grid",

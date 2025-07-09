@@ -6,7 +6,6 @@ import * as React from "react";
 // Component overrides (Stick to one per file)
 import MuiAvatar from "./overrides/MuiAvatar";
 import MuiButton from "./overrides/MuiButton";
-import MuiCheckbox from "./overrides/MuiCheckbox";
 import MuiSlider from "./overrides/MuiSlider";
 import MuiSwitch from "./overrides/MuiSwitch";
 import MuiTable from "./overrides/MuiTable";
@@ -63,7 +62,6 @@ const BenrogoTheme = createTheme({
   components: {
     MuiAvatar,
     MuiButton,
-    MuiCheckbox,
     MuiSlider,
     MuiSwitch,
     MuiTable,

@@ -1,4 +1,5 @@
 @use "sass:list";
+@use "sass:string";
 
 @function generateNeon($color, $intensity) {
   $var: var(--#{$color}-#{$intensity});
@@ -34,6 +35,7 @@ $color-hues: (
 );
 
 :root {
+  /* Color palette and neon glow */
   @each $color, $hue in $color-hues {
     @each $intensity, $sl in $intensity-sl {
       $saturation: list.nth($sl, 1);
@@ -44,4 +46,46 @@ $color-hues: (
       --#{$color}-#{$intensity}-neon: #{generateNeon($color, $intensity)};
     }
   }
+
+  --text-color: #ffffff;
+}
+
+@each $color, $_ in $color-hues {
+  #{".color-" + $color} {
+    --base-100: var(--#{$color}-100);
+    --base-200: var(--#{$color}-200);
+    --base-300: var(--#{$color}-300);
+    --base-400: var(--#{$color}-400);
+    --base-500: var(--#{$color}-500);
+    --base-600: var(--#{$color}-600);
+    --base-100-neon: var(--#{$color}-100-neon);
+    --base-200-neon: var(--#{$color}-200-neon);
+    --base-300-neon: var(--#{$color}-300-neon);
+    --base-400-neon: var(--#{$color}-400-neon);
+    --base-500-neon: var(--#{$color}-500-neon);
+    --base-600-neon: var(--#{$color}-600-neon);
+  }
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html, body {
+  color: var(--text-color);
+  color-scheme: dark;
+  overflow-x: hidden;
+
+  /* Font settings */
+  font-family: "Source Code Pro", monospace;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  /* We style our own links around here */
+  color: inherit;
+  text-decoration: none;
 }

@@ -1,10 +1,9 @@
 import type { Metadata } from "next";
 import { Source_Code_Pro } from "next/font/google";
-import { AppRouterCacheProvider } from "@mui/material-nextjs/v13-appRouter";
 import { SessionProvider } from "next-auth/react";
-
 import BasePage from "@/components/BasePage/BasePage";
-import "./globals.css";
+
+import "./theme.scss";
 
 const sourceCodePro = Source_Code_Pro({
   variable: "--font-source-code-pro",
@@ -27,13 +26,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={sourceCodePro.variable}>
-        <AppRouterCacheProvider>
           <SessionProvider>
             <BasePage>
               {children}
             </BasePage>
           </SessionProvider>
-        </AppRouterCacheProvider>
       </body>
     </html>
   );
