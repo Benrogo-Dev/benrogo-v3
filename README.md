@@ -6,7 +6,7 @@ Version 3 of Benrogo.net
 
 ## Setup
 
-This project is built with Next.js, so you'll need Node.js installed to run it.
+This project is built with Next.js and baked a bun.
 
 - Clone this repo:
 
@@ -17,13 +17,13 @@ This project is built with Next.js, so you'll need Node.js installed to run it.
 - Install deps:
 
   ```bash
-  npm ci
+  bun install
   ```
 
 - Start the dev server:
 
   ```bash
-  npm run dev
+  bun dev
   ```
 
 ### Auth Setup
@@ -37,7 +37,7 @@ This project is built with Next.js, so you'll need Node.js installed to run it.
 - Generate auth secret:
 
     ```bash
-    npx auth secret
+    bunx auth secret
     ```
 
 - Access your local server at: <http://local.benrogo.net:3000>
@@ -46,7 +46,7 @@ This project is built with Next.js, so you'll need Node.js installed to run it.
 
 ## Contributing
 
-- Before you contribute, run `npm run build` locally to
+- Before you contribute, run `bun run build` locally to
   make sure there's no build/lint errors. If there are, your PR won't be accepted!
 - Fork this repository, make a feature branch, make your changes, and create a
   pull request to merge into `main`
