@@ -1,8 +1,10 @@
 "use client";
 
 import {
+  Box,
   FormControlLabel,
   Stack,
+  Switch,
   Table,
   TableBody,
   TableCell,
@@ -10,13 +12,11 @@ import {
   TableHead,
   TableRow,
   Typography,
-  Box,
-  Switch
 } from "@mui/material";
 import { useState } from "react";
-import LinkiesRow from "./LinkiesRow";
-import LinkiesPagination from "./LinkiesPagination";
 import { useMobileLayout } from "@/utils";
+import LinkiesPagination from "./LinkiesPagination";
+import LinkiesRow from "./LinkiesRow";
 
 export type LinkiesEntry = {
   url: string;
@@ -37,7 +37,7 @@ const LinkiesTable = ({ linkies }: LinkiesTableProps) => {
   const [showOffline, setShowOffline] = useState(true);
   const [showUnknown, setShowUnknown] = useState(true);
 
-  const filteredLinkies = linkies.filter(entry => {
+  const filteredLinkies = linkies.filter((entry) => {
     if (entry.status === "offline" && !showOffline) return false;
     if (entry.status === "unknown" && !showUnknown) return false;
     return true;
@@ -61,11 +61,23 @@ const LinkiesTable = ({ linkies }: LinkiesTableProps) => {
       >
         <Stack direction="row">
           <FormControlLabel
-            control={<Switch checked={showOffline} onChange={e => setShowOffline(e.target.checked)} color="error" />}
+            control={
+              <Switch
+                checked={showOffline}
+                onChange={(e) => setShowOffline(e.target.checked)}
+                color="error"
+              />
+            }
             label="Show offline"
           />
           <FormControlLabel
-            control={<Switch checked={showUnknown} onChange={e => setShowUnknown(e.target.checked)} color="warning" />}
+            control={
+              <Switch
+                checked={showUnknown}
+                onChange={(e) => setShowUnknown(e.target.checked)}
+                color="warning"
+              />
+            }
             label="Show unknown"
           />
         </Stack>
@@ -101,11 +113,7 @@ const LinkiesTable = ({ linkies }: LinkiesTableProps) => {
         </TableHead>
         <TableBody>
           {filteredLinkies.map((entry, index) => (
-            <LinkiesRow
-              key={entry.url + index}
-              entry={entry}
-              index={index}
-            />
+            <LinkiesRow key={entry.url} entry={entry} index={index} />
           ))}
         </TableBody>
       </Table>

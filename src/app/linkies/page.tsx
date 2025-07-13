@@ -1,10 +1,10 @@
-import { LinkiesTable } from "@/components";
-import type { LinkiesEntry } from "@/components/LinkiesTable/LinkiesTable";
 import { Typography } from "@mui/material";
 import type { Metadata } from "next";
+import { LinkiesTable } from "@/components";
+import type { LinkiesEntry } from "@/components/LinkiesTable/LinkiesTable";
 
 export const metadata: Metadata = {
-  title: "Linkies"
+  title: "Linkies",
 };
 
 const test: LinkiesEntry[] = [
@@ -13,14 +13,14 @@ const test: LinkiesEntry[] = [
     status: "online",
     requests: 28127271,
     loadTime: 1.27,
-    reliability: 4.8
+    reliability: 4.8,
   },
   {
     url: "https://www.github.com/",
     status: "offline",
     requests: 1827364,
     loadTime: 2.15,
-    reliability: 3.2
+    reliability: 3.2,
   },
   {
     url: "https://www.stackoverflow.com/",
@@ -32,15 +32,15 @@ const test: LinkiesEntry[] = [
     status: "online",
     requests: 5637281,
     loadTime: 1.45,
-    reliability: 4.5
+    reliability: 4.5,
   },
   {
     url: "https://www.exampleeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee.com/",
     status: "offline",
     requests: 12345,
     loadTime: 3.01,
-    reliability: 1.8
-  }
+    reliability: 1.8,
+  },
 ];
 
 const Home = () => {
@@ -50,6 +50,6 @@ const Home = () => {
       <LinkiesTable linkies={test} />
     </>
   );
-}
+};
 
 export default Home;

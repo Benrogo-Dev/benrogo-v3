@@ -1,5 +1,5 @@
-import { Button, Stack, Typography } from "@mui/material";
 import PlayArrowIcon from "@mui/icons-material/PlayArrow";
+import { Button, Stack, Typography } from "@mui/material";
 import { useMobileLayout } from "@/utils";
 
 const LinkiesPagination = () => {

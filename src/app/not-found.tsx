@@ -1,10 +1,12 @@
 const Error404 = () => {
   return (
-    <h1 style={{
-      width: "100%",
-      textAlign: "center",
-      color: "red"
-    }}>
+    <h1
+      style={{
+        width: "100%",
+        textAlign: "center",
+        color: "red",
+      }}
+    >
       404 - Not Found
     </h1>
   );

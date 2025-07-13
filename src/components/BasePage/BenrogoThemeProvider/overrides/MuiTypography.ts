@@ -1,7 +1,7 @@
 const MuiTypography = {
   defaultProps: {
-    fontWeight: "bold"
-  }
+    fontWeight: "bold",
+  },
 };
 
 export default MuiTypography;

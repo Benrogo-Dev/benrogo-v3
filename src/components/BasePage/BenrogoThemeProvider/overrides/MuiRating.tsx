@@ -5,17 +5,17 @@ const MuiRating = {
   styleOverrides: {
     root: {
       "& .MuiRating-iconFilled": {
-        color: "var(--magenta-300)"
+        color: "var(--magenta-300)",
       },
       "& .MuiRating-iconEmpty": {
-        color: "var(--magenta-500)"
-      }
-    }
+        color: "var(--magenta-500)",
+      },
+    },
   },
   defaultProps: {
     icon: <Square />,
-    emptyIcon: <SquareOutlined />
-  }
-}
+    emptyIcon: <SquareOutlined />,
+  },
+};
 
 export default MuiRating;

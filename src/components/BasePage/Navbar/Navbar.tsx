@@ -1,10 +1,10 @@
-"use client"
+"use client";
 
-import Link from "next/link";
-import Image from "next/image";
-import styles from "./Navbar.module.scss";
-import { useState } from "react";
 import PlayArrowIcon from "@mui/icons-material/PlayArrow";
+import Image from "next/image";
+import Link from "next/link";
+import { useState } from "react";
+import styles from "./Navbar.module.scss";
 import SignInButton from "./SignInButton";
 
 const Navbar = () => {
@@ -21,10 +21,7 @@ const Navbar = () => {
     >
       <div className={`${styles.navGroup} ${styles.navGroupLeft}`}>
         <div className={styles.topAlignmentContainer}>
-          <Link
-            href={"/"}
-            className={`${styles.navItem} ${styles.hoverGlow}`}
-          >
+          <Link href={"/"} className={`${styles.navItem} ${styles.hoverGlow}`}>
             <Image
               src="/benrogo-old.png"
               alt="Benrogo logo"
