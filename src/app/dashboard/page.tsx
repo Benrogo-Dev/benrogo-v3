@@ -4,7 +4,7 @@ import { auth } from "@/auth";
 import { Checkbox } from "@/components";
 
 export const metadata: Metadata = {
-  title: "Dashboard"
+  title: "Dashboard",
 };
 
 export const runtime = "edge";
@@ -16,9 +16,20 @@ const Home = async () => {
     <>
       <Typography fontSize={40}>Dashboard</Typography>
       {user && (
-        <div style={{ display: "flex", alignItems: "center", gap: 12, margin: "16px 0" }}>
+        <div
+          style={{
+            display: "flex",
+            alignItems: "center",
+            gap: 12,
+            margin: "16px 0",
+          }}
+        >
           {user.image && (
-            <Avatar src={user.image} alt="GitHub avatar" sx={{boxShadow: "var(--magenta-300-neon)"}} />
+            <Avatar
+              src={user.image}
+              alt="GitHub avatar"
+              sx={{ boxShadow: "var(--magenta-300-neon)" }}
+            />
           )}
           <Typography fontSize={20}>{user.name}</Typography>
           <Typography fontSize={20}>{user.email}</Typography>
@@ -34,7 +45,7 @@ const Home = async () => {
         <Checkbox color="blue" />
         <Checkbox color="magenta" />
       </div>
-      <br/>
+      <br />
       <div style={{ display: "flex", flexFlow: "row", gap: 10 }}>
         <Checkbox color="scarlet" defaultChecked />
         <Checkbox color="orange" defaultChecked />
@@ -45,6 +56,6 @@ const Home = async () => {
       </div>
     </>
   );
-}
+};
 
 export default Home;

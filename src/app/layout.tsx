@@ -13,7 +13,7 @@ const sourceCodePro = Source_Code_Pro({
 export const metadata: Metadata = {
   title: {
     template: "%s | Benrogo",
-    default: "Home | Benrogo"
+    default: "Home | Benrogo",
   },
   description: "Benrogo",
 };
@@ -26,11 +26,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={sourceCodePro.variable}>
-          <SessionProvider>
-            <BasePage>
-              {children}
-            </BasePage>
-          </SessionProvider>
+        <SessionProvider>
+          <BasePage>{children}</BasePage>
+        </SessionProvider>
       </body>
     </html>
   );

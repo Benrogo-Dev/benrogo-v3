@@ -1,8 +1,8 @@
 "use client";
 
-import { useEffect, useState } from "react";
 import Particles from "@tsparticles/react";
 import { loadSlim } from "@tsparticles/slim";
+import { useEffect, useState } from "react";
 
 const ParticleBackground = () => {
   const [init, setInit] = useState(false);
@@ -31,7 +31,7 @@ const ParticleBackground = () => {
           options={{
             fullScreen: {
               enable: true,
-              zIndex: -1
+              zIndex: -1,
             },
             background: {
               color: { value: "#000000" },

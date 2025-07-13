@@ -6,7 +6,10 @@
     "dev": "next dev --turbopack -H local.benrogo.net",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "biome lint .",
+    "format": "biome format . --write",
+    "check": "biome check .",
+    "check:fix": "biome check . --write"
   },
   "dependencies": {
     "@base-ui-components/react": "^1.0.0-beta.1",
@@ -26,12 +29,10 @@
     "react-dom": "^19.1.0"
   },
   "devDependencies": {
-    "@eslint/eslintrc": "^3.3.1",
+    "@biomejs/biome": "^2.1.1",
     "@types/node": "^20.19.1",
     "@types/react": "^19.1.8",
     "@types/react-dom": "^19.1.6",
-    "eslint": "^9.30.0",
-    "eslint-config-next": "15.3.4",
     "sass": "^1.89.2",
     "typescript": "^5.8.3"
   }

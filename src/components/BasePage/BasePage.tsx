@@ -1,8 +1,8 @@
-import * as React from "react";
+import type * as React from "react";
 import styles from "./BasePage.module.scss";
 import BenrogoThemeProvider from "./BenrogoThemeProvider";
-import ParticleBackground from "./ParticleBackground";
 import Navbar from "./Navbar";
+import ParticleBackground from "./ParticleBackground";
 
 type BasePageProps = {
   children: React.ReactNode;
@@ -15,9 +15,7 @@ const BasePage = ({ children }: BasePageProps) => {
       <div className={styles.basePage}>
         <BenrogoThemeProvider>
           <Navbar />
-          <div className={styles.content}>
-              { children }
-          </div>
+          <div className={styles.content}>{children}</div>
         </BenrogoThemeProvider>
       </div>
     </>

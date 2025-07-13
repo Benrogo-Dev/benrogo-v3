@@ -1,7 +1,7 @@
-import { TableRow, TableCell, Typography, Rating } from "@mui/material";
+import { Rating, TableCell, TableRow, Typography } from "@mui/material";
 import Link from "next/link";
-import { LinkiesEntry } from "./LinkiesTable";
 import { useMobileLayout } from "@/utils";
+import type { LinkiesEntry } from "./LinkiesTable";
 
 type LinkiesRowProps = {
   entry: LinkiesEntry;
@@ -13,14 +13,21 @@ const LinkiesRow = ({ entry, index }: LinkiesRowProps) => {
     entry.status === "online"
       ? "success"
       : entry.status === "offline"
-      ? "error"
-      : "warning";
-  
+        ? "error"
+        : "warning";
+
   const mobile = useMobileLayout();
 
   return (
     <TableRow key={entry.url + index}>
-      <TableCell sx={{ maxWidth: mobile ? 180 : undefined, overflow: "hidden", textOverflow: "unset", whiteSpace: "normal" }}>
+      <TableCell
+        sx={{
+          maxWidth: mobile ? 180 : undefined,
+          overflow: "hidden",
+          textOverflow: "unset",
+          whiteSpace: "normal",
+        }}
+      >
         <Link href={entry.url}>
           <Typography
             sx={{
@@ -29,12 +36,12 @@ const LinkiesRow = ({ entry, index }: LinkiesRowProps) => {
               whiteSpace: "normal",
               maxWidth: mobile ? 180 : undefined,
               display: "block",
-              fontSize: mobile ? "14px" : undefined
+              fontSize: mobile ? "14px" : undefined,
             }}
             style={{
               userSelect: "none",
               WebkitUserSelect: "none",
-              WebkitTouchCallout: "none"
+              WebkitTouchCallout: "none",
             }}
             color={mobile ? statusColor : undefined}
           >
@@ -56,17 +63,11 @@ const LinkiesRow = ({ entry, index }: LinkiesRowProps) => {
         <>
           <TableCell align="right" sx={{ width: 120 }}>
             <Typography>
-              {entry.loadTime
-                ? `${entry.loadTime.toLocaleString()} s`
-                : "N/A"}
+              {entry.loadTime ? `${entry.loadTime.toLocaleString()} s` : "N/A"}
             </Typography>
           </TableCell>
           <TableCell align="center" sx={{ width: 140 }}>
-            <Rating
-              readOnly
-              precision={0.1}
-              value={entry.reliability || 0}
-            />
+            <Rating readOnly precision={0.1} value={entry.reliability || 0} />
           </TableCell>
         </>
       )}
