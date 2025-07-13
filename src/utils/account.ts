@@ -1,4 +1,6 @@
 import { getSession } from "next-auth/react";
 
-const session = await getSession();
-session?.user?.id
+export async function getUserId() {
+  const session = await getSession();
+  return session?.user?.id;
+}
