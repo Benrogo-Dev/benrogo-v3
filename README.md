@@ -6,7 +6,7 @@ Version 3 of Benrogo.net
 
 ## Setup
 
-This project is built with Next.js and baked a bun.
+This project is built with Next.js, TypeScript, and uses bun for package management.
 
 - Clone this repo:
 
@@ -46,8 +46,11 @@ This project is built with Next.js and baked a bun.
 
 ## Contributing
 
-- Before you contribute, run `bun run build` locally to
-  make sure there's no build/lint errors. If there are, your PR won't be accepted!
+- Before you contribute, run the following commands locally to ensure everything is clean:
+  - `bun build` - Checks for build errors
+  - `bun check` - Checks for formatting and linting errors
+
+  If any of these fail, your PR won't be accepted!
 - Fork this repository, make a feature branch, make your changes, and create a
   pull request to merge into `main`
 - One or more maintainers will review your PR and either approve it or tell you what
