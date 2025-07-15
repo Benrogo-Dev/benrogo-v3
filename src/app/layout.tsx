@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
-import { Source_Code_Pro } from "next/font/google";
+import { Orbitron } from "next/font/google";
 import { SessionProvider } from "next-auth/react";
 import BasePage from "@/components/BasePage/BasePage";
 
 import "./theme.scss";
 
-const sourceCodePro = Source_Code_Pro({
-  variable: "--font-source-code-pro",
+const orbitron = Orbitron({
+  variable: "--font-orbitron",
   subsets: ["latin"],
 });
 
@@ -25,7 +25,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={sourceCodePro.variable}>
+      <body className={orbitron.variable}>
         <SessionProvider>
           <BasePage>{children}</BasePage>
         </SessionProvider>

@@ -23,7 +23,7 @@ body {
 
 body {
   color: var(--text-color);
-  font-family: "Source Code Pro", monospace;
+  font-family: var(--font-orbitron), sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
