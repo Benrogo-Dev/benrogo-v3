@@ -15,7 +15,7 @@ export const getColorVars = (color: BenrogoPaletteColor): ColorVars =>
     [100, 200, 300, 400, 500, 600].flatMap((n) => [
       [`--base-${n}`, `var(--${color}-${n})`],
       [`--base-${n}-neon`, `var(--${color}-${n}-neon)`],
-    ])
+    ]),
   );
 
 export const useColorStyle = (color: BenrogoPaletteColor): ColorVars =>

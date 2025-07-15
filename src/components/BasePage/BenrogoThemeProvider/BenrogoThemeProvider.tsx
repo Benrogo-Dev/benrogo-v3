@@ -50,6 +50,9 @@ const BenrogoTheme = createTheme({
       main: "#d9720b",
     },
   },
+  typography: {
+    fontFamily: "var(--font-orbitron), sans-serif",
+  },
   breakpoints: {
     values: {
       mobile: 0,
