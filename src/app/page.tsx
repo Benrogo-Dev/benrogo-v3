@@ -1,103 +1,23 @@
-import { Button, Rating, Slider, Switch } from "@mui/material";
-import { Checkbox } from "@/components";
-import { TestBar } from "@/components";
+import { Rating } from "@mui/material";
+import { Checkbox, Switch, Slider, Button } from "@/components";
 
 const Home = () => {
   return (
     <>
       <br/>
-      <div style={{
-        display: "grid",
-        gridTemplateRows: "repeat(12, 4px)",
-        gridTemplateColumns: "repeat(auto-fill, 100px)",
-        gridAutoFlow: "column",
-        gap: 20
-      }}>
-        <TestBar color="scarlet-100"></TestBar>
-        <TestBar color="scarlet-200"></TestBar>
-        <TestBar color="scarlet-300"></TestBar>
-        <TestBar color="scarlet-400"></TestBar>
-        <TestBar color="scarlet-500"></TestBar>
-        <TestBar color="scarlet-600"></TestBar>
-        <TestBar color="scarlet-100" neon></TestBar>
-        <TestBar color="scarlet-200" neon></TestBar>
-        <TestBar color="scarlet-300" neon></TestBar>
-        <TestBar color="scarlet-400" neon></TestBar>
-        <TestBar color="scarlet-500" neon></TestBar>
-        <TestBar color="scarlet-600" neon></TestBar>
-        <TestBar color="orange-100"></TestBar>
-        <TestBar color="orange-200"></TestBar>
-        <TestBar color="orange-300"></TestBar>
-        <TestBar color="orange-400"></TestBar>
-        <TestBar color="orange-500"></TestBar>
-        <TestBar color="orange-600"></TestBar>
-        <TestBar color="orange-100" neon></TestBar>
-        <TestBar color="orange-200" neon></TestBar>
-        <TestBar color="orange-300" neon></TestBar>
-        <TestBar color="orange-400" neon></TestBar>
-        <TestBar color="orange-500" neon></TestBar>
-        <TestBar color="orange-600" neon></TestBar>
-        <TestBar color="green-100"></TestBar>
-        <TestBar color="green-200"></TestBar>
-        <TestBar color="green-300"></TestBar>
-        <TestBar color="green-400"></TestBar>
-        <TestBar color="green-500"></TestBar>
-        <TestBar color="green-600"></TestBar>
-        <TestBar color="green-100" neon></TestBar>
-        <TestBar color="green-200" neon></TestBar>
-        <TestBar color="green-300" neon></TestBar>
-        <TestBar color="green-400" neon></TestBar>
-        <TestBar color="green-500" neon></TestBar>
-        <TestBar color="green-600" neon></TestBar>
-        <TestBar color="cyan-100"></TestBar>
-        <TestBar color="cyan-200"></TestBar>
-        <TestBar color="cyan-300"></TestBar>
-        <TestBar color="cyan-400"></TestBar>
-        <TestBar color="cyan-500"></TestBar>
-        <TestBar color="cyan-600"></TestBar>
-        <TestBar color="cyan-100" neon></TestBar>
-        <TestBar color="cyan-200" neon></TestBar>
-        <TestBar color="cyan-300" neon></TestBar>
-        <TestBar color="cyan-400" neon></TestBar>
-        <TestBar color="cyan-500" neon></TestBar>
-        <TestBar color="cyan-600" neon></TestBar>
-        <TestBar color="blue-100"></TestBar>
-        <TestBar color="blue-200"></TestBar>
-        <TestBar color="blue-300"></TestBar>
-        <TestBar color="blue-400"></TestBar>
-        <TestBar color="blue-500"></TestBar>
-        <TestBar color="blue-600"></TestBar>
-        <TestBar color="blue-100" neon></TestBar>
-        <TestBar color="blue-200" neon></TestBar>
-        <TestBar color="blue-300" neon></TestBar>
-        <TestBar color="blue-400" neon></TestBar>
-        <TestBar color="blue-500" neon></TestBar>
-        <TestBar color="blue-600" neon></TestBar>
-        <TestBar color="magenta-100"></TestBar>
-        <TestBar color="magenta-200"></TestBar>
-        <TestBar color="magenta-300"></TestBar>
-        <TestBar color="magenta-400"></TestBar>
-        <TestBar color="magenta-500"></TestBar>
-        <TestBar color="magenta-600"></TestBar>
-        <TestBar color="magenta-100" neon></TestBar>
-        <TestBar color="magenta-200" neon></TestBar>
-        <TestBar color="magenta-300" neon></TestBar>
-        <TestBar color="magenta-400" neon></TestBar>
-        <TestBar color="magenta-500" neon></TestBar>
-        <TestBar color="magenta-600" neon></TestBar>
-      </div>
+      <br/>
       <br/>
       <div style={{
-        display: "grid",
-        gridTemplateColumns: "repeat(3, 300px)",
+        display: "flex",
+        flexFlow: "row",
         gap: 10
       }}>
-        <Button variant="contained" color="primary">MUI Button Primary Color</Button>
-        <Button variant="contained" color="secondary">MUI Button Secondary Color</Button>
-        <Button variant="contained" color="success">MUI Button Success Color</Button>
-        <Button variant="contained" color="error">MUI Button Error Color</Button>
-        <Button variant="contained" color="info">MUI Button Info Color</Button>
-        <Button variant="contained" color="warning">MUI Button Warning Color</Button>
+        <Button color="scarlet">Scarlet</Button>
+        <Button color="orange">Orange</Button>
+        <Button color="green">Green</Button>
+        <Button color="cyan">Cyan</Button>
+        <Button color="blue">Blue</Button>
+        <Button color="magenta">Magenta</Button>
       </div>
       <br/>
       <div style={{
@@ -105,58 +25,114 @@ const Home = () => {
         flexFlow: "row",
         gap: 10
       }}>
-        <Checkbox color="scarlet" defaultChecked/>
-        <Checkbox color="scarlet" defaultChecked disabled />
+        <Button color="scarlet" disabled>Scarlet</Button>
+        <Button color="orange" disabled>Orange</Button>
+        <Button color="green" disabled>Green</Button>
+        <Button color="cyan" disabled>Cyan</Button>
+        <Button color="blue" disabled>Blue</Button>
+        <Button color="magenta" disabled>Magenta</Button>
+      </div>
+      <br/>
+      <div style={{
+        display: "flex",
+        flexFlow: "row",
+        gap: 10
+      }}>
+        <Checkbox color="scarlet" defaultChecked />
+        <Checkbox color="scarlet" />
         <Checkbox color="orange" defaultChecked />
-        <Checkbox color="orange" defaultChecked disabled />
+        <Checkbox color="orange" />
         <Checkbox color="green" defaultChecked />
-        <Checkbox color="green" defaultChecked disabled />
+        <Checkbox color="green" />
         <Checkbox color="cyan" defaultChecked />
-        <Checkbox color="cyan" defaultChecked disabled />
+        <Checkbox color="cyan" />
         <Checkbox color="blue" defaultChecked />
-        <Checkbox color="blue" defaultChecked disabled />
+        <Checkbox color="blue" />
         <Checkbox color="magenta" defaultChecked />
+        <Checkbox color="magenta" />
+      </div>
+      <br/>
+      <div style={{
+        display: "flex",
+        flexFlow: "row",
+        gap: 10
+      }}>
+        <Checkbox color="scarlet" defaultChecked disabled />
+        <Checkbox color="scarlet" disabled />
+        <Checkbox color="orange" defaultChecked disabled />
+        <Checkbox color="orange" disabled />
+        <Checkbox color="green" defaultChecked disabled />
+        <Checkbox color="green" disabled />
+        <Checkbox color="cyan" defaultChecked disabled />
+        <Checkbox color="cyan" disabled />
+        <Checkbox color="blue" defaultChecked disabled />
+        <Checkbox color="blue" disabled />
         <Checkbox color="magenta" defaultChecked disabled />
+        <Checkbox color="magenta" disabled />
       </div>
+      <br/>
       <div style={{
-        display: "grid",
-        gridTemplateRows: "repeat(4, 20px)",
-        gridTemplateColumns: "repeat(auto-fill, 200px)",
-        gap: 20,
-        gridAutoFlow: "column"
+        display: "flex",
+        flexFlow: "row",
+        gap: 10
       }}>
-        <Slider color="primary" defaultValue={50} />
-        <Slider color="primary" defaultValue={50} disabled />
-        <Slider color="secondary" defaultValue={50} />
-        <Slider color="secondary" defaultValue={50} disabled />
-        <Slider color="success" defaultValue={50} />
-        <Slider color="success" defaultValue={50} disabled />
-        <Slider color="error" defaultValue={50} />
-        <Slider color="error" defaultValue={50} disabled />
-        <Slider color="info" defaultValue={50} />
-        <Slider color="info" defaultValue={50} disabled />
-        <Slider color="warning" defaultValue={50} />
-        <Slider color="warning" defaultValue={50} disabled />
+        <Slider color="scarlet" defaultValue={50} />
+        <Slider color="orange" defaultValue={50} />
+        <Slider color="green" defaultValue={50} />
+        <Slider color="cyan" defaultValue={50} />
+        <Slider color="blue" defaultValue={50} />
+        <Slider color="magenta" defaultValue={50} />
       </div>
+      <br/>
       <div style={{
-        display: "grid",
-        gridTemplateRows: "repeat(4, 20px)",
-        gridTemplateColumns: "repeat(auto-fill, 200px)",
-        gap: 20,
-        gridAutoFlow: "column"
+        display: "flex",
+        flexFlow: "row",
+        gap: 10
       }}>
-        <Switch color="primary" defaultChecked />
-        <Switch color="primary" defaultChecked disabled />
-        <Switch color="secondary" defaultChecked />
-        <Switch color="secondary" defaultChecked disabled />
-        <Switch color="success" defaultChecked />
-        <Switch color="success" defaultChecked disabled />
-        <Switch color="error" defaultChecked />
-        <Switch color="error" defaultChecked disabled />
-        <Switch color="info" defaultChecked />
-        <Switch color="info" defaultChecked disabled />
-        <Switch color="warning" defaultChecked />
-        <Switch color="warning" defaultChecked disabled />
+        <Slider color="scarlet" defaultValue={50} disabled />
+        <Slider color="orange" defaultValue={50} disabled />
+        <Slider color="green" defaultValue={50} disabled />
+        <Slider color="cyan" defaultValue={50} disabled />
+        <Slider color="blue" defaultValue={50} disabled />
+        <Slider color="magenta" defaultValue={50} disabled />
+      </div>
+      <br/>
+      <div style={{
+        display: "flex",
+        flexFlow: "row",
+        gap: 10,
+      }}>
+        <Switch color="scarlet" />
+        <Switch color="scarlet" defaultChecked />
+        <Switch color="orange" />
+        <Switch color="orange" defaultChecked />
+        <Switch color="green" />
+        <Switch color="green" defaultChecked />
+        <Switch color="cyan" />
+        <Switch color="cyan" defaultChecked />
+        <Switch color="blue" />
+        <Switch color="blue" defaultChecked />
+        <Switch color="magenta" />
+        <Switch color="magenta" defaultChecked />
+      </div>
+      <br/>
+      <div style={{
+        display: "flex",
+        flexFlow: "row",
+        gap: 10,
+      }}>
+        <Switch color="scarlet" disabled />
+        <Switch color="scarlet" defaultChecked disabled />
+        <Switch color="orange" disabled />
+        <Switch color="orange" defaultChecked disabled />
+        <Switch color="green" disabled />
+        <Switch color="green" defaultChecked disabled />
+        <Switch color="cyan" disabled />
+        <Switch color="cyan" defaultChecked disabled />
+        <Switch color="blue" disabled />
+        <Switch color="blue" defaultChecked disabled />
+        <Switch color="magenta" disabled />
+        <Switch color="magenta" defaultChecked disabled />
       </div>
       <br/>
       <Rating readOnly value={1.5} precision={0.1} />

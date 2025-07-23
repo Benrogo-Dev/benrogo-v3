@@ -1,21 +1,20 @@
-import { Checkbox as BaseCheckbox } from "@base-ui-components/react/checkbox";
-import { Check } from "@mui/icons-material";
+import { Switch as BaseSwitch } from "@base-ui-components/react/switch";
 import * as React from "react";
-import styles from "./Checkbox.module.scss";
+import styles from "./Switch.module.scss";
 import type { BenrogoPaletteColor } from "@/utils/getColors";
 
-interface CheckboxProps extends BaseCheckbox.Root.Props {
+interface SwitchProps extends BaseSwitch.Root.Props {
   label?: string;
   labelPosition?: "top" | "bottom" | "left" | "right";
   color?: BenrogoPaletteColor;
 }
 
-const Checkbox = ({
+const Switch = ({
   label,
   labelPosition,
   color = "magenta",
   ...props
-}: CheckboxProps) => {
+}: SwitchProps) => {
   const flexFlow = (
     labelPosition === "top" ? "column-reverse":
     labelPosition === "bottom" ? "column" :
@@ -25,14 +24,12 @@ const Checkbox = ({
 
   return (
     <label className={styles.Label} style={{ flexFlow }}>
-      <BaseCheckbox.Root {...props} className={`${styles.Checkbox} color-${color}`}>
-        <BaseCheckbox.Indicator className={styles.Indicator}>
-          <Check />
-        </BaseCheckbox.Indicator>
-      </BaseCheckbox.Root>
+      <BaseSwitch.Root {...props} className={`${styles.Switch} color-${color}`}>
+        <BaseSwitch.Thumb className={styles.Thumb} />
+      </BaseSwitch.Root>
       {label}
     </label>
   )
 };
 
-export default Checkbox;
+export default Switch;
