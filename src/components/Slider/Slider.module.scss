@@ -28,6 +28,7 @@
   background-color: var(--base-300);
   box-shadow: var(--base-300-neon);
   user-select: none;
+  transition: all 0.2s ease;
 
   &[data-disabled] {
     box-shadow: none;
@@ -40,4 +41,5 @@
   border-radius: 100%;
   background-color: white;
   user-select: none;
+  transition: all 0.2s ease;
 }

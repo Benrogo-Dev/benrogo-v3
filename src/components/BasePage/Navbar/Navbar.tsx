@@ -1,6 +1,6 @@
 "use client"
 
-import Link from "next/link";
+import { Link } from "@/components";
 import Image from "next/image";
 import styles from "./Navbar.module.scss";
 import { useState } from "react";
@@ -41,36 +41,11 @@ const Navbar = () => {
           />
         </div>
         <div className={styles.navDivider}></div>
-        <Link
-          href={"/linkies"}
-          className={`${styles.navItem} ${styles.hoverUnderline}`}
-        >
-          Linkies
-        </Link>
-        <Link
-          href={"/dashboard"}
-          className={`${styles.navItem} ${styles.hoverUnderline}`}
-        >
-          Dashboard
-        </Link>
-        <Link
-          href={"/partners"}
-          className={`${styles.navItem} ${styles.hoverUnderline}`}
-        >
-          Partners
-        </Link>
-        <Link
-          href={"/status"}
-          className={`${styles.navItem} ${styles.hoverUnderline}`}
-        >
-          Status
-        </Link>
-        <Link
-          href={"/about"}
-          className={`${styles.navItem} ${styles.hoverUnderline}`}
-        >
-          About
-        </Link>
+        <Link href={"/linkies"} fontSize={18} hoverUnderline>Linkies</Link>
+        <Link href={"/dashboard"} fontSize={18} hoverUnderline>Dashboard</Link>
+        <Link href={"/partners"} fontSize={18} hoverUnderline>Partners</Link>
+        <Link href={"/status"} fontSize={18} hoverUnderline>Status</Link>
+        <Link href={"/about"} fontSize={18} hoverUnderline>About</Link>
       </div>
       <div className={`${styles.navGroup} ${styles.navGroupRight}`}>
         <SignInButton />

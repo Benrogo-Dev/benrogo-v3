@@ -10,6 +10,10 @@
   width: fit-content;
   padding: 0.3rem;
   transition: all 0.1s ease-in;
+  display: flex;
+  flex-flow: row;
+  align-items: center;
+  gap: 0.4rem;
 
   &:disabled {
     box-shadow: none;

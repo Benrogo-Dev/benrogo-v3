@@ -1,6 +1,5 @@
 import * as React from "react";
 import styles from "./BasePage.module.scss";
-import BenrogoThemeProvider from "./BenrogoThemeProvider";
 import ParticleBackground from "./ParticleBackground";
 import Navbar from "./Navbar";
 
@@ -13,12 +12,10 @@ const BasePage = ({ children }: BasePageProps) => {
     <>
       <ParticleBackground />
       <div className={styles.basePage}>
-        <BenrogoThemeProvider>
-          <Navbar />
-          <div className={styles.content}>
-              { children }
-          </div>
-        </BenrogoThemeProvider>
+        <Navbar />
+        <div className={styles.content}>
+            { children }
+        </div>
       </div>
     </>
   );

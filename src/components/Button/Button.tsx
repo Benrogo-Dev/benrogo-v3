@@ -4,7 +4,6 @@ import type { BenrogoPaletteColor } from "@/utils/getColors";
 
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   color?: BenrogoPaletteColor;
-  children?: React.ReactNode;
 }
 
 const Checkbox = ({

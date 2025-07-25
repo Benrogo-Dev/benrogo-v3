@@ -1,5 +1,4 @@
-import { Rating } from "@mui/material";
-import { Checkbox, Switch, Slider, Button } from "@/components";
+import { Checkbox, Switch, Slider, Button, Rating, Link } from "@/components";
 
 const Home = () => {
   return (
@@ -135,11 +134,71 @@ const Home = () => {
         <Switch color="magenta" defaultChecked disabled />
       </div>
       <br/>
-      <Rating readOnly value={1.5} precision={0.1} />
-      <Rating readOnly value={2} />
-      <Rating readOnly value={3} />
-      <Rating readOnly value={4} />
-      <Rating readOnly value={5} />
+      <div style={{
+        display: "flex",
+        flexFlow: "row",
+        gap: 10,
+      }}>
+        <Rating value={0} color="scarlet" />
+        <Rating value={0} color="orange" />
+        <Rating value={0} color="green" />
+        <Rating value={0} color="cyan" />
+        <Rating value={0} color="blue" />
+        <Rating value={0} color="magenta" />
+      </div>
+      <br/>
+      <div style={{
+        display: "flex",
+        flexFlow: "row",
+        gap: 10,
+      }}>
+        <Rating value={1} max={2} color="scarlet" />
+        <Rating value={1} max={2} color="orange" />
+        <Rating value={1} max={2} color="green" />
+        <Rating value={1} max={2} color="cyan" />
+        <Rating value={1} max={2} color="blue" />
+        <Rating value={1} max={2} color="magenta" />
+      </div>
+      <br/>
+      <div style={{
+        display: "flex",
+        flexFlow: "row",
+        gap: 10,
+      }}>
+        <Rating value={2} max={2} color="scarlet" />
+        <Rating value={2} max={2} color="orange" />
+        <Rating value={2} max={2} color="green" />
+        <Rating value={2} max={2} color="cyan" />
+        <Rating value={2} max={2} color="blue" />
+        <Rating value={2} max={2} color="magenta" />
+      </div>
+      <br/>
+      <br/>
+      <div style={{
+        display: "flex",
+        flexFlow: "row",
+        gap: 20,
+      }}>
+        <Link href="#" color="scarlet">Underline off</Link>
+        <Link href="#" color="orange">Underline off</Link>
+        <Link href="#" color="green">Underline off</Link>
+        <Link href="#" color="cyan">Underline off</Link>
+        <Link href="#" color="blue">Underline off</Link>
+        <Link href="#" color="magenta">Underline off</Link>
+      </div>
+      <br/>
+      <div style={{
+        display: "flex",
+        flexFlow: "row",
+        gap: 20,
+      }}>
+        <Link href="#" hoverUnderline color="scarlet">Underline on</Link>
+        <Link href="#" hoverUnderline color="orange">Underline on</Link>
+        <Link href="#" hoverUnderline color="green">Underline on</Link>
+        <Link href="#" hoverUnderline color="cyan">Underline on</Link>
+        <Link href="#" hoverUnderline color="blue">Underline on</Link>
+        <Link href="#" hoverUnderline color="magenta">Underline on</Link>
+      </div>
     </>
   );
 }

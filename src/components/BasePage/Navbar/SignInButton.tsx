@@ -1,9 +1,9 @@
 "use client"
 
-import { Avatar, Button, Typography } from "@mui/material"
+import { Avatar } from "@mui/material"
 import { GitHub } from "@mui/icons-material"
 import { signIn, signOut, useSession } from "next-auth/react";
-import { useMobileLayout } from "@/utils";
+import { Button } from "@/components";
 
 const SignInButton = () => {
   const { data: session } = useSession();
@@ -11,33 +11,16 @@ const SignInButton = () => {
   const username = session?.user?.name;
   const pfpUrl = session?.user?.image;
 
-  const mobile = useMobileLayout();
+  const mobile = false;
 
   return (    
     <>
       <Button
-        color={mobile ? "secondary" : "primary"}
-        sx={{ 
-          display: "flex", 
-          gap: 1
-        }}
+        color={mobile ? "cyan" : "magenta"}
         onClick={() => username ? signOut() : signIn("github")}
       >
         {
-          username ? (
-            <>
-              <Typography>
-                {username}
-              </Typography>
-            </>
-          ) : (
-            <>
-              <Typography>
-                Sign in
-              </Typography>
-              <GitHub fontSize="medium" />
-            </>
-          )
+          username ? username : <>Sign in <GitHub /></>
         }
       </Button>
       {

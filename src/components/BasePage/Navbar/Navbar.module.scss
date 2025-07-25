@@ -30,7 +30,7 @@
   align-items: center;
   display: flex;
   flex-flow: row;
-  gap: 10px;
+  gap: 20px;
   padding-inline: 10px;
 
   &Left {
@@ -87,8 +87,7 @@
   height: 44px;
   width: 4px;
   border-radius: 3px;
-  background: linear-gradient(180deg, var(--magenta-300), var(--cyan-200));
-  box-shadow: var(--magenta-300-neon), inset 0 0 8px color-mix(in oklab, var(--magenta-300) 30%, #fff 70%);
+  box-shadow: var(--magenta-300-neon);
   border: none;
 
   @include mobile {
@@ -121,68 +120,6 @@
 
     :not(.topAlignmentContainer) > & {
       width: 100%;
-    }
-  }
-}
-
-.hoverUnderline {
-  position: relative;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-
-  &::after {
-    content: '';
-    position: absolute;
-    width: 100%;
-    transform: scaleX(0);
-    height: 3px;
-    bottom: -4px;
-    left: 0;
-    background: linear-gradient(90deg, var(--cyan-200), var(--magenta-300));
-    border-radius: 2px;
-    box-shadow: var(--cyan-200-neon);
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    opacity: 0;
-  }
-
-  @include desktop {
-    &:hover {
-      transform: translateY(-3px);
-      color: var(--cyan-200);
-      text-shadow: 0 0 8px color-mix(in oklab, var(--cyan-200) 60%, #fff 40%);
-  
-      &::after {
-        transform: scaleX(1) translateY(3px);
-        transform-origin: bottom center;
-        opacity: 1;
-      }
-    }
-
-    &:active {
-      transform: translateY(-1px);
-      transition-duration: 0.1s;
-    }
-  }
-
-  @include mobile {
-    &:active {
-      color: var(--cyan-200);
-      background-color: color-mix(in oklab, var(--cyan-200) 15%, transparent 85%);
-      border-radius: 8px;
-      transition-duration: 0.1s;
-    }
-  }
-}
-
-.hoverGlow {
-  @extend .hoverUnderline;
-  
-  &::after {
-    display: none;
-  }
-  
-  @include desktop {
-    &:hover {
-      transform: scale(1.05);
     }
   }
 }

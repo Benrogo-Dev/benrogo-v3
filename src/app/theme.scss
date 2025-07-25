@@ -16,6 +16,20 @@
     inset 0 0 (0.6rem - $w * 0.03rem) $var;
 }
 
+@function generateTextNeon($color, $intensity) {
+  $var: var(--#{$color}-#{$intensity});
+  $w: ($intensity - 100) * 0.01;
+  $d: 30% - ($w * 5);
+  $n: 100% - $d;
+
+  @return
+    0 0 (0.2rem - $w * 0.01rem) color-mix(in oklab, $var $n, #fff $d),
+    0 0 (0.2rem - $w * 0.01rem) color-mix(in oklab, $var $n, #fff $d),
+    0 0 (0.8rem - $w * 0.04rem) color-mix(in oklab, $var $n, #000 $d),
+    0 0 (0.2rem - $w * 0.01rem) $var,
+    0 0 (1.2rem - $w * 0.06rem) $var;
+}
+
 $intensity-sl: (
   100: (100%, 85%),
   200: (95%, 70%),
@@ -44,6 +58,7 @@ $color-hues: (
 
       --#{$color}-#{$intensity}: #{$hsl};
       --#{$color}-#{$intensity}-neon: #{generateNeon($color, $intensity)};
+      --#{$color}-#{$intensity}-text-neon: #{generateTextNeon($color, $intensity)};
     }
   }
 
@@ -64,6 +79,12 @@ $color-hues: (
     --base-400-neon: var(--#{$color}-400-neon);
     --base-500-neon: var(--#{$color}-500-neon);
     --base-600-neon: var(--#{$color}-600-neon);
+    --base-100-text-neon: var(--#{$color}-100-text-neon);
+    --base-200-text-neon: var(--#{$color}-200-text-neon);
+    --base-300-text-neon: var(--#{$color}-300-text-neon);
+    --base-400-text-neon: var(--#{$color}-400-text-neon);
+    --base-500-text-neon: var(--#{$color}-500-text-neon);
+    --base-600-text-neon: var(--#{$color}-600-text-neon);
   }
 }
 
