@@ -2,12 +2,12 @@ import { Checkbox as BaseCheckbox } from "@base-ui-components/react/checkbox";
 import { Check } from "@mui/icons-material";
 import * as React from "react";
 import styles from "./Checkbox.module.scss";
-import type { BenrogoPaletteColor } from "@/utils/getColors";
+import type { ThemeColor } from "@/types/colors";
 
 interface CheckboxProps extends BaseCheckbox.Root.Props {
   label?: string;
   labelPosition?: "top" | "bottom" | "left" | "right";
-  color?: BenrogoPaletteColor;
+  color?: ThemeColor;
 }
 
 const Checkbox = ({

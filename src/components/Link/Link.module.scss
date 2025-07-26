@@ -1,11 +1,16 @@
 .Link {
   font-size: inherit;
   font-weight: bold;
-  color: white;
-  text-shadow: var(--base-300-text-neon);
+  font-family: inherit;
+  color: var(--base-300);
   transition: all 0.3s ease;
   position: relative;
   display: inline-block;
+
+  &[data-glow] {
+    color: white;
+    text-shadow: var(--base-300-text-neon);
+  }
 
   &::after {
     content: '';
@@ -22,9 +27,10 @@
     opacity: 0;
   }
 
-  &:hover, &.test {
+  &:hover {
     color: var(--base-300);
     text-shadow: none;
+    transform: translateY(-3px);
 
     &[data-hover-underline] {
       &::after {
@@ -32,7 +38,6 @@
         transform-origin: bottom center;
         opacity: 1;
       }
-      transform: translateY(-3px);
     }
   }
 }

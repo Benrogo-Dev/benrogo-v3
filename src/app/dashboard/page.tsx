@@ -27,7 +27,7 @@ const Home = async () => {
         </div>
       )}
       <div style={{ display: "flex", flexFlow: "row", gap: 10 }}>
-        <Checkbox color="scarlet" />
+        <Checkbox color="red" />
         <Checkbox color="orange" />
         <Checkbox color="green" />
         <Checkbox color="cyan" />
@@ -36,7 +36,7 @@ const Home = async () => {
       </div>
       <br/>
       <div style={{ display: "flex", flexFlow: "row", gap: 10 }}>
-        <Checkbox color="scarlet" defaultChecked />
+        <Checkbox color="red" defaultChecked />
         <Checkbox color="orange" defaultChecked />
         <Checkbox color="green" defaultChecked />
         <Checkbox color="cyan" defaultChecked />

@@ -1,12 +1,12 @@
 import { Switch as BaseSwitch } from "@base-ui-components/react/switch";
 import * as React from "react";
 import styles from "./Switch.module.scss";
-import type { BenrogoPaletteColor } from "@/utils/getColors";
+import type { ThemeColor } from "@/types/colors";
 
 interface SwitchProps extends BaseSwitch.Root.Props {
   label?: string;
   labelPosition?: "top" | "bottom" | "left" | "right";
-  color?: BenrogoPaletteColor;
+  color?: ThemeColor;
 }
 
 const Switch = ({

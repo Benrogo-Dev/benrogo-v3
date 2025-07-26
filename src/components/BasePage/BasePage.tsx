@@ -1,7 +1,6 @@
 import * as React from "react";
 import styles from "./BasePage.module.scss";
-import ParticleBackground from "./ParticleBackground";
-import Navbar from "./Navbar";
+import { ParticleBackground, Navbar } from "@/components";
 
 type BasePageProps = {
   children: React.ReactNode;

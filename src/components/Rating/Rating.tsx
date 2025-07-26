@@ -1,11 +1,11 @@
 import * as React from "react";
 import styles from "./Rating.module.scss";
-import type { BenrogoPaletteColor } from "@/utils/getColors";
+import type { ThemeColor } from "@/types/colors";
 
 interface RatingProps extends React.HtmlHTMLAttributes<HTMLDivElement> {
   value?: number;
   max?: number;
-  color?: BenrogoPaletteColor;
+  color?: ThemeColor;
 }
 
 const Rating = ({

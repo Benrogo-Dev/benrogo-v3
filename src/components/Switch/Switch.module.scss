@@ -20,7 +20,7 @@
   border-radius: 1.5rem;
   background-color: var(--base-500);
   box-shadow: var(--base-500-neon);
-  transition: all 0.2s ease-out;
+  transition: all 0.2s ease 0.1s;
   cursor: pointer;
 
   &[data-checked] {
@@ -51,7 +51,7 @@
   height: 100%;
   border-radius: 100%;
   background-color: white;
-  transition: translate 150ms ease;
+  transition: translate 0.2s ease;
 
   &[data-checked] {
     translate: 1rem 0;

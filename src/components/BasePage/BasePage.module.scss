@@ -1,14 +1,14 @@
-@use "./BenrogoThemeProvider/sizingMixins.scss" as *;
+@use "@/styles/sizingMixins" as *;
 
 .basePage {
   min-height: 100vh;
   display: flex;
   flex-flow: column;
-  padding: var(--basepage-spacing);
-  gap: var(--basepage-spacing);
+  padding: 10px;
+  gap: 10px;
 
   @include mobile {
-    gap: calc(var(--basepage-spacing) / 2)
+    gap: 6px;
   }
 }
 

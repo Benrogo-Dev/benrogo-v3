@@ -11,8 +11,9 @@ const Home = () => {
         flexFlow: "row",
         gap: 10
       }}>
-        <Button color="scarlet">Scarlet</Button>
+        <Button color="red">red</Button>
         <Button color="orange">Orange</Button>
+        <Button color="yellow">Yellow</Button>
         <Button color="green">Green</Button>
         <Button color="cyan">Cyan</Button>
         <Button color="blue">Blue</Button>
@@ -24,8 +25,9 @@ const Home = () => {
         flexFlow: "row",
         gap: 10
       }}>
-        <Button color="scarlet" disabled>Scarlet</Button>
+        <Button color="red" disabled>red</Button>
         <Button color="orange" disabled>Orange</Button>
+        <Button color="yellow" disabled>Yellow</Button>
         <Button color="green" disabled>Green</Button>
         <Button color="cyan" disabled>Cyan</Button>
         <Button color="blue" disabled>Blue</Button>
@@ -37,10 +39,12 @@ const Home = () => {
         flexFlow: "row",
         gap: 10
       }}>
-        <Checkbox color="scarlet" defaultChecked />
-        <Checkbox color="scarlet" />
+        <Checkbox color="red" defaultChecked />
+        <Checkbox color="red" />
         <Checkbox color="orange" defaultChecked />
         <Checkbox color="orange" />
+        <Checkbox color="yellow" defaultChecked />
+        <Checkbox color="yellow" />
         <Checkbox color="green" defaultChecked />
         <Checkbox color="green" />
         <Checkbox color="cyan" defaultChecked />
@@ -56,10 +60,12 @@ const Home = () => {
         flexFlow: "row",
         gap: 10
       }}>
-        <Checkbox color="scarlet" defaultChecked disabled />
-        <Checkbox color="scarlet" disabled />
+        <Checkbox color="red" defaultChecked disabled />
+        <Checkbox color="red" disabled />
         <Checkbox color="orange" defaultChecked disabled />
         <Checkbox color="orange" disabled />
+        <Checkbox color="yellow" defaultChecked disabled />
+        <Checkbox color="yellow" disabled />
         <Checkbox color="green" defaultChecked disabled />
         <Checkbox color="green" disabled />
         <Checkbox color="cyan" defaultChecked disabled />
@@ -75,8 +81,9 @@ const Home = () => {
         flexFlow: "row",
         gap: 10
       }}>
-        <Slider color="scarlet" defaultValue={50} />
+        <Slider color="red" defaultValue={50} />
         <Slider color="orange" defaultValue={50} />
+        <Slider color="yellow" defaultValue={50} />
         <Slider color="green" defaultValue={50} />
         <Slider color="cyan" defaultValue={50} />
         <Slider color="blue" defaultValue={50} />
@@ -88,8 +95,9 @@ const Home = () => {
         flexFlow: "row",
         gap: 10
       }}>
-        <Slider color="scarlet" defaultValue={50} disabled />
+        <Slider color="red" defaultValue={50} disabled />
         <Slider color="orange" defaultValue={50} disabled />
+        <Slider color="yellow" defaultValue={50} disabled />
         <Slider color="green" defaultValue={50} disabled />
         <Slider color="cyan" defaultValue={50} disabled />
         <Slider color="blue" defaultValue={50} disabled />
@@ -101,10 +109,12 @@ const Home = () => {
         flexFlow: "row",
         gap: 10,
       }}>
-        <Switch color="scarlet" />
-        <Switch color="scarlet" defaultChecked />
+        <Switch color="red" />
+        <Switch color="red" defaultChecked />
         <Switch color="orange" />
         <Switch color="orange" defaultChecked />
+        <Switch color="yellow" />
+        <Switch color="yellow" defaultChecked />
         <Switch color="green" />
         <Switch color="green" defaultChecked />
         <Switch color="cyan" />
@@ -120,10 +130,12 @@ const Home = () => {
         flexFlow: "row",
         gap: 10,
       }}>
-        <Switch color="scarlet" disabled />
-        <Switch color="scarlet" defaultChecked disabled />
+        <Switch color="red" disabled />
+        <Switch color="red" defaultChecked disabled />
         <Switch color="orange" disabled />
         <Switch color="orange" defaultChecked disabled />
+        <Switch color="yellow" disabled />
+        <Switch color="yellow" defaultChecked disabled />
         <Switch color="green" disabled />
         <Switch color="green" defaultChecked disabled />
         <Switch color="cyan" disabled />
@@ -139,8 +151,9 @@ const Home = () => {
         flexFlow: "row",
         gap: 10,
       }}>
-        <Rating value={0} color="scarlet" />
+        <Rating value={0} color="red" />
         <Rating value={0} color="orange" />
+        <Rating value={0} color="yellow" />
         <Rating value={0} color="green" />
         <Rating value={0} color="cyan" />
         <Rating value={0} color="blue" />
@@ -152,8 +165,9 @@ const Home = () => {
         flexFlow: "row",
         gap: 10,
       }}>
-        <Rating value={1} max={2} color="scarlet" />
+        <Rating value={1} max={2} color="red" />
         <Rating value={1} max={2} color="orange" />
+        <Rating value={1} max={2} color="yellow" />
         <Rating value={1} max={2} color="green" />
         <Rating value={1} max={2} color="cyan" />
         <Rating value={1} max={2} color="blue" />
@@ -165,8 +179,9 @@ const Home = () => {
         flexFlow: "row",
         gap: 10,
       }}>
-        <Rating value={2} max={2} color="scarlet" />
+        <Rating value={2} max={2} color="red" />
         <Rating value={2} max={2} color="orange" />
+        <Rating value={2} max={2} color="yellow" />
         <Rating value={2} max={2} color="green" />
         <Rating value={2} max={2} color="cyan" />
         <Rating value={2} max={2} color="blue" />
@@ -179,12 +194,13 @@ const Home = () => {
         flexFlow: "row",
         gap: 20,
       }}>
-        <Link href="#" color="scarlet">Underline off</Link>
-        <Link href="#" color="orange">Underline off</Link>
-        <Link href="#" color="green">Underline off</Link>
-        <Link href="#" color="cyan">Underline off</Link>
-        <Link href="#" color="blue">Underline off</Link>
-        <Link href="#" color="magenta">Underline off</Link>
+        <Link href="#" color="red">Example link</Link>
+        <Link href="#" color="orange">Example link</Link>
+        <Link href="#" color="yellow">Example link</Link>
+        <Link href="#" color="green">Example link</Link>
+        <Link href="#" color="cyan">Example link</Link>
+        <Link href="#" color="blue">Example link</Link>
+        <Link href="#" color="magenta">Example link</Link>
       </div>
       <br/>
       <div style={{
@@ -192,12 +208,41 @@ const Home = () => {
         flexFlow: "row",
         gap: 20,
       }}>
-        <Link href="#" hoverUnderline color="scarlet">Underline on</Link>
-        <Link href="#" hoverUnderline color="orange">Underline on</Link>
-        <Link href="#" hoverUnderline color="green">Underline on</Link>
-        <Link href="#" hoverUnderline color="cyan">Underline on</Link>
-        <Link href="#" hoverUnderline color="blue">Underline on</Link>
-        <Link href="#" hoverUnderline color="magenta">Underline on</Link>
+        <Link href="#" hoverUnderline color="red">Example link</Link>
+        <Link href="#" hoverUnderline color="orange">Example link</Link>
+        <Link href="#" hoverUnderline color="yellow">Example link</Link>
+        <Link href="#" hoverUnderline color="green">Example link</Link>
+        <Link href="#" hoverUnderline color="cyan">Example link</Link>
+        <Link href="#" hoverUnderline color="blue">Example link</Link>
+        <Link href="#" hoverUnderline color="magenta">Example link</Link>
+      </div>
+      <br/>
+      <div style={{
+        display: "flex",
+        flexFlow: "row",
+        gap: 20,
+      }}>
+        <Link href="#" glow color="red">Example link</Link>
+        <Link href="#" glow color="orange">Example link</Link>
+        <Link href="#" glow color="yellow">Example link</Link>
+        <Link href="#" glow color="green">Example link</Link>
+        <Link href="#" glow color="cyan">Example link</Link>
+        <Link href="#" glow color="blue">Example link</Link>
+        <Link href="#" glow color="magenta">Example link</Link>
+      </div>
+      <br/>
+      <div style={{
+        display: "flex",
+        flexFlow: "row",
+        gap: 20,
+      }}>
+        <Link href="#" glow hoverUnderline color="red">Example link</Link>
+        <Link href="#" glow hoverUnderline color="orange">Example link</Link>
+        <Link href="#" glow hoverUnderline color="yellow">Example link</Link>
+        <Link href="#" glow hoverUnderline color="green">Example link</Link>
+        <Link href="#" glow hoverUnderline color="cyan">Example link</Link>
+        <Link href="#" glow hoverUnderline color="blue">Example link</Link>
+        <Link href="#" glow hoverUnderline color="magenta">Example link</Link>
       </div>
     </>
   );

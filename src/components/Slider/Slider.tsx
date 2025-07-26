@@ -1,10 +1,10 @@
 import { Slider as BaseSlider } from "@base-ui-components/react/slider";
 import * as React from "react";
 import styles from "./Slider.module.scss";
-import type { BenrogoPaletteColor } from "@/utils/getColors";
+import type { ThemeColor } from "@/types/colors";
 
 interface SliderProps extends BaseSlider.Root.Props {
-  color?: BenrogoPaletteColor;
+  color?: ThemeColor;
 }
 
 const Checkbox = ({

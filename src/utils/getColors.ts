@@ -1,1 +1,0 @@
-export type BenrogoPaletteColor = "scarlet" |"orange" | "green" | "cyan" | "blue" | "magenta";

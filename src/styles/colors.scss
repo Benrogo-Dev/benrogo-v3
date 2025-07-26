@@ -40,12 +40,13 @@ $intensity-sl: (
 );
 
 $color-hues: (
-  "scarlet": 6,
-  "orange": 31,
+  "red": 0,
+  "orange": 30,
+  "yellow": 60,
   "green": 140,
-  "cyan": 175,
-  "blue": 219,
-  "magenta": 308
+  "cyan": 170,
+  "blue": 220,
+  "magenta": 300
 );
 
 :root {
@@ -86,27 +87,4 @@ $color-hues: (
     --base-500-text-neon: var(--#{$color}-500-text-neon);
     --base-600-text-neon: var(--#{$color}-600-text-neon);
   }
-}
-
-* {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
-}
-
-html, body {
-  color: var(--text-color);
-  color-scheme: dark;
-  overflow-x: hidden;
-
-  /* Font settings */
-  font-family: "Source Code Pro", monospace;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-a {
-  /* We style our own links around here */
-  color: inherit;
-  text-decoration: none;
 }

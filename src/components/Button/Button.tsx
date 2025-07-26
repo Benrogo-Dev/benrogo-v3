@@ -1,9 +1,9 @@
 import * as React from "react";
 import styles from "./Button.module.scss";
-import type { BenrogoPaletteColor } from "@/utils/getColors";
+import type { ThemeColor } from "@/types/colors";
 
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  color?: BenrogoPaletteColor;
+  color?: ThemeColor;
 }
 
 const Checkbox = ({

@@ -1,4 +1,6 @@
 export { default as BasePage } from "./BasePage";
+export { default as Navbar } from "./Navbar";
+export { default as ParticleBackground } from "./ParticleBackground";
 export { default as Checkbox } from "./Checkbox";
 export { default as Switch } from "./Switch";
 export { default as Slider } from "./Slider";
