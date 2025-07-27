@@ -11,7 +11,7 @@ const Home = () => {
         flexFlow: "row",
         gap: 10
       }}>
-        <Button color="red">red</Button>
+        <Button color="red">Red</Button>
         <Button color="orange">Orange</Button>
         <Button color="yellow">Yellow</Button>
         <Button color="green">Green</Button>
