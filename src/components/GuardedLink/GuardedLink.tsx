@@ -16,7 +16,7 @@ const getFragment = (text: string, fragmentOffset: number): string => {
   let fragment = "";
 
   for (let i = 0; i < text.length; i++) {
-    if ((i+fragmentOffset) % 3 === 0) {
+    if ((i+fragmentOffset) % 2 === 0) {
       fragment += text[i];
     } else {
       fragment += "&nbsp;";
@@ -39,8 +39,8 @@ const GuardedLink = ({
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setOffset((prevOffset) => (prevOffset + 1) % 3);
-    }, 20);
+      setOffset((prevOffset) => (prevOffset + 1) % 2);
+    }, 40);
 
     return () => clearInterval(interval);
   });
