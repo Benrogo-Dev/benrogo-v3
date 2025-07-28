@@ -29,21 +29,21 @@
     opacity: 0;
   }
 
-  &:hover {
+  &[data-hover-scale]:hover {
+    color: var(--base-300);
+    text-shadow: none;
+    transform: scale(1.05);
+  }
+
+  &[data-hover-underline]:hover {
     color: var(--base-300);
     text-shadow: none;
     transform: translateY(-3px);
 
-    &[data-hover-scale] {
-      transform: scale(1.05);
-    }
-
-    &[data-hover-underline] {
-      &::after {
-        transform: scaleX(1);
-        transform-origin: bottom center;
-        opacity: 1;
-      }
+    &::after {
+      transform: scaleX(1);
+      transform-origin: bottom center;
+      opacity: 1;
     }
   }
 }

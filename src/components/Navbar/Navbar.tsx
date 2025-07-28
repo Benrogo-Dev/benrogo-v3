@@ -40,11 +40,11 @@ const Navbar = ({
           />
         </div>
       </div>
-      <Link href={"/linkies"} fontSize={"1.2rem"} hoverUnderline glow>Linkies</Link>
-      <Link href={"/dashboard"} fontSize={"1.2rem"} hoverUnderline glow>Dashboard</Link>
-      <Link href={"/partners"} fontSize={"1.2rem"} hoverUnderline glow>Partners</Link>
-      <Link href={"/status"} fontSize={"1.2rem"} hoverUnderline glow>Status</Link>
-      <Link href={"/about"} fontSize={"1.2rem"} hoverUnderline glow>About</Link>
+      <Link href={"/linkies"} fontSize={"1.2rem"} clickShrink glow>Linkies</Link>
+      <Link href={"/dashboard"} fontSize={"1.2rem"} clickShrink glow>Dashboard</Link>
+      <Link href={"/partners"} fontSize={"1.2rem"} clickShrink glow>Partners</Link>
+      <Link href={"/status"} fontSize={"1.2rem"} clickShrink glow>Status</Link>
+      <Link href={"/about"} fontSize={"1.2rem"} clickShrink glow>About</Link>
       <AccountButton />
     </nav>
   );
