@@ -1,4 +1,3 @@
-import { Typography } from "@mui/material";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -44,7 +43,7 @@ export const metadata: Metadata = {
 const Home = () => {
   return (
     <>
-      <Typography fontSize={40}>Linkies</Typography>
+      Linkies
     </>
   );
 }

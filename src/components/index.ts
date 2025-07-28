@@ -7,3 +7,5 @@ export { default as Slider } from "./Slider";
 export { default as Button } from "./Button";
 export { default as Rating } from "./Rating";
 export { default as Link } from "./Link";
+export { default as Logo } from "./Logo";
+export { default as AccountButton } from "./AccountButton";

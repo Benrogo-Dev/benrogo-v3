@@ -6,6 +6,8 @@
   transition: all 0.3s ease;
   position: relative;
   display: inline-block;
+  width: fit-content;
+  height: fit-content;
 
   &[data-glow] {
     color: white;
@@ -18,7 +20,7 @@
     width: 100%;
     transform: scaleX(0);
     height: 2px;
-    bottom: -2px;
+    bottom: -4px;
     left: 0;
     background-color: var(--base-300);
     border-radius: 2px;

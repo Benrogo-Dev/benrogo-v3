@@ -1,0 +1,45 @@
+.Logo {
+  display: flex;
+  flex-flow: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.6rem;
+  height: fit-content;
+
+  &[data-glow] {
+    padding: 0.4rem;
+    border: 2px solid var(--base-300);
+    border-radius: 0.6rem;
+    box-shadow: var(--base-300-neon);
+  }
+
+  &.medium {
+    .LogoImage {
+      width: 4rem;
+    }
+
+    .LogoText {
+      font-size: 1.6rem;
+    }
+  }
+
+  &.large {
+    .LogoImage {
+      width: 6rem;
+    }
+
+    .LogoText {
+      font-size: 2rem;
+    }
+  }
+}
+
+.LogoImage {
+  width: 2.2rem;
+}
+
+.LogoText {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: inherit;
+}

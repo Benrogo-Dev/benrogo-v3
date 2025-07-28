@@ -1,10 +1,8 @@
-import { Checkbox, Switch, Slider, Button, Rating, Link } from "@/components";
+import { Checkbox, Switch, Slider, Button, Rating, Link, Logo } from "@/components";
 
 const Home = () => {
   return (
     <>
-      <br/>
-      <br/>
       <br/>
       <div style={{
         display: "flex",
@@ -243,6 +241,18 @@ const Home = () => {
         <Link href="#" glow hoverUnderline color="cyan">Example link</Link>
         <Link href="#" glow hoverUnderline color="blue">Example link</Link>
         <Link href="#" glow hoverUnderline color="magenta">Example link</Link>
+      </div>
+      <br/>
+      <div style={{
+        display: "flex",
+        flexFlow: "row",
+        gap: 20,
+      }}>
+        <Link href="#" glow>
+          <Logo size="small" imageUrl="/benrogo-old.png" text="Benrogo" />
+        </Link>
+        <Logo size="medium" imageUrl="/benrogo-old.png" text="Benrogo" glow />
+        <Logo size="large" imageUrl="/benrogo-old.png" text="Benrogo" />
       </div>
     </>
   );

@@ -1,55 +1,51 @@
 "use client"
 
-import { Link } from "@/components";
-import Image from "next/image";
+import { Link, Logo, AccountButton } from "@/components";
+import React, { useState } from "react";
 import styles from "./Navbar.module.scss";
-import { useState } from "react";
-import PlayArrowIcon from "@mui/icons-material/PlayArrow";
-import SignInButton from "./SignInButton";
+import type { ThemeColor } from "@/types/colors";
+import Icon from '@mdi/react';
+import { mdiTriangle } from "@mdi/js";
 
-const Navbar = () => {
-  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+interface NavbarProps extends React.HtmlHTMLAttributes<HTMLDivElement> {
+  color?: ThemeColor;
+}
 
-  const handleDropdown = () => {
-    setIsDropdownOpen((prevState) => !prevState);
+const Navbar = ({
+  color = "magenta",
+  ...props
+}: NavbarProps) => {
+  const [navbarExpanded, setNavbarExpanded] = useState(false);
+
+  const toggleExpansion = () => {
+    setNavbarExpanded((prevState) => !prevState);
   };
 
   return (
     <nav
-      className={`${styles.navBar} ${isDropdownOpen ? styles.expanded : ""}`}
-      suppressHydrationWarning
+      className={`${styles.Navbar} color-${color}`}
+      {...(navbarExpanded && { "data-expanded": 1 })}
+      {...props}
     >
-      <div className={`${styles.navGroup} ${styles.navGroupLeft}`}>
-        <div className={styles.topAlignmentContainer}>
-          <Link
-            href={"/"}
-            className={`${styles.navItem} ${styles.hoverGlow}`}
-          >
-            <Image
-              src="/benrogo-old.png"
-              alt="Benrogo logo"
-              width={40}
-              height={40}
-              priority
-            />
-            <p>Benrogo</p>
-          </Link>
-          <PlayArrowIcon
-            className={`${styles.dropdownIcon} ${styles.navItem} ${isDropdownOpen ? styles.open : ""}`}
-            onClick={handleDropdown}
-            fontSize="large"
+      <div className={styles.NavbarTopGroup}>
+        <Link href="/" hoverUnderline glow>
+          <Logo imageUrl="/benrogo-old.png" text="Benrogo" /> 
+        </Link>
+        <div className={styles.NavbarExpandArrowContainer} onClick={toggleExpansion}>
+          <Icon
+            path={mdiTriangle}
+            className={styles.NavbarExpandArrow}
+            size={1}
+            rotate={navbarExpanded ? 180 : 270}
           />
         </div>
-        <div className={styles.navDivider}></div>
-        <Link href={"/linkies"} fontSize={18} hoverUnderline>Linkies</Link>
-        <Link href={"/dashboard"} fontSize={18} hoverUnderline>Dashboard</Link>
-        <Link href={"/partners"} fontSize={18} hoverUnderline>Partners</Link>
-        <Link href={"/status"} fontSize={18} hoverUnderline>Status</Link>
-        <Link href={"/about"} fontSize={18} hoverUnderline>About</Link>
       </div>
-      <div className={`${styles.navGroup} ${styles.navGroupRight}`}>
-        <SignInButton />
-      </div>
+      <Link href={"/linkies"} fontSize={"1.2rem"} hoverUnderline glow>Linkies</Link>
+      <Link href={"/dashboard"} fontSize={"1.2rem"} hoverUnderline glow>Dashboard</Link>
+      <Link href={"/partners"} fontSize={"1.2rem"} hoverUnderline glow>Partners</Link>
+      <Link href={"/status"} fontSize={"1.2rem"} hoverUnderline glow>Status</Link>
+      <Link href={"/about"} fontSize={"1.2rem"} hoverUnderline glow>About</Link>
+      <AccountButton />
     </nav>
   );
 };
