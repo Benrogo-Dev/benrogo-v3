@@ -1,4 +1,4 @@
-import { Checkbox, Switch, Slider, Button, Rating, Link, Logo } from "@/components";
+import { Checkbox, Switch, Slider, Button, Rating, Link, Logo, GuardedLink } from "@/components";
 
 const Home = () => {
   return (
@@ -149,20 +149,6 @@ const Home = () => {
         flexFlow: "row",
         gap: 10,
       }}>
-        <Rating value={0} color="red" />
-        <Rating value={0} color="orange" />
-        <Rating value={0} color="yellow" />
-        <Rating value={0} color="green" />
-        <Rating value={0} color="cyan" />
-        <Rating value={0} color="blue" />
-        <Rating value={0} color="magenta" />
-      </div>
-      <br/>
-      <div style={{
-        display: "flex",
-        flexFlow: "row",
-        gap: 10,
-      }}>
         <Rating value={1} max={2} color="red" />
         <Rating value={1} max={2} color="orange" />
         <Rating value={1} max={2} color="yellow" />
@@ -170,20 +156,6 @@ const Home = () => {
         <Rating value={1} max={2} color="cyan" />
         <Rating value={1} max={2} color="blue" />
         <Rating value={1} max={2} color="magenta" />
-      </div>
-      <br/>
-      <div style={{
-        display: "flex",
-        flexFlow: "row",
-        gap: 10,
-      }}>
-        <Rating value={2} max={2} color="red" />
-        <Rating value={2} max={2} color="orange" />
-        <Rating value={2} max={2} color="yellow" />
-        <Rating value={2} max={2} color="green" />
-        <Rating value={2} max={2} color="cyan" />
-        <Rating value={2} max={2} color="blue" />
-        <Rating value={2} max={2} color="magenta" />
       </div>
       <br/>
       <br/>
@@ -253,6 +225,20 @@ const Home = () => {
         </Link>
         <Logo size="medium" imageUrl="/benrogo-old.png" text="Benrogo" glow />
         <Logo size="large" imageUrl="/benrogo-old.png" text="Benrogo" />
+      </div>
+      <br/>
+      <div style={{
+        display: "flex",
+        flexFlow: "row",
+        gap: 20,
+      }}>
+        <GuardedLink href="https://www.google.com" hoverUnderline color="red">www.google.com</GuardedLink>
+        <GuardedLink href="https://www.google.com" hoverUnderline color="orange">www.google.com</GuardedLink>
+        <GuardedLink href="https://www.google.com" hoverUnderline color="yellow">www.google.com</GuardedLink>
+        <GuardedLink href="https://www.google.com" hoverUnderline color="green">www.google.com</GuardedLink>
+        <GuardedLink href="https://www.google.com" hoverUnderline color="cyan">www.google.com</GuardedLink>
+        <GuardedLink href="https://www.google.com" hoverUnderline color="blue">www.google.com</GuardedLink>
+        <GuardedLink href="https://www.google.com" hoverUnderline color="magenta">www.google.com</GuardedLink>
       </div>
     </>
   );
