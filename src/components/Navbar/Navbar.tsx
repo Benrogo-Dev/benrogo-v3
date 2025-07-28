@@ -28,7 +28,7 @@ const Navbar = ({
       {...props}
     >
       <div className={styles.NavbarTopGroup}>
-        <Link href="/" hoverUnderline glow>
+        <Link href="/" hoverScale glow>
           <Logo imageUrl="/benrogo-old.png" text="Benrogo" /> 
         </Link>
         <div className={styles.NavbarExpandArrowContainer} onClick={toggleExpansion}>

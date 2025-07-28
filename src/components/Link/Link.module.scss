@@ -34,6 +34,10 @@
     text-shadow: none;
     transform: translateY(-3px);
 
+    &[data-hover-scale] {
+      transform: scale(1.05);
+    }
+
     &[data-hover-underline] {
       &::after {
         transform: scaleX(1);
