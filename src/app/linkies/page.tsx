@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { GuardedLink } from "@/components";
+import { GuardedLink, GuardedLinkProvider } from "@/components";
 
 export const metadata: Metadata = {
   title: "Linkies"
@@ -43,7 +43,7 @@ export const metadata: Metadata = {
 
 const Home = () => {
   return (
-    <>
+    <GuardedLinkProvider>
       <GuardedLink href="https://www.google.com" hoverUnderline color="red">www.google.com</GuardedLink>
       <GuardedLink href="https://www.google.com" hoverUnderline color="orange">www.google.com</GuardedLink>
       <GuardedLink href="https://www.google.com" hoverUnderline color="yellow">www.google.com</GuardedLink>
@@ -94,7 +94,7 @@ const Home = () => {
       <GuardedLink href="https://www.google.com" hoverUnderline color="blue">www.google.com</GuardedLink>
       <GuardedLink href="https://www.google.com" hoverUnderline color="magenta">www.google.com</GuardedLink>
       <GuardedLink href="https://www.google.com" hoverUnderline color="red">www.google.com</GuardedLink>
-    </>
+    </GuardedLinkProvider>
   );
 }
 

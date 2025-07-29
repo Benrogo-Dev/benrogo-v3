@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from "react";
 import styles from "./GuardedLink.module.scss";
 import type { ThemeColor } from "@/types/colors";
+import { useGuardedLinkContext } from "@/context/GuardedLinkContext";
 
 interface GuardedLinkProps extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
   hoverUnderline?: boolean;
@@ -35,19 +36,11 @@ const GuardedLink = ({
   ...props
 }: GuardedLinkProps) => {
   const [currentText, setCurrentText] = useState("");
-  const [offset, setOffset] = useState(0);
+  const { fragmentOffset } = useGuardedLinkContext();
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      setOffset((prevOffset) => (prevOffset + 1) % 2);
-    }, 40);
-
-    return () => clearInterval(interval);
-  });
-
-  useEffect(() => {
-    setCurrentText(getFragment(children, offset));
-  }, [children, offset]);
+    setCurrentText(getFragment(children, fragmentOffset));
+  }, [children, fragmentOffset]);
 
   return (
     <a

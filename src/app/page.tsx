@@ -1,4 +1,4 @@
-import { Checkbox, Switch, Slider, Button, Rating, Link, Logo, GuardedLink } from "@/components";
+import { Checkbox, Switch, Slider, Button, Rating, Link, Logo, GuardedLink, GuardedLinkProvider } from "@/components";
 
 const Home = () => {
   return (
@@ -232,13 +232,15 @@ const Home = () => {
         flexFlow: "row",
         gap: 20,
       }}>
-        <GuardedLink href="https://www.google.com" hoverUnderline color="red">www.google.com</GuardedLink>
-        <GuardedLink href="https://www.google.com" hoverUnderline color="orange">www.google.com</GuardedLink>
-        <GuardedLink href="https://www.google.com" hoverUnderline color="yellow">www.google.com</GuardedLink>
-        <GuardedLink href="https://www.google.com" hoverUnderline color="green">www.google.com</GuardedLink>
-        <GuardedLink href="https://www.google.com" hoverUnderline color="cyan">www.google.com</GuardedLink>
-        <GuardedLink href="https://www.google.com" hoverUnderline color="blue">www.google.com</GuardedLink>
-        <GuardedLink href="https://www.google.com" hoverUnderline color="magenta">www.google.com</GuardedLink>
+        <GuardedLinkProvider>
+          <GuardedLink href="https://www.google.com" hoverUnderline color="red">www.google.com</GuardedLink>
+          <GuardedLink href="https://www.google.com" hoverUnderline color="orange">www.google.com</GuardedLink>
+          <GuardedLink href="https://www.google.com" hoverUnderline color="yellow">www.google.com</GuardedLink>
+          <GuardedLink href="https://www.google.com" hoverUnderline color="green">www.google.com</GuardedLink>
+          <GuardedLink href="https://www.google.com" hoverUnderline color="cyan">www.google.com</GuardedLink>
+          <GuardedLink href="https://www.google.com" hoverUnderline color="blue">www.google.com</GuardedLink>
+          <GuardedLink href="https://www.google.com" hoverUnderline color="magenta">www.google.com</GuardedLink>
+        </GuardedLinkProvider>
       </div>
     </>
   );

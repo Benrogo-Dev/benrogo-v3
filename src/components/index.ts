@@ -10,3 +10,4 @@ export { default as Link } from "./Link";
 export { default as Logo } from "./Logo";
 export { default as AccountButton } from "./AccountButton";
 export { default as GuardedLink } from "./GuardedLink";
+export { default as GuardedLinkProvider } from "./GuardedLinkProvider";
