@@ -1,0 +1,121 @@
+@use "@/styles/sizingMixins" as *;
+
+.LinkTable {
+  display: table;
+  width: 100%;
+  padding: 1rem;
+  border-radius: 1rem;
+  border: 2px solid var(--base-300);
+  box-shadow: var(--base-300-neon);
+  transition: all 0.3s ease;
+
+  @include mobile {
+    border: none;
+    box-shadow: none;
+    display: flex;
+    justify-content: center;
+    padding: 0;
+  }
+}
+
+.LinkTableHead {
+  display: table-header-group;
+
+  & .LinkTableCell {
+    border-bottom: 2px solid var(--base-100);
+  }
+
+  @include mobile {
+    display: none;
+  }
+}
+
+.LinkTableBody {
+  display: table-row-group;
+
+  @include desktop {
+    & :first-child > .LinkTableCell {
+      padding-top: 1.5rem;
+    }
+  }
+
+  @include mobile {
+    display: flex;
+    flex-flow: column;
+    gap: 1rem;
+    width: 100%;
+  }
+}
+
+.LinkTableRow {
+  display: table-row;
+
+  & > :first-child {
+    width: 100%;
+    max-width: 30vw;
+    overflow: hidden;
+  }
+
+  @include mobile {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border-radius: 1rem;
+    border: 2px solid var(--base-300);
+    box-shadow: var(--base-300-neon);
+    padding-block: 0.5rem;
+
+    & > :first-child {
+      max-width: unset;
+      grid-column: 1 / span 2;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      & > :first-child {
+        width: 80%;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        text-align: left;
+      }
+    }
+
+    & > :nth-child(odd) {
+      margin-left: auto;
+      text-align: right;
+    }
+
+    & > :last-child > * {
+      margin-left: auto;
+    }
+  }
+}
+
+.LinkTableCell {
+  display: table-cell;
+  padding-inline: 1rem;
+  padding-block: 0.5rem;
+  vertical-align: middle;
+  white-space: nowrap;
+
+  @include mobile {
+    display: block;
+
+    &[data-label]::before {
+      content: attr(data-label);
+      font-size: 1.2rem;
+      font-weight: bold;
+      line-height: 2.5rem;
+    }
+  }
+}
+
+.LinkTableExpandArrow {
+  display: none;
+
+  @include mobile {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+  }
+}

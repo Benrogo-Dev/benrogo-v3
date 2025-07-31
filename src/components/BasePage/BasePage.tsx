@@ -12,9 +12,7 @@ const BasePage = ({ children }: BasePageProps) => {
       <ParticleBackground />
       <div className={styles.basePage}>
         <Navbar />
-        <div className={styles.content}>
-            { children }
-        </div>
+        { children }
       </div>
     </>
   );

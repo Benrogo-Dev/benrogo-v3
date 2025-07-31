@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { GuardedLink, GuardedLinkProvider } from "@/components";
+import { GuardedLink, GuardedLinkProvider, LinkTable } from "@/components";
 
 export const metadata: Metadata = {
   title: "Linkies"
@@ -43,58 +43,9 @@ export const metadata: Metadata = {
 
 const Home = () => {
   return (
-    <GuardedLinkProvider>
-      <GuardedLink href="https://www.google.com" hoverUnderline color="red">www.google.com</GuardedLink>
-      <GuardedLink href="https://www.google.com" hoverUnderline color="orange">www.google.com</GuardedLink>
-      <GuardedLink href="https://www.google.com" hoverUnderline color="yellow">www.google.com</GuardedLink>
-      <GuardedLink href="https://www.google.com" hoverUnderline color="green">www.google.com</GuardedLink>
-      <GuardedLink href="https://www.google.com" hoverUnderline color="cyan">www.google.com</GuardedLink>
-      <GuardedLink href="https://www.google.com" hoverUnderline color="blue">www.google.com</GuardedLink>
-      <GuardedLink href="https://www.google.com" hoverUnderline color="magenta">www.google.com</GuardedLink>
-      <GuardedLink href="https://www.google.com" hoverUnderline color="red">www.google.com</GuardedLink>
-      <GuardedLink href="https://www.google.com" hoverUnderline color="orange">www.google.com</GuardedLink>
-      <GuardedLink href="https://www.google.com" hoverUnderline color="yellow">www.google.com</GuardedLink>
-      <GuardedLink href="https://www.google.com" hoverUnderline color="green">www.google.com</GuardedLink>
-      <GuardedLink href="https://www.google.com" hoverUnderline color="cyan">www.google.com</GuardedLink>
-      <GuardedLink href="https://www.google.com" hoverUnderline color="blue">www.google.com</GuardedLink>
-      <GuardedLink href="https://www.google.com" hoverUnderline color="magenta">www.google.com</GuardedLink>
-      <GuardedLink href="https://www.google.com" hoverUnderline color="red">www.google.com</GuardedLink>
-      <GuardedLink href="https://www.google.com" hoverUnderline color="orange">www.google.com</GuardedLink>
-      <GuardedLink href="https://www.google.com" hoverUnderline color="yellow">www.google.com</GuardedLink>
-      <GuardedLink href="https://www.google.com" hoverUnderline color="green">www.google.com</GuardedLink>
-      <GuardedLink href="https://www.google.com" hoverUnderline color="cyan">www.google.com</GuardedLink>
-      <GuardedLink href="https://www.google.com" hoverUnderline color="blue">www.google.com</GuardedLink>
-      <GuardedLink href="https://www.google.com" hoverUnderline color="magenta">www.google.com</GuardedLink>
-      <GuardedLink href="https://www.google.com" hoverUnderline color="red">www.google.com</GuardedLink>
-      <GuardedLink href="https://www.google.com" hoverUnderline color="orange">www.google.com</GuardedLink>
-      <GuardedLink href="https://www.google.com" hoverUnderline color="yellow">www.google.com</GuardedLink>
-      <GuardedLink href="https://www.google.com" hoverUnderline color="green">www.google.com</GuardedLink>
-      <GuardedLink href="https://www.google.com" hoverUnderline color="cyan">www.google.com</GuardedLink>
-      <GuardedLink href="https://www.google.com" hoverUnderline color="blue">www.google.com</GuardedLink>
-      <GuardedLink href="https://www.google.com" hoverUnderline color="magenta">www.google.com</GuardedLink>
-      <GuardedLink href="https://www.google.com" hoverUnderline color="red">www.google.com</GuardedLink>
-      <GuardedLink href="https://www.google.com" hoverUnderline color="orange">www.google.com</GuardedLink>
-      <GuardedLink href="https://www.google.com" hoverUnderline color="yellow">www.google.com</GuardedLink>
-      <GuardedLink href="https://www.google.com" hoverUnderline color="green">www.google.com</GuardedLink>
-      <GuardedLink href="https://www.google.com" hoverUnderline color="cyan">www.google.com</GuardedLink>
-      <GuardedLink href="https://www.google.com" hoverUnderline color="blue">www.google.com</GuardedLink>
-      <GuardedLink href="https://www.google.com" hoverUnderline color="magenta">www.google.com</GuardedLink>
-      <GuardedLink href="https://www.google.com" hoverUnderline color="red">www.google.com</GuardedLink>
-      <GuardedLink href="https://www.google.com" hoverUnderline color="orange">www.google.com</GuardedLink>
-      <GuardedLink href="https://www.google.com" hoverUnderline color="yellow">www.google.com</GuardedLink>
-      <GuardedLink href="https://www.google.com" hoverUnderline color="green">www.google.com</GuardedLink>
-      <GuardedLink href="https://www.google.com" hoverUnderline color="cyan">www.google.com</GuardedLink>
-      <GuardedLink href="https://www.google.com" hoverUnderline color="blue">www.google.com</GuardedLink>
-      <GuardedLink href="https://www.google.com" hoverUnderline color="magenta">www.google.com</GuardedLink>
-      <GuardedLink href="https://www.google.com" hoverUnderline color="red">www.google.com</GuardedLink>
-      <GuardedLink href="https://www.google.com" hoverUnderline color="orange">www.google.com</GuardedLink>
-      <GuardedLink href="https://www.google.com" hoverUnderline color="yellow">www.google.com</GuardedLink>
-      <GuardedLink href="https://www.google.com" hoverUnderline color="green">www.google.com</GuardedLink>
-      <GuardedLink href="https://www.google.com" hoverUnderline color="cyan">www.google.com</GuardedLink>
-      <GuardedLink href="https://www.google.com" hoverUnderline color="blue">www.google.com</GuardedLink>
-      <GuardedLink href="https://www.google.com" hoverUnderline color="magenta">www.google.com</GuardedLink>
-      <GuardedLink href="https://www.google.com" hoverUnderline color="red">www.google.com</GuardedLink>
-    </GuardedLinkProvider>
+    <>
+      <LinkTable />
+    </>
   );
 }
 

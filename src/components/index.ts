@@ -11,3 +11,5 @@ export { default as Logo } from "./Logo";
 export { default as AccountButton } from "./AccountButton";
 export { default as GuardedLink } from "./GuardedLink";
 export { default as GuardedLinkProvider } from "./GuardedLinkProvider";
+export { default as LinkTable } from "./LinkTable";
+export { default as Typography } from "./Typography";
