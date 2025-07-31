@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Source_Code_Pro } from "next/font/google";
 import { SessionProvider } from "next-auth/react";
-import BasePage from "@/components/BasePage/BasePage";
 import "@/styles/layout.scss";
 import "@/styles/colors.scss";
 
@@ -27,9 +26,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={sourceCodePro.variable}>
         <SessionProvider>
-          <BasePage>
-            {children}
-          </BasePage>
+          {children}
         </SessionProvider>
       </body>
     </html>

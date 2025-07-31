@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { LinkTable } from "@/components";
+import { BasePage, LinkTable } from "@/components";
 
 export const metadata: Metadata = {
   title: "Linkies"
@@ -43,9 +43,9 @@ export const metadata: Metadata = {
 
 const Home = () => {
   return (
-    <>
+    <BasePage>
       <LinkTable />
-    </>
+    </BasePage>
   );
 }
 
