@@ -1,14 +1,14 @@
 "use client"
 
-import { Link, GuardedLink, Rating, Typography } from "@/components";
-import React, { useState } from "react";
+import { Link, Rating, Typography } from "@/components";
+import * as React from "react";
 import styles from "./LinkTable.module.scss";
 import type { ThemeColor } from "@/types/colors";
 import Icon from '@mdi/react';
 import { mdiTriangle } from "@mdi/js";
 
 interface LinkTableProps {
-  color: ThemeColor
+  color?: ThemeColor
 }
 
 const LinkTable = ({

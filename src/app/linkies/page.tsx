@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { GuardedLink, GuardedLinkProvider, LinkTable } from "@/components";
+import { LinkTable } from "@/components";
 
 export const metadata: Metadata = {
   title: "Linkies"
