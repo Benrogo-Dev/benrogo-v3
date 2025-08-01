@@ -19,7 +19,7 @@ const AccountButton = () => {
       }
       {
         pfpUrl ? (
-          <img src={pfpUrl} className={styles.AccountButtonProfilePicture} />
+          <img src={pfpUrl} className={styles.AccountButtonProfilePicture} alt="Profile picture" />
         ) : (
           <Icon
             path={mdiGithub}

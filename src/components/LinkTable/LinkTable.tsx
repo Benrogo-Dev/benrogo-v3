@@ -1,6 +1,6 @@
 "use client"
 
-import { Link, Rating, Typography } from "@/components";
+import { GuardedLink, GuardedLinkProvider, Rating, Typography } from "@/components";
 import * as React from "react";
 import styles from "./LinkTable.module.scss";
 import type { ThemeColor } from "@/types/colors";
@@ -24,7 +24,6 @@ const LinkTable = ({
   color = "magenta",
   linkData = []
 }: LinkTableProps) => {
-  // Track expanded state for each row by index
   const [expandedRows, setExpandedRows] = React.useState<Record<number, boolean>>({});
 
   const handleExpandClick = (i: number) => {
@@ -53,6 +52,7 @@ const LinkTable = ({
         </div>
       </div>
       <div className={styles.LinkTableBody}>
+        <GuardedLinkProvider>
         {
           linkData.map((link, i) => {
             const rowColor = (
@@ -70,7 +70,7 @@ const LinkTable = ({
                 data-expanded={expandedRows[i] ? 1 : undefined}
               >
                 <div className={styles.LinkTableCell} onClick={() => handleExpandClick(i)}>
-                  <Link href={link.url} color={rowColor}>{new URL(link.url).hostname}</Link>
+                  <GuardedLink href={link.url} color={rowColor}>{new URL(link.url).hostname}</GuardedLink>
                   <div className={styles.LinkTableExpandArrow}>
                     <Icon
                       path={mdiTriangle}
@@ -96,6 +96,7 @@ const LinkTable = ({
             );
           })
         }
+        </GuardedLinkProvider>
       </div>
     </div>
   );

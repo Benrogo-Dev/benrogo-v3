@@ -1,18 +1,16 @@
 import {
   createContext,
-  Dispatch,
-  SetStateAction,
   useContext,
 } from 'react';
 
 interface GuardedLinkContextType {
-  fragmentOffset: number;
-  setFragmentOffset: Dispatch<SetStateAction<number>>
+  timer: boolean;
+  guardEnabled: boolean;
 }
 
 export const GuardedLinkContext = createContext<GuardedLinkContextType>({
-  fragmentOffset: 0,
-  setFragmentOffset:  () => {}
+  timer: false,
+  guardEnabled: true
 });
 
 export const useGuardedLinkContext = () => {

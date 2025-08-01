@@ -13,17 +13,15 @@ interface GuardedLinkProps extends React.AnchorHTMLAttributes<HTMLAnchorElement>
   children: string;
 }
 
-const getFragment = (text: string, fragmentOffset: number): string => {
+const getRandomFragment = (text: string): string => {
   let fragment = "";
-
   for (let i = 0; i < text.length; i++) {
-    if ((i+fragmentOffset) % 2 === 0) {
-      fragment += text[i];
+    if (Math.random() < 0.35) {
+      fragment += "\u00A0";
     } else {
-      fragment += "&nbsp;";
+      fragment += text[i];
     }
   }
-
   return fragment;
 }
 
@@ -36,21 +34,27 @@ const GuardedLink = ({
   ...props
 }: GuardedLinkProps) => {
   const [currentText, setCurrentText] = useState("");
-  const { fragmentOffset } = useGuardedLinkContext();
+  const { timer, guardEnabled } = useGuardedLinkContext();
 
   useEffect(() => {
-    setCurrentText(getFragment(children, fragmentOffset));
-  }, [children, fragmentOffset]);
+    if (guardEnabled) {
+      setCurrentText(getRandomFragment(children));
+    } else {
+      setCurrentText(children);
+    }
+  }, [children, timer, guardEnabled]);
 
   return (
     <a
       {...props}
       className={`${styles.GuardedLink} color-${color}`}
-      style={{ fontSize }}
-      id="test-link"
-      dangerouslySetInnerHTML={{ __html: currentText }}
+      style={{
+        fontSize,
+      }}
+      draggable={false}
       {...(hoverUnderline && { 'data-hover-underline': 1 })}
       {...(glow && { 'data-glow': 1 })}
+      type={guardEnabled ? currentText : children}
     />
   );
 };
