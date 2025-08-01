@@ -72,7 +72,7 @@
       justify-content: space-between;
 
       & > :first-child {
-        width: 80%;
+        max-width: 80%;
         font-size: 1.2rem;
         overflow: hidden;
         text-overflow: ellipsis;

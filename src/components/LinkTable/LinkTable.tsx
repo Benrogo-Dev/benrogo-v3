@@ -67,14 +67,11 @@ const LinkTable = ({
               <div
                 className={styles.LinkTableRow}
                 key={i}
-                data-expanded={expandedRows[i] ? "true" : undefined}
+                data-expanded={expandedRows[i] ? 1 : undefined}
               >
-                <div className={styles.LinkTableCell}>
+                <div className={styles.LinkTableCell} onClick={() => handleExpandClick(i)}>
                   <Link href={link.url} color={rowColor}>{new URL(link.url).hostname}</Link>
-                  <div
-                    className={styles.LinkTableExpandArrow}
-                    onClick={() => handleExpandClick(i)}
-                  >
+                  <div className={styles.LinkTableExpandArrow}>
                     <Icon
                       path={mdiTriangle}
                       size={0.8}
