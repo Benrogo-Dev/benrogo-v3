@@ -50,7 +50,11 @@ const GuardedLink = ({
     if (linkRef.current) {
       linkRef.current.style.setProperty("--gl-text", `"${guardEnabled ? currentText : children}"`);
     }
-  }, [currentText]);
+  }, [
+    currentText,
+    guardEnabled,
+    children
+  ]);
 
   return (
     <a
