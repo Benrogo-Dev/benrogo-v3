@@ -20,7 +20,7 @@
   }
 
   &::before {
-    content: attr(type);
+    content: var(--gl-text);
   }
 
   &::after {

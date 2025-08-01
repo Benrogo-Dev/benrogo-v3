@@ -70,7 +70,7 @@ const LinkTable = ({
                 data-expanded={expandedRows[i] ? 1 : undefined}
               >
                 <div className={styles.LinkTableCell} onClick={() => handleExpandClick(i)}>
-                  <GuardedLink href={link.url} color={rowColor}>{new URL(link.url).hostname}</GuardedLink>
+                  <GuardedLink href={link.url} color={rowColor} hoverUnderline>{new URL(link.url).hostname}</GuardedLink>
                   <div className={styles.LinkTableExpandArrow}>
                     <Icon
                       path={mdiTriangle}

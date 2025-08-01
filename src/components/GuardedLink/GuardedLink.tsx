@@ -1,6 +1,6 @@
 "use client"
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import styles from "./GuardedLink.module.scss";
 import type { ThemeColor } from "@/types/colors";
 import { useGuardedLinkContext } from "@/context/GuardedLinkContext";
@@ -31,10 +31,12 @@ const GuardedLink = ({
   color = "magenta",
   fontSize,
   children,
+  href,
   ...props
 }: GuardedLinkProps) => {
   const [currentText, setCurrentText] = useState("");
   const { timer, guardEnabled } = useGuardedLinkContext();
+  const linkRef = useRef<HTMLAnchorElement>(null);
 
   useEffect(() => {
     if (guardEnabled) {
@@ -44,8 +46,15 @@ const GuardedLink = ({
     }
   }, [children, timer, guardEnabled]);
 
+  useEffect(() => {
+    if (linkRef.current) {
+      linkRef.current.style.setProperty("--gl-text", `"${guardEnabled ? currentText : children}"`);
+    }
+  }, [currentText]);
+
   return (
     <a
+      ref={linkRef}
       {...props}
       className={`${styles.GuardedLink} color-${color}`}
       style={{
@@ -54,7 +63,7 @@ const GuardedLink = ({
       draggable={false}
       {...(hoverUnderline && { 'data-hover-underline': 1 })}
       {...(glow && { 'data-glow': 1 })}
-      type={guardEnabled ? currentText : children}
+      onClick={() => {window.open(href, "_blank")}}
     />
   );
 };
