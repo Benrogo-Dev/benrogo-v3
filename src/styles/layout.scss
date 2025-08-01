@@ -2,6 +2,8 @@
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+  font-weight: bold;
+  font-family: "Source Code Pro", monospace;
 }
 
 html, body {
@@ -13,7 +15,6 @@ html, body {
 
 body {
   color: white;
-  font-family: "Source Code Pro", monospace;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }

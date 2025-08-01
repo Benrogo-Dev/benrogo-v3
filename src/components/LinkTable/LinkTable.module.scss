@@ -108,7 +108,6 @@
     &[data-label]::before {
       content: attr(data-label);
       font-size: 1.2rem;
-      font-weight: bold;
       line-height: 2.5rem;
     }
   }
