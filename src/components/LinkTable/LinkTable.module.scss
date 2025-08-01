@@ -62,7 +62,7 @@
     border-radius: 1rem;
     border: 2px solid var(--base-300);
     box-shadow: var(--base-300-neon);
-    padding-block: 0.5rem;
+    overflow: hidden;
 
     & > :first-child {
       max-width: unset;
@@ -73,10 +73,15 @@
 
       & > :first-child {
         width: 80%;
+        font-size: 1.2rem;
         overflow: hidden;
         text-overflow: ellipsis;
         text-align: left;
       }
+    }
+
+    &:not([data-expanded]) > :not(:first-child) {
+      display: none;
     }
 
     & > :nth-child(odd) {
@@ -118,4 +123,8 @@
     align-items: center;
     justify-content: center;
   }
+}
+
+.LinkTableExpandArrowIcon {
+  transition: all 0.4s ease;
 }

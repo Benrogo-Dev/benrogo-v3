@@ -44,7 +44,17 @@ export const metadata: Metadata = {
 const Home = () => {
   return (
     <BasePage>
-      <LinkTable />
+      <LinkTable
+        linkData={[
+          {
+            url: "https://www.google.com",
+            requests: 0,
+            status: "offline",
+            loadTime: 10.3,
+            reliability: 4.2
+          }
+        ]}
+      />
     </BasePage>
   );
 }

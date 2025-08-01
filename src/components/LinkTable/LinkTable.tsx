@@ -7,13 +7,30 @@ import type { ThemeColor } from "@/types/colors";
 import Icon from '@mdi/react';
 import { mdiTriangle } from "@mdi/js";
 
+interface LinkData {
+  url: string;
+  requests?: number;
+  status?: "online" | "offline" | "maintenance" | "unknown";
+  loadTime?: number;
+  reliability?: number;
+}
+
 interface LinkTableProps {
-  color?: ThemeColor
+  color?: ThemeColor;
+  linkData?: LinkData[];
 }
 
 const LinkTable = ({
-  color = "magenta"
+  color = "magenta",
+  linkData = []
 }: LinkTableProps) => {
+  // Track expanded state for each row by index
+  const [expandedRows, setExpandedRows] = React.useState<Record<number, boolean>>({});
+
+  const handleExpandClick = (i: number) => {
+    setExpandedRows(prev => ({ ...prev, [i]: !prev[i] }));
+  };
+
   return (
     <div className={`color-${color} ${styles.LinkTable}`}>
       <div className={styles.LinkTableHead}>
@@ -36,102 +53,52 @@ const LinkTable = ({
         </div>
       </div>
       <div className={styles.LinkTableBody}>
-        <div className={styles.LinkTableRow}>
-          <div className={styles.LinkTableCell}>
-            <Link href="#" hoverUnderline color="green">eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee</Link>
-            <div className={styles.LinkTableExpandArrow}>
-              <Icon
-                path={mdiTriangle}
-                size={0.8}
-                rotate={180}
-              />
-            </div>
-          </div>
-          <div className={styles.LinkTableCell} data-label="Requests">
-            <Typography color="green">1,829,384</Typography>
-          </div>
-          <div className={styles.LinkTableCell} data-label="Status">
-            <Typography color="green">ONLINE</Typography>
-          </div>
-          <div className={styles.LinkTableCell} data-label="Load time">
-            <Typography color="green">1.47s</Typography>
-          </div>
-          <div className={styles.LinkTableCell} data-label="Reliability">
-            <Rating value={5} max={10} color="green" />
-          </div>
-        </div>
-        <div className={styles.LinkTableRow}>
-          <div className={styles.LinkTableCell}>
-            <Link href="#" hoverUnderline color="yellow">www.google.com</Link>
-            <div className={styles.LinkTableExpandArrow}>
-              <Icon
-                path={mdiTriangle}
-                size={0.8}
-                rotate={180}
-              />
-            </div>
-          </div>
-          <div className={styles.LinkTableCell} data-label="Requests">
-            <Typography color="yellow">24,382</Typography>
-          </div>
-          <div className={styles.LinkTableCell} data-label="Status">
-            <Typography color="yellow">UNKNOWN</Typography>
-          </div>
-          <div className={styles.LinkTableCell} data-label="Load time">
-            <Typography color="yellow">N/A</Typography>
-          </div>
-          <div className={styles.LinkTableCell} data-label="Reliability">
-            <Rating value={0} max={10} color="yellow" />
-          </div>
-        </div>
-        <div className={styles.LinkTableRow}>
-          <div className={styles.LinkTableCell}>
-            <Link href="#" hoverUnderline color="orange">www.example.com</Link>
-            <div className={styles.LinkTableExpandArrow}>
-              <Icon
-                path={mdiTriangle}
-                size={0.8}
-                rotate={180}
-              />
-            </div>
-          </div>
-          <div className={styles.LinkTableCell} data-label="Requests">
-            <Typography color="orange">382,196</Typography>
-          </div>
-          <div className={styles.LinkTableCell} data-label="Status">
-            <Typography color="orange">MAINTENANCE</Typography>
-          </div>
-          <div className={styles.LinkTableCell} data-label="Load time">
-            <Typography color="orange">N/A</Typography>
-          </div>
-          <div className={styles.LinkTableCell} data-label="Reliability">
-            <Rating value={6.2} max={10} color="orange" />
-          </div>
-        </div>
-        <div className={styles.LinkTableRow}>
-          <div className={styles.LinkTableCell}>
-            <Link href="#" hoverUnderline color="red">www.benrogo.net</Link>
-            <div className={styles.LinkTableExpandArrow}>
-              <Icon
-                path={mdiTriangle}
-                size={0.8}
-                rotate={180}
-              />
-            </div>
-          </div>
-          <div className={styles.LinkTableCell} data-label="Requests">
-            <Typography color="red">382,129,386</Typography>
-          </div>
-          <div className={styles.LinkTableCell} data-label="Status">
-            <Typography color="red">OFFLINE</Typography>
-          </div>
-          <div className={styles.LinkTableCell} data-label="Load time">
-            <Typography color="red">N/A</Typography>
-          </div>
-          <div className={styles.LinkTableCell} data-label="Reliability">
-            <Rating value={3.1} max={10} color="red" />
-          </div>
-        </div>
+        {
+          linkData.map((link, i) => {
+            const rowColor = (
+              link.status === "online" ? "green" :
+              link.status === "offline" ? "red" :
+              link.status === "maintenance" ? "orange" :
+              link.status === "unknown" ? "yellow" :
+              "magenta"
+            );
+
+            return (
+              <div
+                className={styles.LinkTableRow}
+                key={i}
+                data-expanded={expandedRows[i] ? "true" : undefined}
+              >
+                <div className={styles.LinkTableCell}>
+                  <Link href={link.url} color={rowColor}>{new URL(link.url).hostname}</Link>
+                  <div
+                    className={styles.LinkTableExpandArrow}
+                    onClick={() => handleExpandClick(i)}
+                  >
+                    <Icon
+                      path={mdiTriangle}
+                      size={0.8}
+                      rotate={expandedRows[i] ? 180 : 270}
+                      className={styles.LinkTableExpandArrowIcon}
+                    />
+                  </div>
+                </div>
+                <div className={styles.LinkTableCell} data-label="Requests">
+                  <Typography color={rowColor}>{link.requests?.toLocaleString() ?? "ERROR"}</Typography>
+                </div>
+                <div className={styles.LinkTableCell} data-label="Status">
+                  <Typography color={rowColor}>{link.status?.toUpperCase() ?? "ERROR"}</Typography>
+                </div>
+                <div className={styles.LinkTableCell} data-label="Load time">
+                  <Typography color={rowColor}>{link?.loadTime ?? "N/A"}s</Typography>
+                </div>
+                <div className={styles.LinkTableCell} data-label="Reliability">
+                  <Rating value={link?.reliability ?? 0} max={10} color={rowColor} />
+                </div>
+              </div>
+            );
+          })
+        }
       </div>
     </div>
   );
