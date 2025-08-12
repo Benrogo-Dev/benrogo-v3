@@ -1,6 +1,6 @@
 @use "@/styles/sizingMixins" as *;
 
-.LinkTable {
+.LinkiesTable {
   display: table;
   width: 100%;
   padding: 1rem;
@@ -18,10 +18,10 @@
   }
 }
 
-.LinkTableHead {
+.LinkiesTableHead {
   display: table-header-group;
 
-  & .LinkTableCell {
+  & .LinkiesTableCell {
     border-bottom: 2px solid var(--base-100);
   }
 
@@ -30,11 +30,11 @@
   }
 }
 
-.LinkTableBody {
+.LinkiesTableBody {
   display: table-row-group;
 
   @include desktop {
-    & :first-child > .LinkTableCell {
+    & :first-child > .LinkiesTableCell {
       padding-top: 1.5rem;
     }
   }
@@ -47,7 +47,7 @@
   }
 }
 
-.LinkTableRow {
+.LinkiesTableRow {
   display: table-row;
 
   & > :first-child {
@@ -95,7 +95,7 @@
   }
 }
 
-.LinkTableCell {
+.LinkiesTableCell {
   display: table-cell;
   padding-inline: 1rem;
   padding-block: 0.5rem;
@@ -113,7 +113,7 @@
   }
 }
 
-.LinkTableExpandArrow {
+.LinkiesTableExpandArrow {
   display: none;
 
   @include mobile {
@@ -124,6 +124,20 @@
   }
 }
 
-.LinkTableExpandArrowIcon {
+.LinkiesTableExpandArrowIcon {
   transition: all 0.4s ease;
+}
+
+.LinkiesTablePlaceholder {
+  width: 100%;
+  height: 0.8rem;
+  border-radius: 0.25rem;
+  background-color: var(--base-600);
+  animation: pulse 1s infinite alternate;
+}
+
+@keyframes pulse {
+  0% { background-color: var(--base-600); }
+  100% { background-color: var(--base-500); }
+
 }

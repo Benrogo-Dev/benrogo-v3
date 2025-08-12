@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { BasePage, LinkTable } from "@/components";
+import { BasePage, LinkiesTable } from "@/components";
 
 export const metadata: Metadata = {
   title: "Linkies"
@@ -8,7 +8,7 @@ export const metadata: Metadata = {
 const Home = () => {
   return (
     <BasePage>
-      <LinkTable
+      <LinkiesTable
         linkData={[
           {
             url: "https://www.google.com",
