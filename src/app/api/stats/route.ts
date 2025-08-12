@@ -1,5 +1,4 @@
 
-import { NextRequest } from "next/server";
 import { BigQuery } from "@google-cloud/bigquery";
 
 export const GET = async (): Promise<Response> => {
