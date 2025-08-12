@@ -2,7 +2,7 @@
 import { NextRequest } from "next/server";
 import { BigQuery } from "@google-cloud/bigquery";
 
-export const GET = async (request: NextRequest): Promise<Response> => {
+export const GET = async (): Promise<Response> => {
   // Load credentials from environment variable
   const credentials = process.env.GOOGLE_CREDENTIALS ? JSON.parse(process.env.GOOGLE_CREDENTIALS) : undefined;
   const bigQueryClient = new BigQuery({
