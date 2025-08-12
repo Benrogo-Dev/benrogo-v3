@@ -46,4 +46,15 @@
       opacity: 1;
     }
   }
+
+  &[data-click-shrink]:active {
+    transform: scale(0.96);
+    color: var(--base-400);
+    text-shadow: none;
+  }
+
+  &[data-click-shrink]:active::after {
+    background-color: var(--base-400);
+    box-shadow: var(--base-400-neon);
+  }
 }
