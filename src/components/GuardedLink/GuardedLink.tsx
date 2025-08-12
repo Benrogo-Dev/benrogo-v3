@@ -32,6 +32,8 @@ const GuardedLink = ({
   fontSize,
   children,
   href,
+  target,
+  rel,
   ...props
 }: GuardedLinkProps) => {
   const [currentText, setCurrentText] = useState("");
@@ -60,6 +62,7 @@ const GuardedLink = ({
     <a
       ref={linkRef}
       {...props}
+      href={href}
       className={`${styles.GuardedLink} color-${color}`}
       style={{
         fontSize,
@@ -67,7 +70,8 @@ const GuardedLink = ({
       draggable={false}
       {...(hoverUnderline && { 'data-hover-underline': 1 })}
       {...(glow && { 'data-glow': 1 })}
-      onClick={() => {window.open(href, "_blank")}}
+      target={target ?? "_blank"}
+      rel={(target ?? "_blank") === "_blank" ? ["noopener", "noreferrer", ...(rel ? rel.split(" ") : [])].filter((v, i, a) => a.indexOf(v) === i).join(" ") : rel}
     />
   );
 };
