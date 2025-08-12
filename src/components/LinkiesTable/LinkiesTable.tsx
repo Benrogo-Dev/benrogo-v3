@@ -6,6 +6,7 @@ import styles from "./LinkiesTable.module.scss";
 import type { ThemeColor } from "@/types/colors";
 import Icon from '@mdi/react';
 import { mdiTriangle } from "@mdi/js";
+import { safeHostname } from "@/utils/url";
 
 interface LinkData {
   url: string;
@@ -70,7 +71,7 @@ const LinkiesTable = ({
                 data-expanded={expandedRows[i] ? 1 : undefined}
               >
                 <div className={styles.LinkiesTableCell} onClick={() => handleExpandClick(i)}>
-                  <GuardedLink href={link.url} color={rowColor} hoverUnderline>{new URL(link.url).hostname}</GuardedLink>
+                  <GuardedLink href={link.url} color={rowColor} hoverUnderline>{safeHostname(link.url)}</GuardedLink>
                   <div className={styles.LinkiesTableExpandArrow}>
                     <Icon
                       path={mdiTriangle}
