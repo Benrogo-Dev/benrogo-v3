@@ -7,7 +7,7 @@
   align-items: center;
   gap: 1rem;
   border: 2px solid var(--base-300);
-  border-radius: 1.2rem;
+  border-radius: 1rem;
   box-shadow: var(--base-300-neon);
   padding: 0.6rem;
 
@@ -50,7 +50,7 @@
   display: none;
   color: #ffffff;
   line-height: 0px;
-  transition: all 0.2s ease;
+  transition: all 0.4s ease;
 
   @include mobile {
     display: inline-block;

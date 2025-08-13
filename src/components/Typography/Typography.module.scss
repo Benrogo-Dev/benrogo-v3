@@ -1,0 +1,11 @@
+.Typography {
+  font-size: inherit;
+  font-family: inherit;
+  color: var(--base-300);
+  transition: all 0.3s ease;
+
+  &[data-glow] {
+    color: white;
+    text-shadow: var(--base-300-text-neon);
+  }
+}

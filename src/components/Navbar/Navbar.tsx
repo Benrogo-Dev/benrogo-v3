@@ -28,8 +28,8 @@ const Navbar = ({
       {...props}
     >
       <div className={styles.NavbarTopGroup}>
-        <Link href="/" hoverUnderline glow>
-          <Logo imageUrl="/benrogo-old.png" text="Benrogo" /> 
+        <Link href="/" hoverUnderline glow color="blue">
+          <Logo imageUrl="/benrogo-old.png" text="Benrogo" color="blue" /> 
         </Link>
         <div className={styles.NavbarExpandArrowContainer} onClick={toggleExpansion}>
           <Icon
@@ -40,11 +40,11 @@ const Navbar = ({
           />
         </div>
       </div>
-      <Link href={"/linkies"} fontSize={"1.2rem"} hoverUnderline glow>Linkies</Link>
-      <Link href={"/dashboard"} fontSize={"1.2rem"} hoverUnderline glow>Dashboard</Link>
-      <Link href={"/partners"} fontSize={"1.2rem"} hoverUnderline glow>Partners</Link>
-      <Link href={"/status"} fontSize={"1.2rem"} hoverUnderline glow>Status</Link>
-      <Link href={"/about"} fontSize={"1.2rem"} hoverUnderline glow>About</Link>
+      <Link href="/linkies" fontSize="1.2rem" hoverUnderline glow>Linkies</Link>
+      <Link href="/dashboard" fontSize="1.2rem" hoverUnderline glow>Dashboard</Link>
+      <Link href="/partners" fontSize="1.2rem" hoverUnderline glow>Partners</Link>
+      <Link href="/status" fontSize="1.2rem" hoverUnderline glow>Status</Link>
+      <Link href="/about" fontSize="1.2rem" hoverUnderline glow>About</Link>
       <AccountButton />
     </nav>
   );
