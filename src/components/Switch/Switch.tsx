@@ -23,12 +23,12 @@ const Switch = ({
   );
 
   return (
-    <label className={styles.Label} style={{ flexFlow }}>
+    <div className={styles.Container} style={{ flexFlow }}>
       <BaseSwitch.Root {...props} className={`${styles.Switch} color-${color}`}>
         <BaseSwitch.Thumb className={styles.Thumb} />
       </BaseSwitch.Root>
       {label}
-    </label>
+    </div>
   )
 };
 
