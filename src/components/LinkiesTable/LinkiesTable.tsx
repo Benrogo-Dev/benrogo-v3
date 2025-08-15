@@ -22,6 +22,9 @@ interface LinkiesTableProps {
   onlineOnly?: boolean;
 }
 
+type SortColumn = 'domain' | 'requests' | 'reliability' | 'status' | 'loadTime';
+type SortDirection = 'asc' | 'desc';
+
 const LinkiesTable = ({
   color = "magenta",
   linkData,
@@ -29,42 +32,141 @@ const LinkiesTable = ({
 }: LinkiesTableProps) => {
   const [expandedRows, setExpandedRows] = React.useState<Record<number, boolean>>({});
   const [showOnlineOnly, setShowOnlineOnly] = React.useState(onlineOnly);
+  const [sortColumn, setSortColumn] = React.useState<SortColumn | null>(null);
+  const [sortDirection, setSortDirection] = React.useState<SortDirection>('asc');
 
   const handleExpandClick = (i: number) => {
     setExpandedRows(prev => ({ ...prev, [i]: !prev[i] }));
   };
 
-  const filteredLinkData = React.useMemo(() => {
+  const handleSort = (column: SortColumn) => {
+    if (sortColumn === column) {
+      setSortDirection(sortDirection === 'asc' ? 'desc' : 'asc');
+    } else {
+      setSortColumn(column);
+      setSortDirection('asc');
+    }
+  };
+
+  const sortedAndFilteredData = React.useMemo(() => {
     if (!linkData) return undefined;
-    return showOnlineOnly ? linkData.filter(link => link.status === "online") : linkData;
-  }, [linkData, showOnlineOnly]);
+    
+    let filtered = showOnlineOnly ? linkData.filter(link => link.status === "online") : linkData;
+    
+    if (!sortColumn) return filtered;
+    
+    return [...filtered].sort((a, b) => {
+      let aValue: any;
+      let bValue: any;
+      
+      switch (sortColumn) {
+        case 'domain':
+          aValue = safeHostname(a.url).toLowerCase();
+          bValue = safeHostname(b.url).toLowerCase();
+          break;
+        case 'requests':
+          aValue = a.requests ?? 0;
+          bValue = b.requests ?? 0;
+          break;
+        case 'reliability':
+          aValue = a.reliability ?? 0;
+          bValue = b.reliability ?? 0;
+          break;
+        case 'loadTime':
+          aValue = a.loadTime ?? 0;
+          bValue = b.loadTime ?? 0;
+          break;
+        case 'status':
+          const statusOrder = { online: 4, maintenance: 3, unknown: 2, offline: 1 };
+          aValue = statusOrder[a.status as keyof typeof statusOrder] ?? 0;
+          bValue = statusOrder[b.status as keyof typeof statusOrder] ?? 0;
+          break;
+        default:
+          return 0;
+      }
+      
+      if (aValue < bValue) return sortDirection === 'asc' ? -1 : 1;
+      if (aValue > bValue) return sortDirection === 'asc' ? 1 : -1;
+      return 0;
+    });
+  }, [linkData, showOnlineOnly, sortColumn, sortDirection]);
 
   return (
     <>
       <div className={`color-${color} ${styles.LinkiesTable}`}>
       <div className={styles.LinkiesTableHead}>
         <div className={styles.LinkiesTableRow}>
-          <div className={styles.LinkiesTableCell}>
-            <Typography glow>Link</Typography>
+          <div className={`${styles.LinkiesTableCell} ${styles.SortableHeader}`} onClick={() => handleSort('domain')}>
+            <Typography glow>
+              Link
+              {sortColumn === 'domain' && (
+                <Icon
+                  path={mdiTriangle}
+                  size={0.6}
+                  rotate={sortDirection === 'asc' ? 0 : 180}
+                  className={styles.SortIcon}
+                />
+              )}
+            </Typography>
           </div>
-          <div className={styles.LinkiesTableCell}>
-            <Typography glow>Requests (1 week)</Typography>
+          <div className={`${styles.LinkiesTableCell} ${styles.SortableHeader}`} onClick={() => handleSort('requests')}>
+            <Typography glow>
+              Requests (1 week)
+              {sortColumn === 'requests' && (
+                <Icon
+                  path={mdiTriangle}
+                  size={0.6}
+                  rotate={sortDirection === 'asc' ? 0 : 180}
+                  className={styles.SortIcon}
+                />
+              )}
+            </Typography>
           </div>
-          <div className={styles.LinkiesTableCell}>
-            <Typography glow>Status</Typography>
+          <div className={`${styles.LinkiesTableCell} ${styles.SortableHeader}`} onClick={() => handleSort('status')}>
+            <Typography glow>
+              Status
+              {sortColumn === 'status' && (
+                <Icon
+                  path={mdiTriangle}
+                  size={0.6}
+                  rotate={sortDirection === 'asc' ? 0 : 180}
+                  className={styles.SortIcon}
+                />
+              )}
+            </Typography>
           </div>
-          <div className={styles.LinkiesTableCell}>
-            <Typography glow>Load time</Typography>
+          <div className={`${styles.LinkiesTableCell} ${styles.SortableHeader}`} onClick={() => handleSort('loadTime')}>
+            <Typography glow>
+              Load time
+              {sortColumn === 'loadTime' && (
+                <Icon
+                  path={mdiTriangle}
+                  size={0.6}
+                  rotate={sortDirection === 'asc' ? 0 : 180}
+                  className={styles.SortIcon}
+                />
+              )}
+            </Typography>
           </div>
-          <div className={styles.LinkiesTableCell}>
-            <Typography glow>Reliability</Typography>
+          <div className={`${styles.LinkiesTableCell} ${styles.SortableHeader}`} onClick={() => handleSort('reliability')}>
+            <Typography glow>
+              Reliability
+              {sortColumn === 'reliability' && (
+                <Icon
+                  path={mdiTriangle}
+                  size={0.6}
+                  rotate={sortDirection === 'asc' ? 0 : 180}
+                  className={styles.SortIcon}
+                />
+              )}
+            </Typography>
           </div>
         </div>
       </div>
       <div className={styles.LinkiesTableBody}>
         <GuardedLinkProvider>
         {
-          filteredLinkData ? filteredLinkData.map((link, i) => {
+          sortedAndFilteredData ? sortedAndFilteredData.map((link, i) => {
             const rowColor = (
               link.status === "online" ? "green" :
               link.status === "offline" ? "red" :

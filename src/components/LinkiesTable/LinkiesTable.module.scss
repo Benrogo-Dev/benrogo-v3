@@ -125,6 +125,29 @@
   }
 }
 
+.SortableHeader {
+  cursor: pointer;
+  user-select: none;
+  transition: opacity 0.2s ease;
+
+  &:hover {
+    opacity: 0.8;
+  }
+
+  @include mobile {
+    cursor: default;
+  }
+}
+
+.SortIcon {
+  transition: transform 0.2s ease;
+  margin-left: 0.5rem;
+
+  @include mobile {
+    display: none;
+  }
+}
+
 .LinkiesTableExpandArrow {
   display: none;
 
