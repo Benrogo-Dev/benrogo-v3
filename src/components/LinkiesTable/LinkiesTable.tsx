@@ -51,13 +51,13 @@ const LinkiesTable = ({
   const sortedAndFilteredData = React.useMemo(() => {
     if (!linkData) return undefined;
     
-    let filtered = showOnlineOnly ? linkData.filter(link => link.status === "online") : linkData;
+    const filtered = showOnlineOnly ? linkData.filter(link => link.status === "online") : linkData;
     
     if (!sortColumn) return filtered;
     
     return [...filtered].sort((a, b) => {
-      let aValue: any;
-      let bValue: any;
+      let aValue: number | string;
+      let bValue: number | string;
       
       switch (sortColumn) {
         case 'domain':
