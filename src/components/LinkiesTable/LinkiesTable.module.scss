@@ -18,6 +18,18 @@
   }
 }
 
+.LinkiesTableControls {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 1rem;
+  width: 100%;
+  
+  @include mobile {
+    justify-content: center;
+    margin-top: 1rem;
+  }
+}
+
 .LinkiesTableHead {
   display: table-header-group;
 

@@ -1,6 +1,6 @@
 "use client"
 
-import { GuardedLink, GuardedLinkProvider, Rating, Typography } from "@/components";
+import { GuardedLink, GuardedLinkProvider, Rating, Switch, Typography } from "@/components";
 import * as React from "react";
 import styles from "./LinkiesTable.module.scss";
 import type { ThemeColor } from "@/types/colors";
@@ -19,20 +19,29 @@ interface LinkData {
 interface LinkiesTableProps {
   color?: ThemeColor;
   linkData?: LinkData[];
+  onlineOnly?: boolean;
 }
 
 const LinkiesTable = ({
   color = "magenta",
-  linkData
+  linkData,
+  onlineOnly = false
 }: LinkiesTableProps) => {
   const [expandedRows, setExpandedRows] = React.useState<Record<number, boolean>>({});
+  const [showOnlineOnly, setShowOnlineOnly] = React.useState(onlineOnly);
 
   const handleExpandClick = (i: number) => {
     setExpandedRows(prev => ({ ...prev, [i]: !prev[i] }));
   };
 
+  const filteredLinkData = React.useMemo(() => {
+    if (!linkData) return undefined;
+    return showOnlineOnly ? linkData.filter(link => link.status === "online") : linkData;
+  }, [linkData, showOnlineOnly]);
+
   return (
-    <div className={`color-${color} ${styles.LinkiesTable}`}>
+    <>
+      <div className={`color-${color} ${styles.LinkiesTable}`}>
       <div className={styles.LinkiesTableHead}>
         <div className={styles.LinkiesTableRow}>
           <div className={styles.LinkiesTableCell}>
@@ -55,7 +64,7 @@ const LinkiesTable = ({
       <div className={styles.LinkiesTableBody}>
         <GuardedLinkProvider>
         {
-          linkData ? linkData.map((link, i) => {
+          filteredLinkData ? filteredLinkData.map((link, i) => {
             const rowColor = (
               link.status === "online" ? "green" :
               link.status === "offline" ? "red" :
@@ -125,7 +134,17 @@ const LinkiesTable = ({
         }
         </GuardedLinkProvider>
       </div>
-    </div>
+      </div>
+      <div className={styles.LinkiesTableControls}>
+        <Switch
+          label="Show online linkies only"
+          labelPosition="right"
+          color={color}
+          checked={showOnlineOnly}
+          onCheckedChange={setShowOnlineOnly}
+        />
+      </div>
+    </>
   );
 };
 
