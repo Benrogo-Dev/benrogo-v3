@@ -19,7 +19,8 @@ interface LinkData {
 interface LinkiesTableProps {
   color?: ThemeColor;
   linkData?: LinkData[];
-  onlineOnly?: boolean;
+  onlineOnly: boolean;
+  onOnlineOnlyChange?: (value: boolean) => void;
 }
 
 type SortColumn = 'domain' | 'requests' | 'reliability' | 'status' | 'loadTime';
@@ -28,10 +29,10 @@ type SortDirection = 'asc' | 'desc';
 const LinkiesTable = ({
   color = "magenta",
   linkData,
-  onlineOnly = false
+  onlineOnly,
+  onOnlineOnlyChange
 }: LinkiesTableProps) => {
   const [expandedRows, setExpandedRows] = React.useState<Record<number, boolean>>({});
-  const [showOnlineOnly, setShowOnlineOnly] = React.useState(onlineOnly);
   const [sortColumn, setSortColumn] = React.useState<SortColumn | null>(null);
   const [sortDirection, setSortDirection] = React.useState<SortDirection>('asc');
 
@@ -48,14 +49,12 @@ const LinkiesTable = ({
     }
   };
 
-  const sortedAndFilteredData = React.useMemo(() => {
+  const sortedData = React.useMemo(() => {
     if (!linkData) return undefined;
     
-    const filtered = showOnlineOnly ? linkData.filter(link => link.status === "online") : linkData;
+    if (!sortColumn) return linkData;
     
-    if (!sortColumn) return filtered;
-    
-    return [...filtered].sort((a, b) => {
+    return [...linkData].sort((a, b) => {
       let aValue: number | string;
       let bValue: number | string;
       
@@ -89,7 +88,7 @@ const LinkiesTable = ({
       if (aValue > bValue) return sortDirection === 'asc' ? 1 : -1;
       return 0;
     });
-  }, [linkData, showOnlineOnly, sortColumn, sortDirection]);
+  }, [linkData, sortColumn, sortDirection]);
 
   return (
     <>
@@ -166,7 +165,7 @@ const LinkiesTable = ({
       <div className={styles.LinkiesTableBody}>
         <GuardedLinkProvider>
         {
-          sortedAndFilteredData ? sortedAndFilteredData.map((link, i) => {
+          sortedData ? sortedData.map((link, i) => {
             const rowColor = (
               link.status === "online" ? "green" :
               link.status === "offline" ? "red" :
@@ -242,8 +241,8 @@ const LinkiesTable = ({
           label="Show online linkies only"
           labelPosition="right"
           color={color}
-          checked={showOnlineOnly}
-          onCheckedChange={setShowOnlineOnly}
+          checked={onlineOnly}
+          onCheckedChange={onOnlineOnlyChange}
         />
       </div>
     </>
