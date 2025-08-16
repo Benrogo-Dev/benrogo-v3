@@ -92,7 +92,7 @@ const LinkiesTable = ({
 
   return (
     <>
-      <div className={styles.LinkiesTableControls}>
+      <div className={`color-${color} ${styles.LinkiesTableControls}`}>
         <Switch
           label="Show online linkies only"
           labelPosition="right"
