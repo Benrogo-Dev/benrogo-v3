@@ -21,12 +21,12 @@
 .LinkiesTableControls {
   display: flex;
   justify-content: flex-end;
-  margin-top: 1rem;
+  margin-bottom: 1rem;
   width: 100%;
   
   @include mobile {
     justify-content: center;
-    margin-top: 1rem;
+    margin-bottom: 1rem;
   }
 }
 

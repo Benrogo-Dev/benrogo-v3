@@ -92,6 +92,15 @@ const LinkiesTable = ({
 
   return (
     <>
+      <div className={styles.LinkiesTableControls}>
+        <Switch
+          label="Show online linkies only"
+          labelPosition="right"
+          color="green"
+          checked={onlineOnly}
+          onCheckedChange={onOnlineOnlyChange}
+        />
+      </div>
       <div className={`color-${color} ${styles.LinkiesTable}`}>
       <div className={styles.LinkiesTableHead}>
         <div className={styles.LinkiesTableRow}>
@@ -235,15 +244,6 @@ const LinkiesTable = ({
         }
         </GuardedLinkProvider>
       </div>
-      </div>
-      <div className={styles.LinkiesTableControls}>
-        <Switch
-          label="Show online linkies only"
-          labelPosition="right"
-          color={color}
-          checked={onlineOnly}
-          onCheckedChange={onOnlineOnlyChange}
-        />
       </div>
     </>
   );
