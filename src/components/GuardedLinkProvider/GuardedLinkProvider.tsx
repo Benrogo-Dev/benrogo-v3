@@ -1,15 +1,15 @@
-"use client"
+'use client';
 
 import { GuardedLinkContext } from '@/context/GuardedLinkContext';
 import React, { useState, useEffect } from 'react';
-import extensions from "@config/extensions.json";
+import extensions from '@config/extensions.json';
 
 const extensionUrls: string[] = Object.values(extensions)
   .filter((ext) => ext.aiDetection)
   .flatMap((ext) => ext.detectionUrls);
 
 const isChrome = () => {
-  if (typeof window === "undefined" || typeof navigator === "undefined") return false;
+  if (typeof window === 'undefined' || typeof navigator === 'undefined') return false;
   return /Chrome/.test(navigator.userAgent) && !/Edg|OPR/.test(navigator.userAgent);
 };
 

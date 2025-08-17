@@ -18,6 +18,20 @@
   }
 }
 
+.LinkiesTableControls {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding-inline: 1rem;
+  gap: 0.5rem;
+  width: 100%;
+  
+  @include mobile {
+    justify-content: center;
+    padding-inline: 0;
+  }
+}
+
 .LinkiesTableHead {
   display: table-header-group;
 
@@ -113,6 +127,29 @@
   }
 }
 
+.SortableHeader {
+  cursor: pointer;
+  user-select: none;
+  transition: opacity 0.2s ease;
+
+  &:hover {
+    opacity: 0.8;
+  }
+
+  @include mobile {
+    cursor: default;
+  }
+}
+
+.SortIcon {
+  transition: transform 0.2s ease;
+  margin-left: 0.5rem;
+
+  @include mobile {
+    display: none;
+  }
+}
+
 .LinkiesTableExpandArrow {
   display: none;
 
@@ -132,12 +169,16 @@
   width: 100%;
   height: 0.8rem;
   border-radius: 0.25rem;
-  background-color: var(--base-600);
+  background-color: var(--magenta-600);
   animation: pulse 1s infinite alternate;
+
+  &.error {
+    background-color: var(--red-400);
+    animation: none;
+  }
 }
 
 @keyframes pulse {
   0% { background-color: var(--base-600); }
   100% { background-color: var(--base-500); }
-
 }

@@ -1,6 +1,6 @@
-import * as React from "react";
-import styles from "./Typography.module.scss";
-import type { ThemeColor } from "@/types/colors";
+import * as React from 'react';
+import styles from './Typography.module.scss';
+import type { ThemeColor } from '@/types/colors';
 
 interface LinkProps extends React.AnchorHTMLAttributes<HTMLParagraphElement> {
   glow?: boolean;

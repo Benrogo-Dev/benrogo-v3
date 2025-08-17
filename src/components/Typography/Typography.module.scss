@@ -3,6 +3,9 @@
   font-family: inherit;
   color: var(--base-300);
   transition: all 0.3s ease;
+  display: flex;
+  flex-flow: row;
+  align-items: center;
 
   &[data-glow] {
     color: white;

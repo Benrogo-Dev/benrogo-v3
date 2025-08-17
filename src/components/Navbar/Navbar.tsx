@@ -1,18 +1,18 @@
-"use client"
+'use client';
 
-import { Link, Logo, AccountButton } from "@/components";
-import React, { useState } from "react";
-import styles from "./Navbar.module.scss";
-import type { ThemeColor } from "@/types/colors";
+import { Link, Logo, AccountButton } from '@/components';
+import React, { useState } from 'react';
+import styles from './Navbar.module.scss';
+import type { ThemeColor } from '@/types/colors';
 import Icon from '@mdi/react';
-import { mdiTriangle } from "@mdi/js";
+import { mdiTriangle } from '@mdi/js';
 
 interface NavbarProps extends React.HtmlHTMLAttributes<HTMLDivElement> {
   color?: ThemeColor;
 }
 
 const Navbar = ({
-  color = "magenta",
+  color = 'magenta',
   ...props
 }: NavbarProps) => {
   const [navbarExpanded, setNavbarExpanded] = useState(false);
@@ -24,12 +24,12 @@ const Navbar = ({
   return (
     <nav
       className={`${styles.Navbar} color-${color}`}
-      {...(navbarExpanded && { "data-expanded": 1 })}
+      {...(navbarExpanded && { 'data-expanded': 1 })}
       {...props}
     >
       <div className={styles.NavbarTopGroup}>
         <Link href="/" hoverUnderline glow color="blue">
-          <Logo imageUrl="/benrogo-old.png" text="Benrogo" color="blue" /> 
+          <Logo imageUrl="/benrogo-old.png" text="Benrogo" color="blue" />
         </Link>
         <div className={styles.NavbarExpandArrowContainer} onClick={toggleExpansion}>
           <Icon

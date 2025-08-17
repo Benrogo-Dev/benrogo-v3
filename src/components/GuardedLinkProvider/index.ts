@@ -1,1 +1,1 @@
-export { default } from "./GuardedLinkProvider";
+export { default } from './GuardedLinkProvider';

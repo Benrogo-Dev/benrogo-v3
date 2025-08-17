@@ -1,7 +1,7 @@
-import { makeBigQueryRequest } from "@/utils/bigquery";
-import * as errors from "@/utils/errors";
+import { makeBigQueryRequest } from '@/utils/bigquery';
+import * as errors from '@/utils/errors';
 
-export const runtime = "edge";
+export const runtime = 'edge';
 
 export const GET = async (): Promise<Response> => {
   const statsQuery = `
@@ -18,4 +18,4 @@ export const GET = async (): Promise<Response> => {
   } catch (error) {
     return errors.internal(error);
   }
-}
+};

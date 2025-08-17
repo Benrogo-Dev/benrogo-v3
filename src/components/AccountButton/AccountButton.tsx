@@ -1,9 +1,9 @@
-import * as React from "react";
+import * as React from 'react';
 import Icon from '@mdi/react';
-import styles from "./AccountButton.module.css";
-import { Button } from "@/components";
-import { mdiGithub } from "@mdi/js"
-import { signIn, signOut, useSession } from "next-auth/react";
+import styles from './AccountButton.module.css';
+import { Button } from '@/components';
+import { mdiGithub } from '@mdi/js';
+import { signIn, signOut, useSession } from 'next-auth/react';
 
 const AccountButton = () => {
   const { data: session } = useSession();
@@ -12,10 +12,10 @@ const AccountButton = () => {
   return (
     <Button
       color="cyan"
-      onClick={() => session ? signOut() : signIn("github")}
+      onClick={() => session ? signOut() : signIn('github')}
     >
       {
-        session ? "Sign Out" : "Sign In"
+        session ? 'Sign Out' : 'Sign In'
       }
       {
         pfpUrl ? (
@@ -28,7 +28,7 @@ const AccountButton = () => {
         )
       }
     </Button>
-  )
+  );
 };
 
 export default AccountButton;

@@ -1,43 +1,16 @@
-import type { Metadata } from "next";
-import { BasePage, LinkiesTable } from "@/components";
+import type { Metadata } from 'next';
+import { BasePage, LinkiesTable } from '@/components';
 
 export const metadata: Metadata = {
-  title: "Linkies"
+  title: 'Linkies',
 };
 
-const Home = () => {
+const Page = () => {
   return (
     <BasePage>
-      <LinkiesTable
-        linkData={[
-          {
-            url: "https://www.google.com",
-            requests: 38495723,
-            status: "online",
-            loadTime: 0.33,
-            reliability: 8.2
-          },
-          {
-            url: "https://www.example.com",
-            requests: 2793,
-            status: "offline",
-            reliability: 1.7
-          },
-          {
-            url: "https://benrogo.net",
-            requests: 129344,
-            status: "maintenance",
-            reliability: 4.2
-          },
-          {
-            url: "https://discord.com",
-            requests: 91360,
-            status: "unknown"
-          },
-        ]}
-      />
+      <LinkiesTable />
     </BasePage>
   );
-}
+};
 
-export default Home;
+export default Page;

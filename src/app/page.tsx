@@ -1,11 +1,11 @@
-import { Checkbox, Switch, Slider, Button, Rating, Link, Logo, GuardedLink, GuardedLinkProvider, BasePage } from "@/components";
+import { Checkbox, Switch, Slider, Button, Rating, Link, Logo, GuardedLink, GuardedLinkProvider, BasePage } from '@/components';
 
 const Home = () => {
   return (
     <BasePage>
       <div style={{
-        display: "flex",
-        flexFlow: "row",
+        display: 'flex',
+        flexFlow: 'row',
         gap: 10
       }}>
         <Button color="red">Red</Button>
@@ -17,8 +17,8 @@ const Home = () => {
         <Button color="magenta">Magenta</Button>
       </div>
       <div style={{
-        display: "flex",
-        flexFlow: "row",
+        display: 'flex',
+        flexFlow: 'row',
         gap: 10
       }}>
         <Button color="red" disabled>red</Button>
@@ -30,8 +30,8 @@ const Home = () => {
         <Button color="magenta" disabled>Magenta</Button>
       </div>
       <div style={{
-        display: "flex",
-        flexFlow: "row",
+        display: 'flex',
+        flexFlow: 'row',
         gap: 10
       }}>
         <Checkbox color="red" defaultChecked />
@@ -50,8 +50,8 @@ const Home = () => {
         <Checkbox color="magenta" />
       </div>
       <div style={{
-        display: "flex",
-        flexFlow: "row",
+        display: 'flex',
+        flexFlow: 'row',
         gap: 10
       }}>
         <Checkbox color="red" defaultChecked disabled />
@@ -70,8 +70,8 @@ const Home = () => {
         <Checkbox color="magenta" disabled />
       </div>
       <div style={{
-        display: "flex",
-        flexFlow: "row",
+        display: 'flex',
+        flexFlow: 'row',
         gap: 10
       }}>
         <Slider color="red" defaultValue={50} />
@@ -83,8 +83,8 @@ const Home = () => {
         <Slider color="magenta" defaultValue={50} />
       </div>
       <div style={{
-        display: "flex",
-        flexFlow: "row",
+        display: 'flex',
+        flexFlow: 'row',
         gap: 10
       }}>
         <Slider color="red" defaultValue={50} disabled />
@@ -96,8 +96,8 @@ const Home = () => {
         <Slider color="magenta" defaultValue={50} disabled />
       </div>
       <div style={{
-        display: "flex",
-        flexFlow: "row",
+        display: 'flex',
+        flexFlow: 'row',
         gap: 10,
       }}>
         <Switch color="red" />
@@ -116,8 +116,8 @@ const Home = () => {
         <Switch color="magenta" defaultChecked />
       </div>
       <div style={{
-        display: "flex",
-        flexFlow: "row",
+        display: 'flex',
+        flexFlow: 'row',
         gap: 10,
       }}>
         <Switch color="red" disabled />
@@ -136,8 +136,8 @@ const Home = () => {
         <Switch color="magenta" defaultChecked disabled />
       </div>
       <div style={{
-        display: "flex",
-        flexFlow: "row",
+        display: 'flex',
+        flexFlow: 'row',
         gap: 10,
       }}>
         <Rating value={1} max={2} color="red" />
@@ -149,8 +149,8 @@ const Home = () => {
         <Rating value={1} max={2} color="magenta" />
       </div>
       <div style={{
-        display: "flex",
-        flexFlow: "row",
+        display: 'flex',
+        flexFlow: 'row',
         gap: 20,
       }}>
         <Link href="#" color="red">Example link</Link>
@@ -162,8 +162,8 @@ const Home = () => {
         <Link href="#" color="magenta">Example link</Link>
       </div>
       <div style={{
-        display: "flex",
-        flexFlow: "row",
+        display: 'flex',
+        flexFlow: 'row',
         gap: 20,
       }}>
         <Link href="#" hoverUnderline color="red">Example link</Link>
@@ -175,8 +175,8 @@ const Home = () => {
         <Link href="#" hoverUnderline color="magenta">Example link</Link>
       </div>
       <div style={{
-        display: "flex",
-        flexFlow: "row",
+        display: 'flex',
+        flexFlow: 'row',
         gap: 20,
       }}>
         <Link href="#" glow color="red">Example link</Link>
@@ -188,8 +188,8 @@ const Home = () => {
         <Link href="#" glow color="magenta">Example link</Link>
       </div>
       <div style={{
-        display: "flex",
-        flexFlow: "row",
+        display: 'flex',
+        flexFlow: 'row',
         gap: 20,
       }}>
         <Link href="#" glow hoverUnderline color="red">Example link</Link>
@@ -201,8 +201,8 @@ const Home = () => {
         <Link href="#" glow hoverUnderline color="magenta">Example link</Link>
       </div>
       <div style={{
-        display: "flex",
-        flexFlow: "row",
+        display: 'flex',
+        flexFlow: 'row',
         gap: 20,
       }}>
         <Link href="#" glow>
@@ -212,8 +212,8 @@ const Home = () => {
         <Logo size="large" imageUrl="/benrogo-old.png" text="Benrogo" />
       </div>
       <div style={{
-        display: "flex",
-        flexFlow: "row",
+        display: 'flex',
+        flexFlow: 'row',
         gap: 20,
       }}>
         <GuardedLinkProvider>
@@ -228,6 +228,6 @@ const Home = () => {
       </div>
     </BasePage>
   );
-}
+};
 
 export default Home;
