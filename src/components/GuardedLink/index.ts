@@ -1,1 +1,1 @@
-export { default } from "./GuardedLink";
+export { default } from './GuardedLink';

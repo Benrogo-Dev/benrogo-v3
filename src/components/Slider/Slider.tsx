@@ -1,14 +1,14 @@
-import { Slider as BaseSlider } from "@base-ui-components/react/slider";
-import * as React from "react";
-import styles from "./Slider.module.scss";
-import type { ThemeColor } from "@/types/colors";
+import { Slider as BaseSlider } from '@base-ui-components/react/slider';
+import * as React from 'react';
+import styles from './Slider.module.scss';
+import type { ThemeColor } from '@/types/colors';
 
 interface SliderProps extends BaseSlider.Root.Props {
   color?: ThemeColor;
 }
 
 const Checkbox = ({
-  color = "magenta",
+  color = 'magenta',
   ...props
 }: SliderProps) => {
   return (
@@ -20,7 +20,7 @@ const Checkbox = ({
         </BaseSlider.Track>
       </BaseSlider.Control>
     </BaseSlider.Root>
-  )
+  );
 };
 
 export default Checkbox;

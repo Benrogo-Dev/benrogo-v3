@@ -1,2 +1,2 @@
-export { auth as middleware } from "@/auth";
-export const runtime = "experimental-edge";
+export { auth as middleware } from '@/auth';
+export const runtime = 'experimental-edge';

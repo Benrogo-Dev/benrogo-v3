@@ -1,15 +1,14 @@
-import type { Metadata } from "next";
-import { BasePage } from "@/components";
-import LinkiesPageClient from "./LinkiesPageClient";
+import type { Metadata } from 'next';
+import { BasePage, LinkiesTable } from '@/components';
 
 export const metadata: Metadata = {
-  title: "Linkies",
+  title: 'Linkies',
 };
 
 const Page = () => {
   return (
     <BasePage>
-      <LinkiesPageClient />
+      <LinkiesTable />
     </BasePage>
   );
 };

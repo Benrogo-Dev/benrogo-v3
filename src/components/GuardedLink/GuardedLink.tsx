@@ -1,9 +1,9 @@
-"use client"
+'use client';
 
-import React, { useState, useEffect, useRef } from "react";
-import styles from "./GuardedLink.module.scss";
-import type { ThemeColor } from "@/types/colors";
-import { useGuardedLinkContext } from "@/context/GuardedLinkContext";
+import React, { useState, useEffect, useRef } from 'react';
+import styles from './GuardedLink.module.scss';
+import type { ThemeColor } from '@/types/colors';
+import { useGuardedLinkContext } from '@/context/GuardedLinkContext';
 
 interface GuardedLinkProps extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
   hoverUnderline?: boolean;
@@ -14,21 +14,21 @@ interface GuardedLinkProps extends React.AnchorHTMLAttributes<HTMLAnchorElement>
 }
 
 const getRandomFragment = (text: string): string => {
-  let fragment = "";
+  let fragment = '';
   for (let i = 0; i < text.length; i++) {
     if (Math.random() < 0.35) {
-      fragment += "\u00A0";
+      fragment += '\u00A0';
     } else {
       fragment += text[i];
     }
   }
   return fragment;
-}
+};
 
 const GuardedLink = ({
   hoverUnderline = false,
   glow = false,
-  color = "magenta",
+  color = 'magenta',
   fontSize,
   children,
   href,
@@ -36,7 +36,7 @@ const GuardedLink = ({
   rel,
   ...props
 }: GuardedLinkProps) => {
-  const [currentText, setCurrentText] = useState("");
+  const [currentText, setCurrentText] = useState('');
   const { timer, guardEnabled } = useGuardedLinkContext();
   const linkRef = useRef<HTMLAnchorElement>(null);
 
@@ -50,7 +50,7 @@ const GuardedLink = ({
 
   useEffect(() => {
     if (linkRef.current) {
-      linkRef.current.style.setProperty("--gl-text", `"${guardEnabled ? currentText : children}"`);
+      linkRef.current.style.setProperty('--gl-text', `"${guardEnabled ? currentText : children}"`);
     }
   }, [
     currentText,
@@ -70,8 +70,8 @@ const GuardedLink = ({
       draggable={false}
       {...(hoverUnderline && { 'data-hover-underline': 1 })}
       {...(glow && { 'data-glow': 1 })}
-      target={target ?? "_blank"}
-      rel={(target ?? "_blank") === "_blank" ? ["noopener", "noreferrer", ...(rel ? rel.split(" ") : [])].filter((v, i, a) => a.indexOf(v) === i).join(" ") : rel}
+      target={target ?? '_blank'}
+      rel={(target ?? '_blank') === '_blank' ? ['noopener', 'noreferrer', ...(rel ? rel.split(' ') : [])].filter((v, i, a) => a.indexOf(v) === i).join(' ') : rel}
     />
   );
 };

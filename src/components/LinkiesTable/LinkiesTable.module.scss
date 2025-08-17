@@ -20,16 +20,14 @@
 
 .LinkiesTableControls {
   display: flex;
-  justify-content: flex-end;
+  justify-content: flex-start;
   align-items: center;
   padding-inline: 1rem;
-  margin-bottom: 1rem;
   gap: 0.5rem;
   width: 100%;
   
   @include mobile {
     justify-content: center;
-    margin-bottom: 1rem;
     padding-inline: 0;
   }
 }
@@ -171,12 +169,16 @@
   width: 100%;
   height: 0.8rem;
   border-radius: 0.25rem;
-  background-color: var(--base-600);
+  background-color: var(--magenta-600);
   animation: pulse 1s infinite alternate;
+
+  &.error {
+    background-color: var(--red-400);
+    animation: none;
+  }
 }
 
 @keyframes pulse {
   0% { background-color: var(--base-600); }
   100% { background-color: var(--base-500); }
-
 }

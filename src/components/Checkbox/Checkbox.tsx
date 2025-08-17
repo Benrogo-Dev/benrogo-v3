@@ -1,27 +1,27 @@
-import { Checkbox as BaseCheckbox } from "@base-ui-components/react/checkbox";
-import * as React from "react";
-import styles from "./Checkbox.module.scss";
-import type { ThemeColor } from "@/types/colors";
+import { Checkbox as BaseCheckbox } from '@base-ui-components/react/checkbox';
+import * as React from 'react';
+import styles from './Checkbox.module.scss';
+import type { ThemeColor } from '@/types/colors';
 import Icon from '@mdi/react';
-import { mdiCheckBold } from "@mdi/js"
+import { mdiCheckBold } from '@mdi/js';
 
 interface CheckboxProps extends BaseCheckbox.Root.Props {
   label?: string;
-  labelPosition?: "top" | "bottom" | "left" | "right";
+  labelPosition?: 'top' | 'bottom' | 'left' | 'right';
   color?: ThemeColor;
 }
 
 const Checkbox = ({
   label,
   labelPosition,
-  color = "magenta",
+  color = 'magenta',
   ...props
 }: CheckboxProps) => {
   const flexFlow = (
-    labelPosition === "top" ? "column-reverse":
-    labelPosition === "bottom" ? "column" :
-    labelPosition === "left" ? "row-reverse" :
-    "row"
+    labelPosition === 'top' ? 'column-reverse':
+      labelPosition === 'bottom' ? 'column' :
+        labelPosition === 'left' ? 'row-reverse' :
+          'row'
   );
 
   return (
@@ -33,7 +33,7 @@ const Checkbox = ({
       </BaseCheckbox.Root>
       {label}
     </label>
-  )
+  );
 };
 
 export default Checkbox;

@@ -1,6 +1,6 @@
-import * as React from "react";
-import styles from "./BasePage.module.scss";
-import { ParticleBackground, Navbar } from "@/components";
+import * as React from 'react';
+import styles from './BasePage.module.scss';
+import { ParticleBackground, Navbar } from '@/components';
 
 type BasePageProps = {
   children: React.ReactNode;
@@ -14,10 +14,10 @@ const BasePage = ({
   return (
     <>
       <ParticleBackground
-        colors={error ? ["red"] : ["cyan", "magenta"]}
+        colors={error ? ['red'] : ['cyan', 'magenta']}
       />
       <div className={styles.basePage}>
-        <Navbar color={error ? "red" : "magenta"} />
+        <Navbar color={error ? 'red' : 'magenta'} />
         { children }
       </div>
     </>
