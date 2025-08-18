@@ -7,7 +7,7 @@
   align-items: center;
   gap: 1rem;
   border: 2px solid var(--base-300);
-  border-radius: 1rem;
+  border-radius: 1.2rem;
   box-shadow: var(--base-300-neon);
   padding: 0.6rem;
 
@@ -50,7 +50,7 @@
   display: none;
   color: #ffffff;
   line-height: 0px;
-  transition: all 0.4s ease;
+  transition: all 0.2s ease;
 
   @include mobile {
     display: inline-block;
@@ -59,4 +59,15 @@
 
 .NavbarExpandArrowContainer:active .NavbarExpandArrow {
   color: var(--base-300);
+}
+
+// Compose link animations specifically for navbar
+// Ensure both underline and scale apply together on hover
+.Navbar a[data-hover-underline][data-hover-scale]:hover {
+  transform: translateY(-3px) scale(1.05);
+}
+
+// When clicking while underline is active, compose the shrink with a slight lift
+.Navbar a[data-hover-underline][data-click-shrink]:active {
+  transform: translateY(-1px) scale(0.96);
 }
