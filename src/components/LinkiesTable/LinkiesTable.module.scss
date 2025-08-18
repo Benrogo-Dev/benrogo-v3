@@ -1,0 +1,184 @@
+@use "@/styles/sizingMixins" as *;
+
+.LinkiesTable {
+  display: table;
+  width: 100%;
+  padding: 1rem;
+  border-radius: 1rem;
+  border: 2px solid var(--base-300);
+  box-shadow: var(--base-300-neon);
+  transition: all 0.3s ease;
+
+  @include mobile {
+    border: none;
+    box-shadow: none;
+    display: flex;
+    justify-content: center;
+    padding: 0;
+  }
+}
+
+.LinkiesTableControls {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding-inline: 1rem;
+  gap: 0.5rem;
+  width: 100%;
+  
+  @include mobile {
+    justify-content: center;
+    padding-inline: 0;
+  }
+}
+
+.LinkiesTableHead {
+  display: table-header-group;
+
+  & .LinkiesTableCell {
+    border-bottom: 2px solid var(--base-100);
+  }
+
+  @include mobile {
+    display: none;
+  }
+}
+
+.LinkiesTableBody {
+  display: table-row-group;
+
+  @include desktop {
+    & :first-child > .LinkiesTableCell {
+      padding-top: 1.5rem;
+    }
+  }
+
+  @include mobile {
+    display: flex;
+    flex-flow: column;
+    gap: 1rem;
+    width: 100%;
+  }
+}
+
+.LinkiesTableRow {
+  display: table-row;
+
+  & > :first-child {
+    width: 100%;
+    max-width: 30vw;
+    overflow: hidden;
+  }
+
+  @include mobile {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border-radius: 1rem;
+    border: 2px solid var(--base-300);
+    box-shadow: var(--base-300-neon);
+    overflow: hidden;
+
+    & > :first-child {
+      max-width: unset;
+      grid-column: 1 / span 2;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      & > :first-child {
+        max-width: 80%;
+        font-size: 1.2rem;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        text-align: left;
+      }
+    }
+
+    &:not([data-expanded]) > :not(:first-child) {
+      display: none;
+    }
+
+    & > :nth-child(odd) {
+      margin-left: auto;
+      text-align: right;
+    }
+
+    & > :last-child > * {
+      margin-left: auto;
+    }
+  }
+}
+
+.LinkiesTableCell {
+  display: table-cell;
+  padding-inline: 1rem;
+  padding-block: 0.5rem;
+  vertical-align: middle;
+  white-space: nowrap;
+
+  @include mobile {
+    display: block;
+
+    &[data-label]::before {
+      content: attr(data-label);
+      font-size: 1.2rem;
+      line-height: 2.5rem;
+    }
+  }
+}
+
+.SortableHeader {
+  cursor: pointer;
+  user-select: none;
+  transition: opacity 0.2s ease;
+
+  &:hover {
+    opacity: 0.8;
+  }
+
+  @include mobile {
+    cursor: default;
+  }
+}
+
+.SortIcon {
+  transition: transform 0.2s ease;
+  margin-left: 0.5rem;
+
+  @include mobile {
+    display: none;
+  }
+}
+
+.LinkiesTableExpandArrow {
+  display: none;
+
+  @include mobile {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+.LinkiesTableExpandArrowIcon {
+  transition: all 0.4s ease;
+}
+
+.LinkiesTablePlaceholder {
+  width: 100%;
+  height: 0.8rem;
+  border-radius: 0.25rem;
+  background-color: var(--magenta-600);
+  animation: pulse 1s infinite alternate;
+
+  &.error {
+    background-color: var(--red-400);
+    animation: none;
+  }
+}
+
+@keyframes pulse {
+  0% { background-color: var(--base-600); }
+  100% { background-color: var(--base-500); }
+}

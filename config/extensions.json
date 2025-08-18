@@ -1,0 +1,149 @@
+{
+  "Securly": {
+    "detectionUrls": [
+      "chrome-extension://ckecmkbnoanpgplccmnoikfmpcdladkc/fonts/Metropolis.css",
+      "chrome-extension://joflmkccibkooplaeoinecjbmdebglab/fonts/Metropolis.css",
+      "chrome-extension://iheobagjkfklnlikgihanlhcddjoihkg/fonts/Metropolis.css",
+      "chrome-extension://hkobaiihndnbfhbkmjjfbdimfbdcppdh/notfound.html",
+      "chrome-extension://jfbecfmiegcjddenjhlbhlikcbfmnafd/notfound.html"
+    ],
+    "aiDetection": true
+  },
+  "GoGuardian": {
+    "detectionUrls": [
+      "chrome-extension://haldlgldplgnggkjaafhelgiaglafanh/youtube_injection.js"
+    ],
+    "aiDetection": true
+  },
+  "LANSchool": {
+    "detectionUrls": [
+      "chrome-extension://baleiojnjpgeojohhhfbichcodgljmnj/blocked.html"
+    ],
+    "aiDetection": false
+  },
+  "Linewize": {
+    "detectionUrls": [
+      "chrome-extension://ddfbkhpmcdbciejenfcolaaiebnjcbfc/background/assets/pages/default-blocked.html",
+      "chrome-extension://ifinpabiejbjobcphhaomiifjibpkjlf/background/assets/pages/default-blocked.html"
+    ],
+    "aiDetection": false
+  },
+  "Blocksi": {
+    "detectionUrls": [
+      "chrome-extension://ghlpmldmjjhmdgmneoaibbegkjjbonbk/pages/blockPage.html"
+    ],
+    "aiDetection": false
+  },
+  "FortiGuard": {
+    "detectionUrls": [
+      "chrome-extension://igbgpehnbmhgdgjbhkkpedommgmfbeao/youtube_injection.js"
+    ],
+    "aiDetection": false
+  },
+  "Cisco Umbrella": {
+    "detectionUrls": [
+      "chrome-extension://jcdhmojfecjfmbdpchihbeilohgnbdci/blocked.html"
+    ],
+    "aiDetection": false
+  },
+  "ContentKeeper": {
+    "detectionUrls": [
+      "chrome-extension://jdogphakondfdmcanpapfahkdomaicfa/img/ckauth19x.png",
+      "chrome-extension://odoanpnonilogofggaohhkdkdgbhdljp/img/ckauth19x.png"
+    ],
+    "aiDetection": true
+  },
+  "Hapara": {
+    "detectionUrls": [
+      "chrome-extension://kbohafcopfpigkjdimdcdgenlhkmhbnc/blocked.html",
+      "chrome-extension://aceopacgaepdcelohobicpffbbejnfac/blocked.html"
+    ],
+    "aiDetection": true
+  },
+  "iBoss": {
+    "detectionUrls": [
+      "chrome-extension://kmffehbidlalibfeklaefnckpidbodff/restricted.html"
+    ],
+    "aiDetection": false
+  },
+  "Lightspeed": {
+    "detectionUrls": [
+      "chrome-extension://njdniclgegijdcdliklgieicanpmcngj/js/wasm_exec.js",
+      "chrome-extension://adkcpkpghahmbopkjchobieckeoaoeem/icon-128.png",
+      "chrome-extension://kkbmdgjggcdajckdlbngdjonpchpaiea/assets/icon-classroom-128.png"
+    ],
+    "aiDetection": true
+  },
+  "InterCLASS Filtering Service": {
+    "detectionUrls": [
+      "chrome-extension://jbddgjglgkkneonnineaohdhabjbgopi/pages/message-page.html"
+    ],
+    "aiDetection": false
+  },
+  "InterSafe GatewayConnection Agent": {
+    "detectionUrls": [
+      "chrome-extension://ecjoghccnjlodjlmkgmnbnkdcbnjgden/resources/options.js"
+    ],
+    "aiDetection": false
+  },
+  "LoiLo Web Filters": {
+    "detectionUrls": [
+      "chrome-extension://pabjlbjcgldndnpjnokjakbdofjgnfia/image/allow_icon/shield_green_128x128.png"
+    ],
+    "aiDetection": false
+  },
+  "LanSchool Web Helper": {
+    "detectionUrls": [
+      "chrome-extension://honjcnefekfnompampcpmcdadibmjhlk/blocked.html"
+    ],
+    "aiDetection": false
+  },
+  "IMTLazarus": {
+    "detectionUrls": [
+      "chrome-extension://cgigopjakkeclhggchgnhmpmhghcbnaf/models/model.json"
+    ],
+    "aiDetection": false
+  },
+  "Impero Backdrop": {
+    "detectionUrls": [
+      "chrome-extension://jjpmjccpemllnmgiaojaocgnakpmfgjg/licenses.html"
+    ],
+    "aiDetection": false
+  },
+  "Mobile Guardian": {
+    "detectionUrls": [
+      "chrome-extension://fgmafhdohjkdhfaacgbgclmfgkgokgmb/block.html"
+    ],
+    "aiDetection": false
+  },
+  "NetSupport School Student": {
+    "detectionUrls": [
+      "chrome-extension://gcjpefhffmcgplgklffgbebganmhffje/_locales/lt/messages.json"
+    ],
+    "aiDetection": false
+  },
+  "classroom.cloud Student": {
+    "detectionUrls": [
+      "chrome-extension://mpkdoimpgkhjcicmhmlmgboelebflpla/_locales/lt/messages.json"
+    ],
+    "aiDetection": false
+  },
+  "Borderless Classroom Student": {
+    "detectionUrls": [
+      "chrome-extension://kdpgkligilplaanoablcpjahjjeghcl/pages/blockPage.html"
+    ],
+    "aiDetection": false
+  },
+  "Lugus School": {
+    "detectionUrls": [
+      "chrome-extension://eoobggamkobbcpiojefejfglbfcacgca/assets/images/icon_128.png"
+    ],
+    "aiDetection": false
+  },
+  "TEST": {
+    "detectionUrls": [
+      "chrome-extension://ghbmnnjooekpmoecnnnilnnbdlolhkhi/page_embed_script.js"
+    ],
+    "aiDetection": true
+  }
+}

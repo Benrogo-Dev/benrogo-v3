@@ -1,20 +1,20 @@
-import * as React from "react";
-import styles from "./Logo.module.scss";
-import type { ThemeColor } from "@/types/colors";
+import * as React from 'react';
+import styles from './Logo.module.scss';
+import type { ThemeColor } from '@/types/colors';
 
 interface LogoProps extends React.HtmlHTMLAttributes<HTMLDivElement> {
   color?: ThemeColor;
-  size?: "small" | "medium" | "large";
+  size?: 'small' | 'medium' | 'large';
   imageUrl: string;
   text?: string;
   glow?: boolean;
 }
 
 const Logo = ({
-  color = "magenta",
-  size = "small",
+  color = 'magenta',
+  size = 'small',
   imageUrl,
-  text = "",
+  text = '',
   glow = false,
   ...props
 }: LogoProps) => {
@@ -33,7 +33,7 @@ const Logo = ({
         text && <p className={styles.LogoText}>{text}</p>
       }
     </div>
-  )
+  );
 };
 
 export default Logo;

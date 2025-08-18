@@ -1,12 +1,11 @@
-import { Checkbox, Switch, Slider, Button, Rating, Link, Logo } from "@/components";
+import { Checkbox, Switch, Slider, Button, Rating, Link, Logo, GuardedLink, GuardedLinkProvider, BasePage } from '@/components';
 
 const Home = () => {
   return (
-    <>
-      <br/>
+    <BasePage>
       <div style={{
-        display: "flex",
-        flexFlow: "row",
+        display: 'flex',
+        flexFlow: 'row',
         gap: 10
       }}>
         <Button color="red">Red</Button>
@@ -17,10 +16,9 @@ const Home = () => {
         <Button color="blue">Blue</Button>
         <Button color="magenta">Magenta</Button>
       </div>
-      <br/>
       <div style={{
-        display: "flex",
-        flexFlow: "row",
+        display: 'flex',
+        flexFlow: 'row',
         gap: 10
       }}>
         <Button color="red" disabled>red</Button>
@@ -31,10 +29,9 @@ const Home = () => {
         <Button color="blue" disabled>Blue</Button>
         <Button color="magenta" disabled>Magenta</Button>
       </div>
-      <br/>
       <div style={{
-        display: "flex",
-        flexFlow: "row",
+        display: 'flex',
+        flexFlow: 'row',
         gap: 10
       }}>
         <Checkbox color="red" defaultChecked />
@@ -52,10 +49,9 @@ const Home = () => {
         <Checkbox color="magenta" defaultChecked />
         <Checkbox color="magenta" />
       </div>
-      <br/>
       <div style={{
-        display: "flex",
-        flexFlow: "row",
+        display: 'flex',
+        flexFlow: 'row',
         gap: 10
       }}>
         <Checkbox color="red" defaultChecked disabled />
@@ -73,10 +69,9 @@ const Home = () => {
         <Checkbox color="magenta" defaultChecked disabled />
         <Checkbox color="magenta" disabled />
       </div>
-      <br/>
       <div style={{
-        display: "flex",
-        flexFlow: "row",
+        display: 'flex',
+        flexFlow: 'row',
         gap: 10
       }}>
         <Slider color="red" defaultValue={50} />
@@ -87,10 +82,9 @@ const Home = () => {
         <Slider color="blue" defaultValue={50} />
         <Slider color="magenta" defaultValue={50} />
       </div>
-      <br/>
       <div style={{
-        display: "flex",
-        flexFlow: "row",
+        display: 'flex',
+        flexFlow: 'row',
         gap: 10
       }}>
         <Slider color="red" defaultValue={50} disabled />
@@ -101,10 +95,9 @@ const Home = () => {
         <Slider color="blue" defaultValue={50} disabled />
         <Slider color="magenta" defaultValue={50} disabled />
       </div>
-      <br/>
       <div style={{
-        display: "flex",
-        flexFlow: "row",
+        display: 'flex',
+        flexFlow: 'row',
         gap: 10,
       }}>
         <Switch color="red" />
@@ -122,10 +115,9 @@ const Home = () => {
         <Switch color="magenta" />
         <Switch color="magenta" defaultChecked />
       </div>
-      <br/>
       <div style={{
-        display: "flex",
-        flexFlow: "row",
+        display: 'flex',
+        flexFlow: 'row',
         gap: 10,
       }}>
         <Switch color="red" disabled />
@@ -143,24 +135,9 @@ const Home = () => {
         <Switch color="magenta" disabled />
         <Switch color="magenta" defaultChecked disabled />
       </div>
-      <br/>
       <div style={{
-        display: "flex",
-        flexFlow: "row",
-        gap: 10,
-      }}>
-        <Rating value={0} color="red" />
-        <Rating value={0} color="orange" />
-        <Rating value={0} color="yellow" />
-        <Rating value={0} color="green" />
-        <Rating value={0} color="cyan" />
-        <Rating value={0} color="blue" />
-        <Rating value={0} color="magenta" />
-      </div>
-      <br/>
-      <div style={{
-        display: "flex",
-        flexFlow: "row",
+        display: 'flex',
+        flexFlow: 'row',
         gap: 10,
       }}>
         <Rating value={1} max={2} color="red" />
@@ -171,25 +148,9 @@ const Home = () => {
         <Rating value={1} max={2} color="blue" />
         <Rating value={1} max={2} color="magenta" />
       </div>
-      <br/>
       <div style={{
-        display: "flex",
-        flexFlow: "row",
-        gap: 10,
-      }}>
-        <Rating value={2} max={2} color="red" />
-        <Rating value={2} max={2} color="orange" />
-        <Rating value={2} max={2} color="yellow" />
-        <Rating value={2} max={2} color="green" />
-        <Rating value={2} max={2} color="cyan" />
-        <Rating value={2} max={2} color="blue" />
-        <Rating value={2} max={2} color="magenta" />
-      </div>
-      <br/>
-      <br/>
-      <div style={{
-        display: "flex",
-        flexFlow: "row",
+        display: 'flex',
+        flexFlow: 'row',
         gap: 20,
       }}>
         <Link href="#" color="red">Example link</Link>
@@ -200,10 +161,9 @@ const Home = () => {
         <Link href="#" color="blue">Example link</Link>
         <Link href="#" color="magenta">Example link</Link>
       </div>
-      <br/>
       <div style={{
-        display: "flex",
-        flexFlow: "row",
+        display: 'flex',
+        flexFlow: 'row',
         gap: 20,
       }}>
         <Link href="#" hoverUnderline color="red">Example link</Link>
@@ -214,10 +174,9 @@ const Home = () => {
         <Link href="#" hoverUnderline color="blue">Example link</Link>
         <Link href="#" hoverUnderline color="magenta">Example link</Link>
       </div>
-      <br/>
       <div style={{
-        display: "flex",
-        flexFlow: "row",
+        display: 'flex',
+        flexFlow: 'row',
         gap: 20,
       }}>
         <Link href="#" glow color="red">Example link</Link>
@@ -228,10 +187,9 @@ const Home = () => {
         <Link href="#" glow color="blue">Example link</Link>
         <Link href="#" glow color="magenta">Example link</Link>
       </div>
-      <br/>
       <div style={{
-        display: "flex",
-        flexFlow: "row",
+        display: 'flex',
+        flexFlow: 'row',
         gap: 20,
       }}>
         <Link href="#" glow hoverUnderline color="red">Example link</Link>
@@ -242,10 +200,9 @@ const Home = () => {
         <Link href="#" glow hoverUnderline color="blue">Example link</Link>
         <Link href="#" glow hoverUnderline color="magenta">Example link</Link>
       </div>
-      <br/>
       <div style={{
-        display: "flex",
-        flexFlow: "row",
+        display: 'flex',
+        flexFlow: 'row',
         gap: 20,
       }}>
         <Link href="#" glow>
@@ -254,8 +211,23 @@ const Home = () => {
         <Logo size="medium" imageUrl="/benrogo-old.png" text="Benrogo" glow />
         <Logo size="large" imageUrl="/benrogo-old.png" text="Benrogo" />
       </div>
-    </>
+      <div style={{
+        display: 'flex',
+        flexFlow: 'row',
+        gap: 20,
+      }}>
+        <GuardedLinkProvider>
+          <GuardedLink href="https://www.google.com" hoverUnderline color="red">www.google.com</GuardedLink>
+          <GuardedLink href="https://www.google.com" hoverUnderline color="orange">www.google.com</GuardedLink>
+          <GuardedLink href="https://www.google.com" hoverUnderline color="yellow">www.google.com</GuardedLink>
+          <GuardedLink href="https://www.google.com" hoverUnderline color="green">www.google.com</GuardedLink>
+          <GuardedLink href="https://www.google.com" hoverUnderline color="cyan">www.google.com</GuardedLink>
+          <GuardedLink href="https://www.google.com" hoverUnderline color="blue">www.google.com</GuardedLink>
+          <GuardedLink href="https://www.google.com" hoverUnderline color="magenta">www.google.com</GuardedLink>
+        </GuardedLinkProvider>
+      </div>
+    </BasePage>
   );
-}
+};
 
 export default Home;

@@ -3,10 +3,11 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev --turbopack -H local.benrogo.net",
+    "dev": "next dev -H local.benrogo.net",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "fixlint": "next lint --fix"
   },
   "dependencies": {
     "@base-ui-components/react": "^1.0.0-beta.1",
@@ -15,6 +16,7 @@
     "@tsparticles/engine": "^3.8.1",
     "@tsparticles/react": "^3.0.0",
     "@tsparticles/slim": "^3.8.1",
+    "jose": "^6.0.12",
     "next": "15.3.4",
     "next-auth": "^5.0.0-beta.29",
     "react": "^19.1.0",
@@ -27,7 +29,9 @@
     "@types/react-dom": "^19.1.6",
     "eslint": "^9.30.0",
     "eslint-config-next": "15.3.4",
+    "globals": "^16.3.0",
     "sass": "^1.89.2",
-    "typescript": "^5.8.3"
+    "typescript": "^5.8.3",
+    "typescript-eslint": "^8.39.1"
   }
 }

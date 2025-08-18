@@ -1,0 +1,53 @@
+.GuardedLink {
+  font-size: inherit;
+  color: var(--base-300);
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-block;
+  width: fit-content;
+  height: fit-content;
+  cursor: pointer;
+
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-user-drag: none;
+  -webkit-touch-callout: none;
+
+  &[data-glow] {
+    color: white;
+    text-shadow: var(--base-300-text-neon);
+  }
+
+  &::before {
+    content: var(--gl-text);
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: -4px;
+    left: 0;
+    background-color: var(--base-300);
+    border-radius: 2px;
+    box-shadow: var(--base-300-neon);
+    transition: all 0.3s ease 0.1s;
+    opacity: 0;
+  }
+
+  &:hover {
+    color: var(--base-300);
+    text-shadow: none;
+    transform: translateY(-3px);
+
+    &[data-hover-underline] {
+      &::after {
+        transform: scaleX(1);
+        transform-origin: bottom center;
+        opacity: 1;
+      }
+    }
+  }
+}

@@ -1,11 +1,10 @@
-.Label {
+.Container {
   display: flex;
   width: fit-content;
   height: fit-content;
   align-items: center;
   justify-content: center;
-  gap: 6px;
-  font-weight: bold;
+  gap: 1rem;
 }
 
 .Switch {
@@ -15,7 +14,7 @@
   border: 0;
   margin: 0;
   padding: 1px;
-  width: 2.5rem;
+  min-width: 2.5rem;
   height: 1.5rem;
   border-radius: 1.5rem;
   background-color: var(--base-500);

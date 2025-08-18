@@ -1,9 +1,9 @@
-"use client";
+'use client';
 
-import React, { useEffect, useState, useMemo } from "react";
-import Particles, { IParticlesProps } from "@tsparticles/react";
-import { loadSlim } from "@tsparticles/slim";
-import type { ThemeColor, ColorIntensity } from "@/types/colors";
+import React, { useEffect, useState, useMemo } from 'react';
+import Particles, { IParticlesProps } from '@tsparticles/react';
+import { loadSlim } from '@tsparticles/slim';
+import type { ThemeColor, ColorIntensity } from '@/types/colors';
 
 interface ParticleBackgroundProps extends IParticlesProps {
   colors?: ThemeColor[];
@@ -11,14 +11,14 @@ interface ParticleBackgroundProps extends IParticlesProps {
 }
 
 const ParticleBackground = ({
-  colors = ["magenta", "cyan"],
+  colors = ['magenta', 'cyan'],
   colorIntensity = 400,
   ...props
 }: ParticleBackgroundProps) => {
   const [init, setInit] = useState(false);
 
   const options = useMemo(() => {
-    if (typeof window !== "undefined") {
+    if (typeof window !== 'undefined') {
       const root = document.documentElement;
       const colorsArray = colors.map((color) =>
         getComputedStyle(root).getPropertyValue(`--${color}-${colorIntensity}`).trim()
@@ -30,7 +30,7 @@ const ParticleBackground = ({
           zIndex: -1,
         },
         background: {
-          color: { value: "#000000" },
+          color: { value: '#000000' },
         },
         fpsLimit: 120,
         interactivity: {
@@ -43,7 +43,7 @@ const ParticleBackground = ({
         particles: {
           color: { value: colorsArray },
           move: {
-            direction: "bottom",
+            direction: 'bottom',
             enable: true,
             random: true,
             speed: { min: 0.5, max: 1 },
@@ -65,11 +65,11 @@ const ParticleBackground = ({
               sync: false,
             },
           },
-          shape: { type: "square" },
+          shape: { type: 'square' },
           size: { value: { min: 1, max: 4 } },
         },
         emitters: {
-          direction: "bottom",
+          direction: 'bottom',
           rate: {
             quantity: 5,
             delay: 0.1,
@@ -84,7 +84,7 @@ const ParticleBackground = ({
           },
         },
         detectRetina: true,
-      } as IParticlesProps["options"];
+      } as IParticlesProps['options'];
     }
 
     return {
@@ -93,7 +93,7 @@ const ParticleBackground = ({
         zIndex: -1,
       },
       background: {
-        color: { value: "#000000" },
+        color: { value: '#000000' },
       },
       fpsLimit: 120,
       interactivity: {
@@ -104,9 +104,9 @@ const ParticleBackground = ({
         },
       },
       particles: {
-        color: { value: ["#ffffff"] },
+        color: { value: ['#ffffff'] },
         move: {
-          direction: "bottom",
+          direction: 'bottom',
           enable: true,
           random: true,
           speed: { min: 0.5, max: 1 },
@@ -128,11 +128,11 @@ const ParticleBackground = ({
             sync: false,
           },
         },
-        shape: { type: "square" },
+        shape: { type: 'square' },
         size: { value: { min: 1, max: 4 } },
       },
       emitters: {
-        direction: "bottom",
+        direction: 'bottom',
         rate: {
           quantity: 5,
           delay: 0.1,
@@ -147,12 +147,12 @@ const ParticleBackground = ({
         },
       },
       detectRetina: true,
-    } as IParticlesProps["options"];
+    } as IParticlesProps['options'];
   }, [colors, colorIntensity]);
 
   useEffect(() => {
     const initializeParticles = async () => {
-      const { tsParticles } = await import("@tsparticles/engine");
+      const { tsParticles } = await import('@tsparticles/engine');
       await loadSlim(tsParticles);
       setInit(true);
     };

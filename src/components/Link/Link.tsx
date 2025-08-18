@@ -1,6 +1,6 @@
-import * as React from "react";
-import styles from "./Link.module.scss";
-import type { ThemeColor } from "@/types/colors";
+import * as React from 'react';
+import styles from './Link.module.scss';
+import type { ThemeColor } from '@/types/colors';
 
 interface LinkProps extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
   hoverUnderline?: boolean;
@@ -16,7 +16,7 @@ const Link = ({
   hoverScale = false,
   clickShrink = false,
   glow = false,
-  color = "magenta",
+  color = 'magenta',
   fontSize,
   children,
   ...props
