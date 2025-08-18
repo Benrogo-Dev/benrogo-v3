@@ -28,7 +28,7 @@ const Navbar = ({
       {...props}
     >
       <div className={styles.NavbarTopGroup}>
-        <Link href="/" hoverUnderline hoverScale clickShrink glow color={color}>
+        <Link href="/" hoverScale clickShrink glow color={color}>
           <Logo imageUrl="/benrogo-old.png" text="Benrogo" color={color} />
         </Link>
         <div className={styles.NavbarExpandArrowContainer} onClick={toggleExpansion}>
@@ -40,11 +40,11 @@ const Navbar = ({
           />
         </div>
       </div>
-      <Link href="/linkies" fontSize="1.2rem" hoverUnderline clickShrink glow color={color}>Linkies</Link>
-      <Link href="/dashboard" fontSize="1.2rem" hoverUnderline clickShrink glow color={color}>Dashboard</Link>
-      <Link href="/partners" fontSize="1.2rem" hoverUnderline clickShrink glow color={color}>Partners</Link>
-      <Link href="/status" fontSize="1.2rem" hoverUnderline clickShrink glow color={color}>Status</Link>
-      <Link href="/about" fontSize="1.2rem" hoverUnderline clickShrink glow color={color}>About</Link>
+      <Link href="/linkies" fontSize="1.2rem" clickShrink glow color={color}>Linkies</Link>
+      <Link href="/dashboard" fontSize="1.2rem" clickShrink glow color={color}>Dashboard</Link>
+      <Link href="/partners" fontSize="1.2rem" clickShrink glow color={color}>Partners</Link>
+      <Link href="/status" fontSize="1.2rem" clickShrink glow color={color}>Status</Link>
+      <Link href="/about" fontSize="1.2rem" clickShrink glow color={color}>About</Link>
       <AccountButton />
     </nav>
   );
