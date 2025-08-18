@@ -7,9 +7,10 @@
   align-items: center;
   gap: 1rem;
   border: 2px solid var(--base-300);
-  border-radius: 1rem;
+  border-radius: 1.2rem;
   box-shadow: var(--base-300-neon);
   padding: 0.6rem;
+  transform: translateY(-8px);
 
   :last-child {
     margin-left: auto;
@@ -50,9 +51,21 @@
   display: none;
   color: #ffffff;
   line-height: 0px;
-  transition: all 0.4s ease;
+  transition: all 0.2s ease;
 
   @include mobile {
     display: inline-block;
   }
+}
+
+.NavbarExpandArrowContainer:active .NavbarExpandArrow {
+  color: var(--base-300);
+}
+
+.Navbar a[data-hover-scale]:hover {
+  transform: translateY(-3px) scale(1.05);
+}
+
+.Navbar a[data-click-shrink]:active {
+  transform: scale(0.96);
 }
